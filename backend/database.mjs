@@ -48,11 +48,13 @@ export default class Database {
     });
 
     console.log();
-    console.log("Sample Users:");
-    console.log(`   ${user1.userId} ${user1.firstName}`);
-    console.log(`   ${user2.userId} ${user2.firstName}`);
-    console.log(`   ${user3.userId} ${user3.firstName}`);
-    console.log();
+    // console.log("Sample Users:");
+    // console.log(`   ${user1.userId} ${user1.firstName}`);
+    // console.log(`   ${user2.userId} ${user2.firstName}`);
+    // console.log(`   ${user3.userId} ${user3.firstName}`);
+    console.log("Sample Database:");
+    console.log(JSON.stringify(this.data));
+    // console.log(JSON.stringify(this.data, ()=> {}, "\n"));
 
     // Luke and Obi-Wan are already connected
     const connection = this.createConnection({

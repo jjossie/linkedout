@@ -2,7 +2,11 @@ import express from "express";
 import Database from "./database.mjs";
 
 const app = express();
-const db = Database();
+const db = new Database();
+const port = 3430;
+
+app.use(express.json());
+
 
 /****************************************
  * User Endpoints
@@ -10,7 +14,10 @@ const db = Database();
 app.get("/user/:userId", (request, response) => {
     const userId = request.params.userId;
     const user = db.userById(userId);
-    return response.status(200).json(user);
+    if (user)
+        return response.status(200).json(user);
+    else
+        return response.sendStatus(400);
 });
 
 app.post("/user", (request, response) => {
@@ -29,7 +36,7 @@ app.put("/user/:userId", (request, response) => {
 app.delete("/user/:userId", (request, response) => {
     const userId = request.params.userId;
     db.deleteUser(userId);
-    return response.status(200);
+    return response.sendStatus(200);
 });
 
 
@@ -38,3 +45,38 @@ app.delete("/user/:userId", (request, response) => {
  * ConnectionRequest Endpoints
  ****************************************/
 
+app.get("/connectionRequest/:connectionRequestId", (request, response) => {
+    const connectionRequestId = request.params.connectionRequestId;
+    const connectionRequest = db.connectionRequestById(connectionRequestId);
+    if (connectionRequest)
+        return response.status(200).json(connectionRequest);
+    else
+        return response.sendStatus(400);
+});
+
+app.post("/connectionRequest", (request, response) => {
+    const connectionRequestData = request.body;
+    const newConnectionRequestResult =  db.createConnectionRequest(connectionRequestData);
+    return response.status(201).json(newConnectionRequestResult);
+});
+
+app.put("/connectionRequest/:connectionRequestId", (request, response) => {
+    const connectionRequestId = request.params.connectionRequestId;
+    const newConnectionRequestData = request.body;
+    const updatedConnectionRequestResult = db.updateConnectionRequest(connectionRequestId, newConnectionRequestData);
+    return response.status(200).json(updatedConnectionRequestResult);
+});
+
+app.delete("/connectionRequest/:connectionRequestId", (request, response) => {
+    const connectionRequestId = request.params.connectionRequestId;
+    db.deleteConnectionRequest(connectionRequestId);
+    return response.sendStatus(200);
+});
+
+
+/****************************************
+ * Listener
+ ****************************************/
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+})

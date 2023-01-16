@@ -1,0 +1,66 @@
+
+    ### /****************************************
+    ### * ConnectionRequest Endpoints
+    ### ****************************************/
+
+### Create Luke connection request to Vader
+POST http://localhost:3430/connectionRequest/
+Content-Type: application/json
+
+{
+  "senderId": "user:736ea62d-e5de-410c-b704-48326f3f41d8",
+  "receiverId": "user:a3ea25c3-6c54-4dd3-bbf7-d85018718b99"
+}
+
+### Get Luke's Conn req to Vader
+GET http://localhost:3430/connectionRequest/connectionRequest:bffec3f3-d45a-4c0a-814c-91a8e2a501b1/
+Accept: application/json
+
+### Edit Luke connection request - change to Obi-Wan
+PUT http://localhost:3430/connectionRequest/connectionRequest:bffec3f3-d45a-4c0a-814c-91a8e2a501b1/
+Content-Type: application/json
+
+{
+  "senderId": "user:736ea62d-e5de-410c-b704-48326f3f41d8",
+  "receiverId": "user:0243b85c-1410-46de-bb44-d823aeea49ef"
+}
+
+### Delete Luke's Conn req
+DELETE http://localhost:3430/connectionRequest/connectionRequest:bffec3f3-d45a-4c0a-814c-91a8e2a501b1/
+Accept: application/json
+
+
+
+
+
+    ### /****************************************
+    ### * User Endpoints
+    ### ****************************************/
+
+### Get a single user (Luke Skywalker)
+GET http://localhost:3430/user/user:736ea62d-e5de-410c-b704-48326f3f41d8/
+Accept: application/json
+
+### Create a new user (Joe Momma)
+POST http://localhost:3430/user
+Content-Type: application/json
+
+{
+  "firstName": "Joe",
+  "lastName": "Momma",
+  "email": "joemomma@gmail.com"
+}
+
+### Update Luke Skywalker to Skuke Lywalker
+PUT http://localhost:3430/user/user:736ea62d-e5de-410c-b704-48326f3f41d8/
+Content-Type: application/json
+
+{
+  "firstName": "Skuke",
+  "lastName": "Lywalker",
+  "email": "luke@skywalker.com"
+}
+
+### Delete a single user (Luke Skywalker)
+DELETE http://localhost:3430/user/user:736ea62d-e5de-410c-b704-48326f3f41d8/
+Accept: application/json

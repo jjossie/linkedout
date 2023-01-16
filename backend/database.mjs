@@ -96,7 +96,7 @@ export default class Database {
 
   _createData(key, data) {
     this._ensureKeyExists(key);
-    const id = this._generateId(key);
+    const id = data[`${key}Id`] || this._generateId(key);
     this.data[key][id] = {
       [`${key}Id`]: id,
       ...data,

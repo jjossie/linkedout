@@ -128,6 +128,123 @@ app.delete("/connection/:connectionId", (request, response) => {
 
 
 /****************************************
+ * Post Endpoints
+ ****************************************/
+
+app.get("/post/:postId", (request, response) => {
+    const postId = request.params.postId;
+    const post = db.postById(postId);
+    if (post)
+        return response.status(200).json(post);
+    else
+        return response.sendStatus(400);
+});
+
+app.post("/post", (request, response) => {
+    const postData = request.body;
+    const newPostResult =  db.createPost(postData);
+    if (newPostResult)
+        return response.status(201).json(newPostResult);
+    else
+        return response.sendStatus(400);
+});
+
+app.put("/post/:postId", (request, response) => {
+    const postId = request.params.postId;
+    const newPostData = request.body;
+    const updatedPostResult = db.updatePost(postId, newPostData);
+    if (updatedPostResult)
+        return response.status(200).json(updatedPostResult);
+    else
+        return response.sendStatus(400);
+});
+
+app.delete("/post/:postId", (request, response) => {
+    const postId = request.params.postId;
+    db.deletePost(postId);
+    return response.sendStatus(200);
+});
+
+/****************************************
+ * PrivateChat Endpoints
+ ****************************************/
+
+app.get("/chat/:chatId", (request, response) => {
+    const chatId = request.params.chatId;
+    const chat = db.privateChatById(chatId);
+    if (chat)
+        return response.status(200).json(chat);
+    else
+        return response.sendStatus(400);
+});
+
+app.post("/chat", (request, response) => {
+    const chatData = request.body;
+    const newPrivateChatResult =  db.createPrivateChat(chatData);
+    if (newPrivateChatResult)
+        return response.status(201).json(newPrivateChatResult);
+    else
+        return response.sendStatus(400);
+});
+
+app.put("/chat/:chatId", (request, response) => {
+    const chatId = request.params.chatId;
+    const newPrivateChatData = request.body;
+    const updatedPrivateChatResult = db.updatePrivateChat(chatId, newPrivateChatData);
+    if (updatedPrivateChatResult)
+        return response.status(200).json(updatedPrivateChatResult);
+    else
+        return response.sendStatus(400);
+});
+
+app.delete("/chat/:chatId", (request, response) => {
+    const chatId = request.params.chatId;
+    db.deletePrivateChat(chatId);
+    return response.sendStatus(200);
+});
+
+
+
+/****************************************
+ * PrivateChatMessage Endpoints
+ ****************************************/
+
+app.get("/chatMessage/:chatMessageId", (request, response) => {
+    const chatMessageId = request.params.chatMessageId;
+    const chatMessage = db.privateChatMessageById(chatMessageId);
+    if (chatMessage)
+        return response.status(200).json(chatMessage);
+    else
+        return response.sendStatus(400);
+});
+
+app.post("/chatMessage", (request, response) => {
+    const chatMessageData = request.body;
+    const newPrivateChatMessageResult =  db.createPrivateChatMessage(chatMessageData);
+    if (newPrivateChatMessageResult)
+        return response.status(201).json(newPrivateChatMessageResult);
+    else
+        return response.sendStatus(400);
+});
+
+app.put("/chatMessage/:chatMessageId", (request, response) => {
+    const chatMessageId = request.params.chatMessageId;
+    const newPrivateChatMessageData = request.body;
+    const updatedPrivateChatMessageResult = db.updatePrivateChatMessage(chatMessageId, newPrivateChatMessageData);
+    if (updatedPrivateChatMessageResult)
+        return response.status(200).json(updatedPrivateChatMessageResult);
+    else
+        return response.sendStatus(400);
+});
+
+app.delete("/chatMessage/:chatMessageId", (request, response) => {
+    const chatMessageId = request.params.chatMessageId;
+    db.deletePrivateChatMessage(chatMessageId);
+    return response.sendStatus(200);
+});
+
+
+/****************************************
  * Listener
  ****************************************/
 app.listen(port, () => {

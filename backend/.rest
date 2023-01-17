@@ -1,9 +1,9 @@
 
 
 
-### /****************************************
-### * User Endpoints
-### ****************************************/
+///****************************************
+//* User Endpoints
+//****************************************/
 
 ### Get a single user (Luke Skywalker)
 GET http://localhost:3430/user/user:736ea62d-e5de-410c-b704-48326f3f41d8/
@@ -35,9 +35,9 @@ Accept: application/json
 
 
 
-### /****************************************
-### * ConnectionRequest Endpoints
-### ****************************************/
+///****************************************
+//* ConnectionRequest Endpoints
+//****************************************/
 
 ### Create Luke connection request to Vader
 POST http://localhost:3430/connectionRequest/
@@ -68,9 +68,9 @@ Accept: application/json
 
 
 
-### /****************************************
-### * Connection Endpoints
-### ****************************************/
+///****************************************
+//* Connection Endpoints
+//****************************************/
 
 ### Create Luke connection with Vader
 POST http://localhost:3430/connection/

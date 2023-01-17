@@ -23,14 +23,20 @@ app.get("/user/:userId", (request, response) => {
 app.post("/user", (request, response) => {
     const newUserData = request.body;
     const newUserResult =  db.createUser(newUserData);
-    return response.status(201).json(newUserResult);
+    if (newUserResult)
+        return response.status(201).json(newUserResult);
+    else
+        return response.sendStatus(400);
 });
 
 app.put("/user/:userId", (request, response) => {
     const userId = request.params.userId;
     const newUserData = request.body;
     const updatedUserResult = db.updateUser(userId, newUserData);
-    return response.status(200).json(updatedUserResult);
+    if (updatedUserResult)
+        return response.status(200).json(updatedUserResult);
+    else
+        return response.sendStatus(400);
 });
 
 app.delete("/user/:userId", (request, response) => {
@@ -57,19 +63,66 @@ app.get("/connectionRequest/:connectionRequestId", (request, response) => {
 app.post("/connectionRequest", (request, response) => {
     const connectionRequestData = request.body;
     const newConnectionRequestResult =  db.createConnectionRequest(connectionRequestData);
-    return response.status(201).json(newConnectionRequestResult);
+    if (newConnectionRequestResult)
+        return response.status(201).json(newConnectionRequestResult);
+    else
+        return response.sendStatus(400);
 });
 
 app.put("/connectionRequest/:connectionRequestId", (request, response) => {
     const connectionRequestId = request.params.connectionRequestId;
     const newConnectionRequestData = request.body;
     const updatedConnectionRequestResult = db.updateConnectionRequest(connectionRequestId, newConnectionRequestData);
-    return response.status(200).json(updatedConnectionRequestResult);
+    if (updatedConnectionRequestResult)
+        return response.status(200).json(updatedConnectionRequestResult);
+    else
+        return response.sendStatus(400);
 });
 
 app.delete("/connectionRequest/:connectionRequestId", (request, response) => {
     const connectionRequestId = request.params.connectionRequestId;
     db.deleteConnectionRequest(connectionRequestId);
+    return response.sendStatus(200);
+});
+
+
+
+
+/****************************************
+ * Connection Endpoints
+ ****************************************/
+
+app.get("/connection/:connectionId", (request, response) => {
+    const connectionId = request.params.connectionId;
+    const connection = db.connectionById(connectionId);
+    if (connection)
+        return response.status(200).json(connection);
+    else
+        return response.sendStatus(400);
+});
+
+app.post("/connection", (request, response) => {
+    const connectionData = request.body;
+    const newConnectionResult =  db.createConnection(connectionData);
+    if (newConnectionResult)
+        return response.status(201).json(newConnectionResult);
+    else
+        return response.sendStatus(400);
+});
+
+app.put("/connection/:connectionId", (request, response) => {
+    const connectionId = request.params.connectionId;
+    const newConnectionData = request.body;
+    const updatedConnectionResult = db.updateConnection(connectionId, newConnectionData);
+    if (updatedConnectionResult)
+        return response.status(200).json(updatedConnectionResult);
+    else
+        return response.sendStatus(400);
+});
+
+app.delete("/connection/:connectionId", (request, response) => {
+    const connectionId = request.params.connectionId;
+    db.deleteConnection(connectionId);
     return response.sendStatus(200);
 });
 

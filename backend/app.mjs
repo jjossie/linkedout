@@ -1,4 +1,4 @@
-import express from "express";
+import express, {request} from "express";
 import Database from "./database.mjs";
 
 const app = express();
@@ -242,6 +242,73 @@ app.delete("/chatMessage/:chatMessageId", (request, response) => {
     db.deletePrivateChatMessage(chatMessageId);
     return response.sendStatus(200);
 });
+
+
+/****************************************
+ * Additional GET Endpoints
+ ****************************************/
+app.get("/users/:userId/connectionRequests", (req, res) => {
+    const userId = req.params.userId;
+    const connectionRequests = db
+        .allConnectionRequests()
+        .filter( connReq => {
+            return (connReq.receiverId === userId);
+        });
+    res.status(200).json(connectionRequests ?? {});
+});
+
+app.get("/users/:userId/connections", (req, res) => {
+    const userId = req.params.userId;
+    const connections = db
+        .allConnections()
+        .filter( conn => {
+            return (conn.includes(userId));
+        });
+    if (connections)
+        res.status(200).json(connections);
+    else
+        res.status(404);
+});
+
+app.get("/users/:userId/chats", (req, res) => {
+    const userId = req.params.userId;
+    const chats = db
+        .allPrivateChats()
+        .filter( chat => {
+            return (chat.includes(userId));
+        });
+    if (chats)
+        res.status(200).json(chats);
+    else
+        res.status(404);
+});
+
+app.get("/users/:userId/posts", (req, res) => {
+    const userId = req.params.userId;
+    const connections = db
+        .allPosts()
+        .filter( post => {
+            return (post.userId === userId);
+        });
+    if (connections)
+        res.status(200).json(connections);
+    else
+        res.status(404);
+});
+
+
+app.get("/chat/:chatId/messages", (res, req) => {
+    const chatId = res.params.chatId;
+    const chatMessages = db
+        .allPrivateChatMessages()
+        .filter(message => {
+            return (message.chatId === chatId);
+        });
+    if (chatMessages)
+        res.status(200).json(chatMessages);
+    else
+        res.status(404);
+})
 
 
 /****************************************

@@ -1,0 +1,101 @@
+
+
+
+///****************************************
+//* User Endpoints
+//****************************************/
+
+### Get a single user (Luke Skywalker)
+GET http://localhost:3430/user/user:736ea62d-e5de-410c-b704-48326f3f41d8/
+Accept: application/json
+
+### Create a new user (Joe Momma)
+POST http://localhost:3430/user
+Content-Type: application/json
+
+{
+  "firstName": "Joe",
+  "lastName": "Momma",
+  "email": "joemomma@gmail.com"
+}
+
+### Update Luke Skywalker to Skuke Lywalker
+PUT http://localhost:3430/user/user:736ea62d-e5de-410c-b704-48326f3f41d8/
+Content-Type: application/json
+
+{
+  "firstName": "Skuke",
+  "lastName": "Lywalker",
+  "email": "luke@skywalker.com"
+}
+
+### Delete a single user (Luke Skywalker)
+DELETE http://localhost:3430/user/user:736ea62d-e5de-410c-b704-48326f3f41d8/
+Accept: application/json
+
+
+
+///****************************************
+//* ConnectionRequest Endpoints
+//****************************************/
+
+### Create Luke connection request to Vader
+POST http://localhost:3430/connectionRequest/
+Content-Type: application/json
+
+{
+  "senderId": "user:736ea62d-e5de-410c-b704-48326f3f41d8",
+  "receiverId": "user:a3ea25c3-6c54-4dd3-bbf7-d85018718b99"
+}
+
+### Get Luke's Conn req to Vader
+GET http://localhost:3430/connectionRequest/connectionRequest:20c8c5e3-75b3-459f-afce-62a988487d30/
+Accept: application/json
+
+### Edit Luke connection request - change to Obi-Wan
+PUT http://localhost:3430/connectionRequest/connecconnectionRequest:20c8c5e3-75b3-459f-afce-62a988487d30/
+Content-Type: application/json
+
+{
+  "senderId": "user:736ea62d-e5de-410c-b704-48326f3f41d8",
+  "receiverId": "user:0243b85c-1410-46de-bb44-d823aeea49ef"
+}
+
+### Delete Luke's Conn req
+DELETE http://localhost:3430/connectionRequest/connectionRequest:20c8c5e3-75b3-459f-afce-62a988487d30/
+Accept: application/json
+
+
+
+
+///****************************************
+//* Connection Endpoints
+//****************************************/
+
+### Create Luke connection with Vader
+POST http://localhost:3430/connection/
+Content-Type: application/json
+
+{
+  "userIds": ["user:736ea62d-e5de-410c-b704-48326f3f41d8",
+              "user:a3ea25c3-6c54-4dd3-bbf7-d85018718b99"]
+}
+
+### Get Luke's Conn with Vader
+GET http://localhost:3430/connection/connection:39f2db84-ce4f-4cf7-b9fb-7b03623e2dc1/
+Accept: application/json
+
+### Edit Luke connection - change to Obi-Wan
+PUT http://localhost:3430/connection/connection:39f2db84-ce4f-4cf7-b9fb-7b03623e2dc1/
+Content-Type: application/json
+
+{
+  "userIds": ["user:736ea62d-e5de-410c-b704-48326f3f41d8",
+              "user:0243b85c-1410-46de-bb44-d823aeea49ef"]
+}
+
+### Delete Luke's Conn
+DELETE http://localhost:3430/connection/connection:39f2db84-ce4f-4cf7-b9fb-7b03623e2dc1/
+Accept: application/json
+
+

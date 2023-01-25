@@ -52,7 +52,6 @@ export default class Database {
     console.log(`   ${user1.userId} ${user1.firstName}`);
     console.log(`   ${user2.userId} ${user2.firstName}`);
     console.log(`   ${user3.userId} ${user3.firstName}`);
-    console.log();
 
     // Luke and Obi-Wan are already connected
     const connection = this.createConnection({
@@ -96,7 +95,7 @@ export default class Database {
 
   _createData(key, data) {
     this._ensureKeyExists(key);
-    const id = this._generateId(key);
+    const id = data[`${key}Id`] || this._generateId(key);
     this.data[key][id] = {
       [`${key}Id`]: id,
       ...data,

@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37e55c69-ef86-40bb-a1ed-7d632318f62a" name="Changes" comment="merge t2-pa2">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/AvatarImage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/BackgroundImage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Button.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/InputTextField.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ProfileInfo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/RecentExperience.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/RecentExperienceItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/bg.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/byui.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/pfp.heic" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/pfp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/vanguard.jpeg" afterDir="false" />
+    <list default="true" id="37e55c69-ef86-40bb-a1ed-7d632318f62a" name="Changes" comment="lots of components getting made">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RecentExperience.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RecentExperience.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +134,7 @@
       <workItem from="1673972486916" duration="277000" />
       <workItem from="1673973091668" duration="1846000" />
       <workItem from="1673978921594" duration="3221000" />
-      <workItem from="1674619738931" duration="7752000" />
+      <workItem from="1674619738931" duration="9016000" />
     </task>
     <task id="LOCAL-00001" summary="add ConnectionRequest Endpoints">
       <created>1673902088730</created>
@@ -177,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674619710486</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lots of components getting made">
+      <created>1674629237234</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674629237234</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +194,7 @@
     <MESSAGE value="added connections" />
     <MESSAGE value="added posts, private chats, and private chat messages, but didn't test any of them" />
     <MESSAGE value="merge t2-pa2" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge t2-pa2" />
+    <MESSAGE value="lots of components getting made" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of components getting made" />
   </component>
 </project>

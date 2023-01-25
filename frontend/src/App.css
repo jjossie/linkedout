@@ -1,38 +1,121 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*****************************
+ * Generic Styles
+ *****************************/
+.body-text {
+    font-size: 12pt;
+}
+
+.greyed-text {
+    color: slategrey;
+}
+
+.link-text {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+.link-text:visited:active:hover {
+}
+
+/*****************************
+ * Component Styles
+ *****************************/
+
+.avatar-image {
+    height: 12em;
+    width: 12em;
+    border-radius: 6em;
+    overflow: hidden;
+    border: 3px solid white;
+    position: relative;
+    left: 4em;
+    top: -8em;
+}
+
+.avatar-image > img {
+    width: 12em;
+    height: 12em;
+}
+
+.background-image {
+    height: 24em;
+    overflow: hidden;
+    background-position: center;
+}
+
+.background-image > img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.recent-experience-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.recent-experience-item--text {
+    font-weight: bold;
+}
+
+.profile-info {
+    position: relative;
+    top: -12em;
+    padding: 4em;
+}
+
+.profile-info--button-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    height: 2em;
+    border-radius: 1.5em;
+    color: dodgerblue;
+    font-weight: bold;
+    border: 2px solid dodgerblue;
+    margin: 0.5em 0.5em 0.5em 0;
+    padding: 0 0.75em;
+    line-height: 2em;
 }

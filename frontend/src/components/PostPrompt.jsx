@@ -1,7 +1,10 @@
 import React from 'react'
 
-export default function PostPrompt() {
+const PostPrompt = () => {
   return (
     <div>PostPrompt</div>
-  )
+  );
 }
+
+
+export default PostPrompt;

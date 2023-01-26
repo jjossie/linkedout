@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37e55c69-ef86-40bb-a1ed-7d632318f62a" name="Changes" comment="lots of components getting made">
+    <list default="true" id="37e55c69-ef86-40bb-a1ed-7d632318f62a" name="Changes" comment="console full of errors and stuff kinda looking somewhat like it should that's what we like">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/PostMediaButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AvatarImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AvatarImage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/InputTextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/InputTextField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/RecentExperience.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RecentExperience.jsx" afterDir="false" />
     </list>
@@ -62,7 +69,7 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.appearance",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -134,7 +141,7 @@
       <workItem from="1673972486916" duration="277000" />
       <workItem from="1673973091668" duration="1846000" />
       <workItem from="1673978921594" duration="3221000" />
-      <workItem from="1674619738931" duration="9016000" />
+      <workItem from="1674619738931" duration="21259000" />
     </task>
     <task id="LOCAL-00001" summary="add ConnectionRequest Endpoints">
       <created>1673902088730</created>
@@ -171,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674629237234</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="console full of errors and stuff kinda looking somewhat like it should that's what we like">
+      <created>1674630536763</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674630536763</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +209,7 @@
     <MESSAGE value="added posts, private chats, and private chat messages, but didn't test any of them" />
     <MESSAGE value="merge t2-pa2" />
     <MESSAGE value="lots of components getting made" />
-    <option name="LAST_COMMIT_MESSAGE" value="lots of components getting made" />
+    <MESSAGE value="console full of errors and stuff kinda looking somewhat like it should that's what we like" />
+    <option name="LAST_COMMIT_MESSAGE" value="console full of errors and stuff kinda looking somewhat like it should that's what we like" />
   </component>
 </project>

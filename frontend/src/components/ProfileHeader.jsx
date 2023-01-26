@@ -12,9 +12,9 @@ const ProfileHeader = () => {
     {name: "Vanguard", image: vanguardImg},
     {name: "BYU-Idaho", image: byuiImg}
   ]
-  return (<div>
+  return (<div className="profile-header">
     <BackgroundImage/>
-    <AvatarImage/>
+    <AvatarImage size={12}/>
     <ProfileInfo
       name="Layne Moseley"
       description="🍪"

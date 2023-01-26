@@ -5,10 +5,10 @@ import 'react-icons';
 import PostPrompt from "./components/PostPrompt";
 
 function App() {
-  return (<main>
+  return (<>
     <ProfileHeader/>
     <PostPrompt/>
-  </main>);
+  </>);
 }
 
 export default App;

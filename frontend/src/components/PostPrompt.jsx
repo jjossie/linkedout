@@ -5,6 +5,9 @@ import PostMediaButton from "./PostMediaButton";
 import {RiVideoLine, RiArticleLine} from "react-icons/ri";
 import {RiCalendar2Line} from "react-icons/ri";
 import {HiOutlinePhotograph} from "react-icons/hi";
+import {Avatar} from "@mui/material";
+
+import pfp from "../images/pfp.png";
 
 const PostPrompt = () => {
   const style = {
@@ -13,10 +16,13 @@ const PostPrompt = () => {
     alignItems: "center",
     padding: "1em 4em"
   }
+  const avatarStyle = {
+
+  }
   return (
     <div className="post-prompt">
       <div style={style}>
-        <AvatarImage size={4}/>
+        <Avatar src={pfp} sx={avatarStyle}/>
         <InputTextField name="newPostInputText" placeholder="Write a post"/>
       </div>
       <div style={style}>

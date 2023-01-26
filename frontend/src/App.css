@@ -64,7 +64,7 @@
     height: min-content;
 }
 
-.profile-header > .avatar-image {
+#profile-header-avatar {
     position: relative;
     left: 4em;
     top: -8em;

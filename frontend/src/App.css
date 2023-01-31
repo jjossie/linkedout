@@ -1,0 +1,161 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*****************************
+ * Generic Styles
+ *****************************/
+.body-text {
+    font-size: 12pt;
+}
+
+.greyed-text {
+    color: slategrey;
+}
+
+.link-text {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+.link-text:visited:active:hover {
+}
+
+/*****************************
+ * Component Styles
+ *****************************/
+
+.profile-header {
+    height: min-content;
+}
+
+#profile-header-avatar {
+    position: relative;
+    left: 4em;
+    top: -8em;
+}
+
+.avatar-image {
+    height: 12em;
+    width: 12em;
+    border-radius: 6em;
+    overflow: hidden;
+    border: 3px solid white;
+    box-sizing: border-box;
+}
+
+.avatar-image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    height: 24em;
+    overflow: hidden;
+    background-position: center;
+}
+
+.background-image > img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.recent-experience-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.recent-experience-item--text {
+    font-weight: bold;
+}
+
+.profile-info {
+    position: relative;
+    top: -12em;
+    padding: 4em;
+}
+
+.profile-info--button-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    height: 2em;
+    border-radius: 1.5em;
+    color: dodgerblue;
+    font-weight: bold;
+    border: 2px solid dodgerblue;
+    margin: 0.5em 0.5em 0.5em 0;
+    padding: 0 0.75em;
+    line-height: 2em;
+}
+
+.recent-experience {
+    position: absolute;
+    top: 32em;
+    right: 4em;
+}
+
+.recent-experience-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.recent-experience-item > * {
+    padding: 0.5em;
+}
+
+.recent-experience-item > img {
+    max-width: 3em;
+}
+
+.recent-experience-item--text {
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+
+.post-prompt {
+    position: relative;
+    top: -12em;
+}

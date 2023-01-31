@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="37e55c69-ef86-40bb-a1ed-7d632318f62a" name="Changes" comment="Got everything in there, styles are a mess">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KEjitEErHNiTED1qqU7kLfuJzq" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "js.last.introduce.type": "CONST",
+    "last_opened_file_path": "/Users/joel/Documents/Development/CSE430/professional-network-jjossie",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.start frontend">
+    <configuration name=" | Create a new user (Joe Momma)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="2" requestIdentifier="Create a new user (Joe Momma)" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | Delete Luke's Conn" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="12" requestIdentifier="Delete Luke's Conn" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | Get Luke's Conn with Vader" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="10" requestIdentifier="Get Luke's Conn with Vader" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | Update Luke Skywalker to Skuke Lywalker" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Update Luke Skywalker to Skuke Lywalker" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | /****************************************#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="9" requestIdentifier="/****************************************#3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="start backend" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/backend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start frontend" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request. | Update Luke Skywalker to Skuke Lywalker" />
+      <item itemvalue="HTTP Request. | Create a new user (Joe Momma)" />
+      <item itemvalue="HTTP Request. | /****************************************#3" />
+      <item itemvalue="HTTP Request. | Delete Luke's Conn" />
+      <item itemvalue="HTTP Request. | Get Luke's Conn with Vader" />
+      <item itemvalue="npm.start frontend" />
+      <item itemvalue="npm.start backend" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request. | Update Luke Skywalker to Skuke Lywalker" />
+        <item itemvalue="HTTP Request. | Create a new user (Joe Momma)" />
+        <item itemvalue="HTTP Request. | Get Luke's Conn with Vader" />
+        <item itemvalue="HTTP Request. | /****************************************#3" />
+        <item itemvalue="HTTP Request. | Delete Luke's Conn" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37e55c69-ef86-40bb-a1ed-7d632318f62a" name="Changes" comment="" />
+      <created>1673546766346</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673546766346</updated>
+      <workItem from="1673546767987" duration="3542000" />
+      <workItem from="1673844615087" duration="6535000" />
+      <workItem from="1673900911808" duration="18000" />
+      <workItem from="1673900945335" duration="1802000" />
+      <workItem from="1673907473592" duration="287000" />
+      <workItem from="1673913727272" duration="3681000" />
+      <workItem from="1673971844686" duration="635000" />
+      <workItem from="1673972486916" duration="277000" />
+      <workItem from="1673973091668" duration="1846000" />
+      <workItem from="1673978921594" duration="3221000" />
+      <workItem from="1674619738931" duration="22479000" />
+    </task>
+    <task id="LOCAL-00001" summary="add ConnectionRequest Endpoints">
+      <created>1673902088730</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673902088730</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added connections">
+      <created>1673913968476</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673913968476</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added posts, private chats, and private chat messages, but didn't test any of them">
+      <created>1673923611116</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673923611116</updated>
+    </task>
+    <task id="LOCAL-00004" summary="merge t2-pa2">
+      <created>1674619710486</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674619710486</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lots of components getting made">
+      <created>1674629237234</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674629237234</updated>
+    </task>
+    <task id="LOCAL-00006" summary="console full of errors and stuff kinda looking somewhat like it should that's what we like">
+      <created>1674630536763</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674630536763</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Got everything in there, styles are a mess">
+      <created>1674718936773</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674718936773</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add ConnectionRequest Endpoints" />
+    <MESSAGE value="added connections" />
+    <MESSAGE value="added posts, private chats, and private chat messages, but didn't test any of them" />
+    <MESSAGE value="merge t2-pa2" />
+    <MESSAGE value="lots of components getting made" />
+    <MESSAGE value="console full of errors and stuff kinda looking somewhat like it should that's what we like" />
+    <MESSAGE value="Got everything in there, styles are a mess" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got everything in there, styles are a mess" />
+  </component>
+</project>

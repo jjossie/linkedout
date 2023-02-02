@@ -1,5 +1,4 @@
-import React from 'react'
-import AvatarImage from "./AvatarImage";
+import React from 'react';
 import InputTextField from "./InputTextField";
 import PostMediaButton from "./PostMediaButton";
 import {RiVideoLine, RiArticleLine} from "react-icons/ri";
@@ -26,14 +25,10 @@ const PostPrompt = () => {
         <InputTextField name="newPostInputText" placeholder="Write a post"/>
       </div>
       <div style={style}>
-        <PostMediaButton icon={HiOutlinePhotograph} text="Photo" color="dodgerblue">
-        </PostMediaButton>
-        <PostMediaButton icon={RiVideoLine} text="Video" color="mediumseagreen">
-        </PostMediaButton>
-        <PostMediaButton icon={RiCalendar2Line} text="Event" color="peru">
-        </PostMediaButton>
-        <PostMediaButton icon={RiArticleLine} text="Write article" color="tomato">
-        </PostMediaButton>
+        <PostMediaButton icon={HiOutlinePhotograph} text="Photo" color="dodgerblue"/>
+        <PostMediaButton icon={RiVideoLine} text="Video" color="mediumseagreen"/>
+        <PostMediaButton icon={RiCalendar2Line} text="Event" color="peru"/>
+        <PostMediaButton icon={RiArticleLine} text="Write article" color="tomato"/>
       </div>
     </div>
   );

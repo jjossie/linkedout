@@ -1,5 +1,6 @@
 import {Router} from "express";
 import Database from "../database.mjs";
+import uc from "../controllers/userController.mjs";
 export const routes = Router();
 
 const db = new Database();
@@ -243,23 +244,25 @@ routes.delete("/chatMessage/:chatMessageId", (request, response) => {
 /****************************************
  * Additional GET Endpoints
  ****************************************/
-routes.get("/users/:userId/connectionRequests", (req, res) => {
+routes.get("/users/:userId/connectionRequests", async (req, res) => {
     const userId = req.params.userId;
-    const connectionRequests = db
-        .allConnectionRequests()
-        .filter( connReq => {
-            return (connReq.receiverId === userId);
-        });
+    // const connectionRequests = db
+    //     .allConnectionRequests()
+    //     .filter( connReq => {
+    //         return (connReq.receiverId === userId);
+    //     });
+    const connectionRequests = await uc.connectionRequestsForUserId(userId);
     res.status(200).json(connectionRequests ?? {});
 });
 
-routes.get("/users/:userId/connections", (req, res) => {
+routes.get("/users/:userId/connections", async (req, res) => {
     const userId = req.params.userId;
-    const connections = db
-        .allConnections()
-        .filter( conn => {
-            return (conn.includes(userId));
-        });
+    // const connections = db
+    //     .allConnections()
+    //     .filter( conn => {
+    //         return (conn.includes(userId));
+    //     });
+    const connections = await uc.connectionsForUserId(userId);
     if (connections)
         res.status(200).json(connections);
     else

@@ -10,7 +10,7 @@ This assignment expands on what we learned in Topic 2: Programming Assignment 1.
 - Create a basic express app. You can use the following express tutorials:
   - [Getting Started](https://expressjs.com/en/starter/installing.html)
   - [Hello World](https://expressjs.com/en/starter/hello-world.html)
-- Install the `nodemon` and `uuid` packages with `npm`. (`uuid` is needed for `database.mjs`)
+- Install the `nodemon` and `uuid` packages with `npm`. (`uuid` is needed for `database.js`)
 - **Create _GET_, _POST_, _PUT_, and _DELETE_ APIs for the following data objects and their structure:**
   - **user**: a user on the network
     - userId
@@ -49,7 +49,7 @@ This assignment expands on what we learned in Topic 2: Programming Assignment 1.
 - **Design one more API of your choosing with the following requirements:**
   - Look at your LinkedIn homepage
   - Find a UI element that is not supported by our API set
-  - Design and create an API that will supply the data needed for that UI element. You don't necessarily need to use `database.mjs`. You can use dummy data if you'd like.
+  - Design and create an API that will supply the data needed for that UI element. You don't necessarily need to use `database.js`. You can use dummy data if you'd like.
 
 ## Hints
 

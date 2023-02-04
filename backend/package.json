@@ -2,10 +2,11 @@
   "name": "professional-network-backend",
   "version": "1.0.0",
   "description": "The backend is an Express.js web server application that contains all of the APIs necessary to support the frontend.",
-  "main": "app.mjs",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon app.mjs",
-    "test": "echo 'lol you think we test around here'"
+    "start": "nodemon app.js",
+    "test": "echo 'lol you think we test around here'",
+    "seed": "node ./scripts/seed.mjs"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/byui-wdd430/professional-network-jjossie#readme",
   "dependencies": {
+    "casual": "^1.6.2",
     "express": "^4.18.2",
     "luxon": "^3.2.1",
     "mongodb": "^5.0.0",

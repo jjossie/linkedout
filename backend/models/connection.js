@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
@@ -8,4 +8,4 @@ const ConnectionSchema = new Schema({
 
 const ConnectionModel = mongoose.model("connection", ConnectionSchema);
 
-export default ConnectionModel;
+module.exports = ConnectionModel;

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ConnectionRequestSchema = new Schema({
@@ -8,4 +8,4 @@ const ConnectionRequestSchema = new Schema({
 
 const ConnectionRequestModel = mongoose.model("connectionRequest", ConnectionRequestSchema);
 
-export default ConnectionRequestModel;
+module.exports =  ConnectionRequestModel;

@@ -4,20 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="git workspace">
-      <change afterPath="$PROJECT_DIR$/backend/controllers/userController.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/connection.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/connectionRequest.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/post.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/privateChat.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/privateChatMessage.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/user.mjs" afterDir="false" />
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="got halfway through t4-pa2">
+      <change afterPath="$PROJECT_DIR$/backend/models/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/scripts/seed.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-01-15T221745.404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-01-15T221815.404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-01-15T222007.402.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-01-15T222037.402.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-01-15T222045.400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-01-15T222131.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/userController.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/connection.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/connectionRequest.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/connectionRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/post.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/privateChat.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/privateChat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/privateChatMessage.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/privateChatMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/user.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/index.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/index.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AvatarImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AvatarImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/index.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/t2-pa2.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/t2-pa2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/t4-pa2.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/t4-pa2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +41,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2L6A5Kfl7XA33EOUTVoWqh9Zk4t" />
   <component name="ProjectLevelVcsManager">
@@ -47,16 +61,71 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/joel/Documents/Development/CSE430/professional-network-jjossie",
+    "last_opened_file_path": "/Users/joel/Documents/Development/CSE430/professional-network-jjossie/backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ]
   }
 }]]></component>
+  <component name="RunManager" selected="npm.Run Backend">
+    <configuration name=" | Create a new user (Joe Momma)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Create a new user (Joe Momma)" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | Delete a single user (Luke Skywalker)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="5" requestIdentifier="Delete a single user (Luke Skywalker)" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | Get Feed for User" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Get Feed for User" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="Run Backend" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/backend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run Frontend" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request. | #1" />
+      <item itemvalue="HTTP Request. | #2" />
+      <item itemvalue="HTTP Request. | Create a new user (Joe Momma)" />
+      <item itemvalue="HTTP Request. | Delete a single user (Luke Skywalker)" />
+      <item itemvalue="HTTP Request. | Get Feed for User" />
+      <item itemvalue="npm.Run Backend" />
+      <item itemvalue="npm.Run Frontend" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request. | Get Feed for User" />
+        <item itemvalue="HTTP Request. | Delete a single user (Luke Skywalker)" />
+        <item itemvalue="HTTP Request. | #2" />
+        <item itemvalue="HTTP Request. | Create a new user (Joe Momma)" />
+        <item itemvalue="HTTP Request. | #1" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,8 +134,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675180973871</updated>
-      <workItem from="1675180977321" duration="11478000" />
+      <workItem from="1675180977321" duration="31086000" />
     </task>
+    <task id="LOCAL-00001" summary="got halfway through t4-pa2">
+      <created>1675356816193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675356816193</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,5 +151,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="got halfway through t4-pa2" />
+    <option name="LAST_COMMIT_MESSAGE" value="got halfway through t4-pa2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/backend/controllers/userController.js</url>
+          <line>165</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

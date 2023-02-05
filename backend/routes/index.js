@@ -317,7 +317,7 @@ routes.get("/user/:userId/feed", async (req, res) => {
     const feed = await uc.feedForUserId(userId);
     return res.status(200).json(feed);
   } catch (e) {
-    return res.sendStatus(400);
+    return res.status(400).json(e);
   }
 });
 

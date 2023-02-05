@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="edit workspace.xml">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="create t5-pa2">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/top-level/ConnectionRequests.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/professional-network-jjossie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/professional-network-jjossie.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +30,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="t4-pa2" />
+      </map>
+    </option>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2L6A5Kfl7XA33EOUTVoWqh9Zk4t" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -55,7 +73,12 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="npm.Run Backend">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/components/top-level" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Run Frontend">
     <configuration name=" | Create a new user (Joe Momma)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Create a new user (Joe Momma)" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -114,7 +137,7 @@
       <updated>1675180973871</updated>
       <workItem from="1675180977321" duration="31302000" />
       <workItem from="1675547211612" duration="7279000" />
-      <workItem from="1675557487318" duration="923000" />
+      <workItem from="1675557487318" duration="3893000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -144,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675555846616</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="create t5-pa2">
+      <created>1675565121938</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675565121938</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +186,7 @@
     <MESSAGE value="Made lots of progress on the mongoose front" />
     <MESSAGE value="edit .gitignore" />
     <MESSAGE value="edit workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit workspace.xml" />
+    <MESSAGE value="create t5-pa2" />
+    <option name="LAST_COMMIT_MESSAGE" value="create t5-pa2" />
   </component>
 </project>

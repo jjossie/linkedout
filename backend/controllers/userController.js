@@ -164,32 +164,20 @@ const postsForUserId = (userId) => {
 
 const feedForUserId = async (userId) => {
   const friends = await connectionsForUserId(userId);
-  let friendIds = [];
-  friends.map(friend => {
-    const filterResult = friend.userIds.filter((id) => (id !== userId)).toString();
-    friendIds.push(filterResult);
-    return filterResult;
+  const friendIds = friends.map(connection => {
+    return connection.userIds.filter(id => (id !== userId))[0].toString();
   });
 
-  const posts = await PostModel.find()
+  const posts = await PostModel
+    .find({
+      'userId': {$in: friendIds}
+    })
     .populate({
       path: 'userId',
       model: UserModel
     })
-    .find({
-      'userId': {$in: friendIds}
-
-      // I was trying for quite some time to figure out how to do this via a query
-      // instead of multiple awaited operations. Couldn't figure it out. Here's one attempt:
-
-      // 'userId': {
-      //   $in: ConnectionModel.find({userIds: userId})
-      //     .transform(connection => {
-      //       return connection.userIds.filter((id) => (id !== userId)).toString();
-      //     })
-      // }
-    })
-    .sort({createdAt: "desc"});
+    .sort({createdAt: "desc"})
+    .limit(10);
 
   const connectionRequests = await ConnectionRequestModel.find()
     .populate({

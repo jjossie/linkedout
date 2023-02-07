@@ -238,7 +238,7 @@ routes.delete("/chatMessage/:chatMessageId", (request, response) => {
 /****************************************
  * Additional GET Endpoints
  ****************************************/
-routes.get("/users/:userId/connectionRequests", async (req, res) => {
+routes.get("/user/:userId/connectionRequests", async (req, res) => {
   const userId = req.params.userId;
   // const connectionRequests = uc
   //     .allConnectionRequests()
@@ -249,7 +249,7 @@ routes.get("/users/:userId/connectionRequests", async (req, res) => {
   res.status(200).json(connectionRequests ?? {});
 });
 
-routes.get("/users/:userId/connections", async (req, res) => {
+routes.get("/user/:userId/connections", async (req, res) => {
   const userId = req.params.userId;
   // const connections = uc
   //     .allConnections()
@@ -263,7 +263,7 @@ routes.get("/users/:userId/connections", async (req, res) => {
     res.status(404);
 });
 
-routes.get("/users/:userId/chats", (req, res) => {
+routes.get("/user/:userId/chats", (req, res) => {
   const userId = req.params.userId;
   const chats = uc
     .allPrivateChats()
@@ -276,7 +276,7 @@ routes.get("/users/:userId/chats", (req, res) => {
     res.status(404);
 });
 
-routes.get("/users/:userId/posts", (req, res) => {
+routes.get("/user/:userId/posts", (req, res) => {
   const userId = req.params.userId;
   const connections = uc
     .allPosts()

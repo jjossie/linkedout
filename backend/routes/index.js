@@ -276,15 +276,11 @@ routes.get("/user/:userId/chats", (req, res) => {
     res.status(404);
 });
 
-routes.get("/user/:userId/posts", (req, res) => {
+routes.get("/user/:userId/posts", async (req, res) => {
   const userId = req.params.userId;
-  const connections = uc
-    .allPosts()
-    .filter(post => {
-      return (post.userId === userId);
-    });
-  if (connections)
-    res.status(200).json(connections);
+  const posts = await uc.postsForUserId(userId);
+  if (posts)
+    res.status(200).json(posts);
   else
     res.status(404);
 });

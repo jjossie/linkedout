@@ -158,7 +158,10 @@ const privateChatsForUserId = (userId) => {
 };
 
 const postsForUserId = (userId) => {
-  return PostModel.find({userId: userId});
+  return PostModel.find({userId: userId}).populate({
+    path: 'userId',
+    model: UserModel
+  });
 };
 
 

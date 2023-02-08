@@ -5,7 +5,6 @@ import pfp from "../images/pfp.png";
 const ConnectionRequest = (props) => {
   const subContainerStyle = {
     display: "flex",
-    // justifyContent: "space-between"
   };
   const containerStyle = {
     display: "flex",

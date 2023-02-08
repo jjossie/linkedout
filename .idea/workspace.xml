@@ -8,13 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="css is a mess but WHO CARES">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" afterDir="false" />
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="added lots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/ConnectionRequests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/ConnectionRequests.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +139,7 @@
       <workItem from="1675547211612" duration="7279000" />
       <workItem from="1675557487318" duration="4693000" />
       <workItem from="1675576739554" duration="2247000" />
-      <workItem from="1675736900696" duration="29466000" />
+      <workItem from="1675736900696" duration="31534000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -197,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675819927563</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added lots">
+      <created>1675840233744</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1675840233744</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +220,8 @@
     <MESSAGE value="put framework in place for t5-pa2" />
     <MESSAGE value="got the feed working !!" />
     <MESSAGE value="css is a mess but WHO CARES" />
-    <option name="LAST_COMMIT_MESSAGE" value="css is a mess but WHO CARES" />
+    <MESSAGE value="added lots" />
+    <option name="LAST_COMMIT_MESSAGE" value="added lots" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

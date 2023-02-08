@@ -14,7 +14,7 @@ export async function getConnections() {
   // Get the logged-in user
   const userUrl = `${baseUrl}/user/${userId}`;
   const userObj = await fetch(userUrl).then(res => res.json());
-  console.log(userObj)
+  // console.log(userObj)
 
   // Get the connections
   const connectionsUrl = `${baseUrl}/user/${userId}/connections`;
@@ -23,7 +23,7 @@ export async function getConnections() {
   connectionsArr.map(connection => {
     connectionUserIds.push(connection.userIds.filter(id => id !== userId)[0].toString());
   });
-  console.log(connectionUserIds);
+  // console.log(connectionUserIds);
 
   return {
     loggedInUser: userObj,
@@ -33,7 +33,16 @@ export async function getConnections() {
 
 
 export async function getPosts(request) {
-
+  const postsUrl = `${baseUrl}/user/${request.params.userId}/posts`;
+  const posts = await fetch(postsUrl).then(res => res.json());
+  // console.log(posts)
+  const userUrl = `${baseUrl}/user/${request.params.userId}`;
+  const user = await fetch(userUrl).then(res => res.json());
+  // console.log(user)
+  return {
+    user: user,
+    posts: posts
+  }
 }
 
 
@@ -41,6 +50,6 @@ export async function getConnectionRequests(request) {
   // Get the connection requests for the logged-in user
   const connectionRequestUrl = `${baseUrl}/user/${loggedInUserId}/connectionRequests`;
   const connectionRequests = await fetch(connectionRequestUrl).then(res => res.json());
-  console.log(connectionRequests);
+  // console.log(connectionRequests);
   return connectionRequests;
 }

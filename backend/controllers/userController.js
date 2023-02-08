@@ -163,8 +163,8 @@ const postsForUserId = (userId) => {
 
 
 const feedForUserId = async (userId) => {
-  const friends = await connectionsForUserId(userId);
-  const friendIds = friends.map(connection => {
+  const connections = await connectionsForUserId(userId);
+  const friendIds = connections.map(connection => {
     return connection.userIds.filter(id => (id !== userId))[0].toString();
   });
 

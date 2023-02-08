@@ -9,10 +9,9 @@ const Main = () => {
   console.log(info);
   return (
     <div>
-      <Header/>
-      <PostPrompt/>
+      <Header />
+      <PostPrompt />
       <Feed posts={info.posts} />
-
     </div>
   );
 };

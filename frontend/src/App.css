@@ -75,8 +75,8 @@ body {
 }
 
 .profile-info {
-    position: relative;
-    top: -12em;
+    /*position: relative;*/
+    /*top: -12em;*/
     padding: 4em;
 }
 
@@ -96,11 +96,11 @@ body {
     line-height: 2em;
 }
 
-.recent-experience {
-    position: absolute;
-    top: 32em;
-    right: 4em;
-}
+/*.recent-experience {*/
+/*    position: absolute;*/
+/*    top: 32em;*/
+/*    right: 4em;*/
+/*}*/
 
 .recent-experience-item {
     display: flex;
@@ -124,5 +124,4 @@ body {
 
 .post-prompt {
     position: relative;
-    top: -12em;
 }

@@ -15,7 +15,7 @@ const RecentExperience = (props) => {
     return item;
   });
   return (
-    <div className="recent-experience">
+    <div style={{padding: "4em"}}>
       {itemComponents}
     </div>
   );

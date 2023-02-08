@@ -8,22 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="put framework in place for t5-pa2">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Feed.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/FeedItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Post.jsx" afterDir="false" />
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="got the feed working !!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RecentExperience.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RecentExperience.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +137,7 @@
       <workItem from="1675547211612" duration="7279000" />
       <workItem from="1675557487318" duration="4693000" />
       <workItem from="1675576739554" duration="2247000" />
-      <workItem from="1675736900696" duration="17427000" />
+      <workItem from="1675736900696" duration="21302000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -191,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675568159854</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="got the feed working !!">
+      <created>1675795504526</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675795504526</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +202,8 @@
     <MESSAGE value="edit workspace.xml" />
     <MESSAGE value="create t5-pa2" />
     <MESSAGE value="put framework in place for t5-pa2" />
-    <option name="LAST_COMMIT_MESSAGE" value="put framework in place for t5-pa2" />
+    <MESSAGE value="got the feed working !!" />
+    <option name="LAST_COMMIT_MESSAGE" value="got the feed working !!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

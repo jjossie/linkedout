@@ -4,33 +4,36 @@ import PostMediaButton from "./PostMediaButton";
 import {RiVideoLine, RiArticleLine} from "react-icons/ri";
 import {RiCalendar2Line} from "react-icons/ri";
 import {HiOutlinePhotograph} from "react-icons/hi";
-import {Avatar} from "@mui/material";
+import {Avatar, Card} from "@mui/material";
 
 import pfp from "../images/pfp.png";
 
 const PostPrompt = () => {
-  const style = {
+  const containerStyle = {
+    width: "75vw",
+    boxSizing: "border-box"
+  }
+  const subContainerStyle = {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    padding: "1em 4em"
+    padding: "1em 4em",
+    gap: "1em"
   }
-  const avatarStyle = {
-
-  }
+  const avatarStyle = {}
   return (
-    <div className="post-prompt">
-      <div style={style}>
+    <Card sx={containerStyle}>
+      <div style={subContainerStyle}>
         <Avatar src={pfp} sx={avatarStyle}/>
         <InputTextField name="newPostInputText" placeholder="Write a post"/>
       </div>
-      <div style={style}>
+      <div style={subContainerStyle}>
         <PostMediaButton icon={HiOutlinePhotograph} text="Photo" color="dodgerblue"/>
         <PostMediaButton icon={RiVideoLine} text="Video" color="mediumseagreen"/>
         <PostMediaButton icon={RiCalendar2Line} text="Event" color="peru"/>
         <PostMediaButton icon={RiArticleLine} text="Write article" color="tomato"/>
       </div>
-    </div>
+    </Card>
   );
 }
 

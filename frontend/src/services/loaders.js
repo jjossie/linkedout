@@ -1,6 +1,8 @@
-const loggedInUserId = "63dbfc0d187fe1e57908cfe1" // Carolyn Lindgren
+import dotenv from 'dotenv';
+dotenv.config();
 
-const baseUrl = "http://localhost:3430";
+const loggedInUserId = "63dbfc0d187fe1e57908cfe1" // Carolyn Lindgren
+const baseUrl = process.env.BACKEND_BASE_URL;
 
 export async function getFeed({params}) {
   const feedUrl = `${baseUrl}/user/${loggedInUserId}/feed`;

@@ -5,8 +5,6 @@ import {RouterProvider, createBrowserRouter} from "react-router-dom";
 // Project Imports
 import './App.css';
 
-import ProfileHeader from "./components/ProfileHeader";
-import PostPrompt from "./components/PostPrompt";
 import Main from "./components/top-level/Main";
 import {getConnectionRequests, getConnections, getFeed, getPosts} from "./services/loaders";
 import Profile from "./components/top-level/Profile";

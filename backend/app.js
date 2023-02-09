@@ -2,6 +2,8 @@ const express = require("express");
 const routes = require("./routes");
 const {mongoose} = require("mongoose");
 const cors = require("cors");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 const port = 3430;
@@ -14,7 +16,7 @@ app.use('/', routes);
  * Listener
  ****************************************/
 mongoose.connect(
-  "mongodb+srv://students:RILnPuIPTo92RCu4@winter2023.inr9f0r.mongodb.net/Joel?retryWrites=true&w=majority"
+  process.env.MONGODB_URI
 ).then(() => {
   app.listen(port, () => {
     console.log(`Listening on port ${port}`);

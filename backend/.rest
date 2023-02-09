@@ -1,6 +1,6 @@
 
 ### Get Feed for User
-GET http://localhost:3430/user/63dbfc0d187fe1e57908cfea/feed
+GET https://professional-network-jjossie-backend.vercel.app/user/63dbfc0d187fe1e57908cfea/feed
 Accept: application/json
 
 ###

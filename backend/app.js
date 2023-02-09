@@ -29,4 +29,4 @@ mongoose.connect(
   });
 }).catch(() => console.log("Failed to connect to database"));
 
-module.exports = {app};
+module.exports = app;

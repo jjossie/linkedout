@@ -20,3 +20,5 @@ mongoose.connect(
     console.log(`Listening on port ${port}`);
   });
 }).catch(() => console.log("Failed to connect to database"));
+
+module.exports = {app};

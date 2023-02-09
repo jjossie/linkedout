@@ -3,12 +3,11 @@ import pfp from "../images/pfp.png";
 import PropTypes from "prop-types";
 
 const AvatarImage = ({size}) => {
-    const style = {
+  return (
+    <div className="avatar-image" style={{
       width: size + "em",
       height: size + "em",
-    };
-  return (
-    <div className="avatar-image" style={style}>
+    }}>
       <img src={pfp} alt="profile"/>
     </div>
   );

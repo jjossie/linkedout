@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from "../Header";
+import Header from "../containers/Header";
 import ProfileHeader from "../ProfileHeader";
 import {useLoaderData} from "react-router-dom";
 import Feed from "../Feed";
+import MainContentContainer from "../containers/MainContentContainer";
 
 const User = () => {
   const {user, posts} = useLoaderData();
@@ -11,8 +12,8 @@ const User = () => {
   return (
     <div>
       <Header/>
-      <ProfileHeader name={fullName}/>
-      <Feed posts={posts}/>
+      <MainContentContainer><ProfileHeader name={fullName}/>
+        <Feed posts={posts}/></MainContentContainer>
     </div>
   );
 };

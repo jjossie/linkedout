@@ -1,8 +1,9 @@
 import React from 'react';
 import {useLoaderData} from "react-router-dom";
-import Header from "../Header";
+import Header from "../containers/Header";
 import Feed from "../Feed";
 import PostPrompt from "../PostPrompt";
+import MainContentContainer from "../containers/MainContentContainer";
 
 const Main = () => {
   const info = useLoaderData();
@@ -10,8 +11,10 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <PostPrompt />
-      <Feed posts={info.posts} />
+      <MainContentContainer>
+        <PostPrompt/>
+        <Feed posts={info.posts}/>
+      </MainContentContainer>
     </div>
   );
 };

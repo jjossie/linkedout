@@ -1,8 +1,9 @@
 import React from 'react';
 import ProfileHeader from "../ProfileHeader";
 import {useLoaderData} from "react-router-dom";
-import Header from "../Header";
+import Header from "../containers/Header";
 import PostPrompt from "../PostPrompt";
+import MainContentContainer from "../containers/MainContentContainer";
 
 const Profile = (props) => {
   const info = useLoaderData();
@@ -10,8 +11,10 @@ const Profile = (props) => {
   return (
     <div>
       <Header/>
-      <ProfileHeader name={fullName}/>
-      <PostPrompt/>
+      <MainContentContainer>
+        <ProfileHeader name={fullName}/>
+        <PostPrompt/>
+      </MainContentContainer>
     </div>
   );
 };

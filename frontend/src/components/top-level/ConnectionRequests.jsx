@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from "../Header";
+import Header from "../containers/Header";
 import {useLoaderData} from "react-router-dom";
 import ConnectionRequest from "../ConnectionRequest";
+import MainContentContainer from "../containers/MainContentContainer";
 
 const ConnectionRequests = () => {
 
@@ -16,9 +17,11 @@ const ConnectionRequests = () => {
   return (
     <div>
       <Header/>
-      {connectionRequestComponents}
-      // Single component for testing purposes
-      <ConnectionRequest username="Joe Momma"/>
+      <MainContentContainer>
+        {connectionRequestComponents}
+        // Single component for testing purposes
+        <ConnectionRequest username="Joe Momma"/>
+      </MainContentContainer>
     </div>
   );
 };

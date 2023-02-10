@@ -1,6 +1,6 @@
 import React from 'react';
 import {Avatar, Button, Card, TextField} from "@mui/material";
-import pfp from "../images/pfp.png";
+import pfp from "../../images/pfp.png";
 import {IoIosSearch} from "react-icons/io";
 
 import {Link} from "react-router-dom";
@@ -14,7 +14,13 @@ const Header = (props) => {
   const userId = "63dbfc0d187fe1e57908cf8d";
 
   return (
-    <Card sx={{margin: '0.5em', padding: '0.5em'}}>
+    <Card sx={{
+      width: "100vw",
+      position: "fixed",
+      top: "0",
+      padding: '0.5em',
+      zIndex: "10",
+    }}>
       <div style={{
         display: "flex",
         alignItems: "center",

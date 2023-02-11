@@ -26,27 +26,41 @@ const Header = (props) => {
         alignItems: "center",
         justifyContent: "space-around"
       }}>
-        <div>
-          <IoIosSearch sx={{
-            color: 'action.active', mr: 1, my: 0.5,
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5em",
+        }}>
+          <IoIosSearch
+            size="2em"
+            sx={{
+            color: 'action.active',
+            mr: 1,
+            my: 0.5,
+            // width: "2em",
+            // size: "2em",
           }}/>
           <TextField id="input-with-sx" label="Search" variant="standard"/>
         </div>
-        <Link style={linkStyle} key="feed" to="/">
+        <div style={{
+          display: "flex",
+          gap: "0.5em",
+        }}>
+          <Link style={linkStyle} key="feed" to="/">
           <Button variant="text">Feed</Button>
         </Link>
-        <Link style={linkStyle} key="profile" to="/profile">
-          <Button variant="text">Profile</Button>
-        </Link>
-        <Link style={linkStyle} key="user" to={`/user/${userId}`}>
-          <Button variant="text">User</Button>
-        </Link>
-        <Link style={linkStyle} key="connectionRequests" to="/connectionRequests">
-          <Button variant="text">Connection Requests</Button>
-        </Link>
-        <Link style={linkStyle} key="profileAvatar" to="/profile">
-          <Avatar id="header-avatar" src={pfp} sx={avatarStyle}/>
-        </Link>
+          <Link style={linkStyle} key="profile" to="/profile">
+            <Button variant="text">Profile</Button>
+          </Link>
+          <Link style={linkStyle} key="user" to={`/user/${userId}`}>
+            <Button variant="text">User</Button>
+          </Link>
+          <Link style={linkStyle} key="connectionRequests" to="/connectionRequests">
+            <Button variant="text">Connection Requests</Button>
+          </Link>
+          <Link style={linkStyle} key="profileAvatar" to="/profile">
+            <Avatar id="header-avatar" src={pfp} sx={avatarStyle}/>
+          </Link></div>
       </div>
     </Card>
   );

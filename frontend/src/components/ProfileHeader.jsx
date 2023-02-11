@@ -11,9 +11,10 @@ import pfp from "../images/pfp.png"
 
 const ProfileHeader = (props) => {
   const containerStyle = {
-    width: "75vw",
-    boxSizing: "border-box",
-    margin: "8em"
+    // width: "75vw",
+    // boxSizing: "border-box",
+    // margin: "8em"
+    position: "relative"
   };
   const experienceItems = [
     {name: "Vanguard", image: vanguardImg},
@@ -22,27 +23,27 @@ const ProfileHeader = (props) => {
   const avatarStyle = {
     height: "12em",
     width: "12em",
+    position: "absolute",
+    left: "3em",
+    top: "12em",
+    float: "left"
   }
   return (<Card sx={containerStyle}>
-    <BackgroundImage/>
-    <Avatar id="profile-header-avatar" src={pfp} sx={avatarStyle}/>
-    <div style={{
-      position: "relative",
-      top: "-12em",
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "start",
-    }}>
-      <ProfileInfo
-      name={props.name}
-      description="User Description because there's none in the DB"
-      location="Rexburg, Idaho, United States"
-      contactLink="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwithZePiuL8AhX7hIkEHS5WBOcQwqsBegQIDRAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU"
-      connectionsLink="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwithZePiuL8AhX7hIkEHS5WBOcQwqsBegQIDRAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU"
-    />
-      <RecentExperience experienceItems={experienceItems}/>
-    </div>
-  </Card>);
+      <BackgroundImage/>
+      <Avatar id="profile-header-avatar" src={pfp} sx={avatarStyle}/>
+      <div style={{
+        display: "flex", flexDirection: "row", alignItems: "start",
+      }}>
+        <ProfileInfo
+          name={props.name}
+          description="User Description because there's none in the DB"
+          location="Rexburg, Idaho, United States"
+          contactLink="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwithZePiuL8AhX7hIkEHS5WBOcQwqsBegQIDRAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU"
+          connectionsLink="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwithZePiuL8AhX7hIkEHS5WBOcQwqsBegQIDRAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU"
+        />
+        <RecentExperience experienceItems={experienceItems}/>
+      </div>
+    </Card>);
 }
 
 export default ProfileHeader;

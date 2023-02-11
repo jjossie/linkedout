@@ -2,7 +2,9 @@ import React from 'react';
 import Header from "../containers/Header";
 import {useLoaderData} from "react-router-dom";
 import ConnectionRequest from "../ConnectionRequest";
-import MainContentContainer from "../containers/MainContentContainer";
+import MainPanelContainer from "../containers/MainPanelContainer";
+import CenterPanel from "../containers/CenterPanel";
+import LeftPanel from "../containers/LeftPanel";
 
 const ConnectionRequests = () => {
 
@@ -17,11 +19,14 @@ const ConnectionRequests = () => {
   return (
     <div>
       <Header/>
-      <MainContentContainer>
-        {connectionRequestComponents}
-        // Single component for testing purposes
-        <ConnectionRequest username="Joe Momma"/>
-      </MainContentContainer>
+      <MainPanelContainer>
+        <LeftPanel/>
+        <CenterPanel>
+          {connectionRequestComponents}
+          { /* Single component for testing purposes */ }
+          <ConnectionRequest username="Joe Momma"/>
+        </CenterPanel>
+      </MainPanelContainer>
     </div>
   );
 };

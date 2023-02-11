@@ -10,8 +10,7 @@ import pfp from "../images/pfp.png";
 
 const PostPrompt = () => {
   const containerStyle = {
-    width: "75vw",
-    boxSizing: "border-box"
+    margin: "2em 0"
   }
   const subContainerStyle = {
     display: "flex",

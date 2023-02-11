@@ -3,7 +3,9 @@ import Header from "../containers/Header";
 import ProfileHeader from "../ProfileHeader";
 import {useLoaderData} from "react-router-dom";
 import Feed from "../Feed";
-import MainContentContainer from "../containers/MainContentContainer";
+import MainPanelContainer from "../containers/MainPanelContainer";
+import CenterPanel from "../containers/CenterPanel";
+import LeftPanel from "../containers/LeftPanel";
 
 const User = () => {
   const {user, posts} = useLoaderData();
@@ -12,8 +14,13 @@ const User = () => {
   return (
     <div>
       <Header/>
-      <MainContentContainer><ProfileHeader name={fullName}/>
-        <Feed posts={posts}/></MainContentContainer>
+      <MainPanelContainer>
+        <LeftPanel/>
+        <CenterPanel>
+          <ProfileHeader name={fullName}/>
+        <Feed posts={posts}/>
+        </CenterPanel>
+      </MainPanelContainer>
     </div>
   );
 };

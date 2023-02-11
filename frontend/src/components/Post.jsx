@@ -6,8 +6,8 @@ const Post = props => {
 
   return (
     <Card style={{
-      margin: "16px",
-      padding: "16px"
+      margin: "2em 0 0 0",
+      padding: "2em 3em"
     }}>
       <div style={{
         display: "flex",

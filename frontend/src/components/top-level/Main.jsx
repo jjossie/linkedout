@@ -3,7 +3,9 @@ import {useLoaderData} from "react-router-dom";
 import Header from "../containers/Header";
 import Feed from "../Feed";
 import PostPrompt from "../PostPrompt";
-import MainContentContainer from "../containers/MainContentContainer";
+import MainPanelContainer from "../containers/MainPanelContainer";
+import CenterPanel from "../containers/CenterPanel";
+import LeftPanel from "../containers/LeftPanel";
 
 const Main = () => {
   const info = useLoaderData();
@@ -11,10 +13,13 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <MainContentContainer>
-        <PostPrompt/>
-        <Feed posts={info.posts}/>
-      </MainContentContainer>
+      <MainPanelContainer>
+        <LeftPanel/>
+        <CenterPanel>
+          <PostPrompt/>
+          <Feed posts={info.posts}/>
+        </CenterPanel>
+      </MainPanelContainer>
     </div>
   );
 };

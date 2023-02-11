@@ -3,7 +3,9 @@ import ProfileHeader from "../ProfileHeader";
 import {useLoaderData} from "react-router-dom";
 import Header from "../containers/Header";
 import PostPrompt from "../PostPrompt";
-import MainContentContainer from "../containers/MainContentContainer";
+import MainPanelContainer from "../containers/MainPanelContainer";
+import CenterPanel from "../containers/CenterPanel";
+import LeftPanel from "../containers/LeftPanel";
 
 const Profile = (props) => {
   const info = useLoaderData();
@@ -11,10 +13,13 @@ const Profile = (props) => {
   return (
     <div>
       <Header/>
-      <MainContentContainer>
-        <ProfileHeader name={fullName}/>
-        <PostPrompt/>
-      </MainContentContainer>
+      <MainPanelContainer>
+        <LeftPanel/>
+        <CenterPanel>
+          <ProfileHeader name={fullName}/>
+          <PostPrompt/>
+        </CenterPanel>
+      </MainPanelContainer>
     </div>
   );
 };

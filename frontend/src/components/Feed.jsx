@@ -19,7 +19,6 @@ const Feed = props => {
   const feedStyle = {
     display: "flex",
     flexDirection: "column",
-    width: "75%"
   }
 
   return (

@@ -21,6 +21,7 @@ app.use('/', routes);
 /****************************************
  * Listener
  ****************************************/
+mongoose.set('strictQuery', true); // Suppress warning
 mongoose.connect(
   process.env.MONGODB_URI
 ).then(() => {

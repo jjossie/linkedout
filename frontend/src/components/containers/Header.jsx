@@ -34,12 +34,10 @@ const Header = (props) => {
           <IoIosSearch
             size="2em"
             sx={{
-            color: 'action.active',
-            mr: 1,
-            my: 0.5,
-            // width: "2em",
-            // size: "2em",
-          }}/>
+              color: 'action.active',
+              mr: 1,
+              my: 0.5,
+            }}/>
           <TextField id="input-with-sx" label="Search" variant="standard"/>
         </div>
         <div style={{
@@ -47,8 +45,8 @@ const Header = (props) => {
           gap: "0.5em",
         }}>
           <Link style={linkStyle} key="feed" to="/">
-          <Button variant="text">Feed</Button>
-        </Link>
+            <Button variant="text">Feed</Button>
+          </Link>
           <Link style={linkStyle} key="profile" to="/profile">
             <Button variant="text">Profile</Button>
           </Link>

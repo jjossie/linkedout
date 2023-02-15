@@ -8,14 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="added lots">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="improved header">
+      <change afterPath="$PROJECT_DIR$/backend/scripts/seed_old.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/t7-pa2.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/scripts/seed.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/scripts/seed.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/containers/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/containers/Header.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +33,10 @@
         <entry key="$PROJECT_DIR$" value="t4-pa2" />
       </map>
     </option>
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -49,32 +51,33 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/joel/Documents/Development/CSE430/professional-network-jjossie",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/joel/Documents/Development/CSE430/professional-network-jjossie&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/components/containers" />
       <recent name="$PROJECT_DIR$/frontend/src/components/top-level" />
     </key>
   </component>
@@ -140,6 +143,7 @@
       <workItem from="1675557487318" duration="4693000" />
       <workItem from="1675576739554" duration="2247000" />
       <workItem from="1675736900696" duration="31534000" />
+      <workItem from="1676433840026" duration="1243000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -204,7 +208,70 @@
       <option name="project" value="LOCAL" />
       <updated>1675840233744</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="export backend and delete old db">
+      <created>1675963383548</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1675963383548</updated>
+    </task>
+    <task id="LOCAL-00011" summary="modularize backend base url">
+      <created>1675964086049</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675964086049</updated>
+    </task>
+    <task id="LOCAL-00012" summary="got dotenvs working">
+      <created>1675965024114</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675965024114</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add vercel.json">
+      <created>1675965105635</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1675965105635</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ADD OPTIONS">
+      <created>1675966078678</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1675966078678</updated>
+    </task>
+    <task id="LOCAL-00015" summary="AAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHH">
+      <created>1675966610482</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1675966610482</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added some containers to the UI">
+      <created>1675989896037</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1675989896037</updated>
+    </task>
+    <task id="LOCAL-00017" summary="dramatic improvements to frontend">
+      <created>1676089581013</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1676089581013</updated>
+    </task>
+    <task id="LOCAL-00018" summary="improved header">
+      <created>1676090002531</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1676090002531</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,18 +288,15 @@
     <MESSAGE value="got the feed working !!" />
     <MESSAGE value="css is a mess but WHO CARES" />
     <MESSAGE value="added lots" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lots" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/src/App.js</url>
-          <line>41</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="export backend and delete old db" />
+    <MESSAGE value="modularize backend base url" />
+    <MESSAGE value="got dotenvs working" />
+    <MESSAGE value="add vercel.json" />
+    <MESSAGE value="ADD OPTIONS" />
+    <MESSAGE value="AAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHH" />
+    <MESSAGE value="Added some containers to the UI" />
+    <MESSAGE value="dramatic improvements to frontend" />
+    <MESSAGE value="improved header" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved header" />
   </component>
 </project>

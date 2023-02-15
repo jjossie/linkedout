@@ -1,30 +1,28 @@
-import ConnectionModel from "../models/Connection.js";
-import ConnectionRequestModel from "../models/ConnectionRequest.js";
-import PostModel from "../models/Post.js";
-import UserModel from "../models/UserModel.js";
+import {
+  ConnectionModel,
+  ConnectionRequestModel,
+  FeedModel,
+  PostModel,
+  PrivateChatModel,
+  UserModel,
+} from "../models/index.js";
 import casual from "casual";
 import mongoose from "mongoose";
 
-mongoose.set("strictQuery", false);
-
 await mongoose.connect(
-  "mongodb+srv://students:RILnPuIPTo92RCu4@winter2023.inr9f0r.mongodb.net/Jackson?retryWrites=true&w=majority"
+  "mongodb+srv://students:RILnPuIPTo92RCu4@winter2023.inr9f0r.mongodb.net/Joel?retryWrites=true&w=majority"
 );
 
 await ConnectionModel.deleteMany();
-await ConnectionRequestModel.deleteMany();
+// await ConnectionRequestModel.deleteMany();
 // await FeedModel.deleteMany();
 await PostModel.deleteMany();
 // await PrivateChatModel.deleteMany();
 await UserModel.deleteMany();
 
-const emptyArrayOfSize = (n = 0) => Array(n).fill(null);
+const EmptyArray = (n = 0) => Array(n).fill(null);
 
-const randomInteger = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
-const flipACoin = () => randomInteger(1, 100) > 50;
-
-const userPromises = emptyArrayOfSize(100).map(() => {
+const userPromises = EmptyArray(100).map(() => {
   var firstName = casual.first_name;
   var lastName = casual.last_name;
   var email = casual.email;
@@ -39,7 +37,7 @@ const users = await Promise.all(userPromises);
 const postPromises = [];
 users.map((u) => {
   const { _id: userId } = u;
-  emptyArrayOfSize(10).forEach(() => {
+  EmptyArray(10).forEach(() => {
     var createdAt = casual.moment.format();
     var content = casual.sentence;
     const post = new PostModel({ userId, createdAt, content });
@@ -55,24 +53,14 @@ const connectionPromises = [];
 const idArray = users.map((u) => u._id);
 
 for (let i = 0; i < idArray.length; i++) {
-  const numberOfConnections = Math.floor(Math.random() * 20) + 1; // Random connections before 1-20 accounts.
+  const numberOfConnections = Math.floor(Math.random() * 10) + 1; // Random connections before 1-10 accounts.
   for (let k = 0; k < numberOfConnections; k++) {
     const connectionIndex =
       Math.floor(Math.random() * (idArray.length - i - 1)) + i + 1; // Returns a random index in idArray.
     if (idArray[connectionIndex] == null) continue;
-
     var userIds = [idArray[i].toString(), idArray[connectionIndex].toString()];
-
-    // 50% of the time, make a connection. Otherwise, make a connection request
-    if (flipACoin()) {
-      const connection = new ConnectionModel({ userIds });
-      connectionPromises.push(connection.save());
-    } else {
-      const senderId = userIds[0];
-      const receiverId = userIds[1];
-      const request = new ConnectionRequestModel({ senderId, receiverId });
-      connectionPromises.push(request.save());
-    }
+    const connection = new ConnectionModel({ userIds });
+    connectionPromises.push(connection.save());
   }
 }
 

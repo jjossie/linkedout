@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/byui-wdd430/professional-network-jjossie#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "casual": "^1.6.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

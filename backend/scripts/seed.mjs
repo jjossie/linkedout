@@ -1,7 +1,7 @@
 import ConnectionModel from "../models/Connection.js";
 import ConnectionRequestModel from "../models/ConnectionRequest.js";
 import PostModel from "../models/Post.js";
-import UserModel from "../models/UserModel.js";
+import UserModel from "../models/User.js";
 import casual from "casual";
 import mongoose from "mongoose";
 

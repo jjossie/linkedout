@@ -58,7 +58,8 @@ const Header = (props) => {
           </Link>
           <Link style={linkStyle} key="profileAvatar" to="/profile">
             <Avatar id="header-avatar" src={pfp} sx={avatarStyle}/>
-          </Link></div>
+          </Link>
+        </div>
       </div>
     </Card>
   );

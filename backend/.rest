@@ -38,6 +38,7 @@ Accept: application/json
 ### Get new feed
 GET http://localhost:3430/user/feed
 Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
 
 
 

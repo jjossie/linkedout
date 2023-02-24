@@ -17,12 +17,17 @@ const getAuth = async (req, res, next) => {
 // Looks for an authentication header and extracts the Promise<token> if it exists
 // Otherwise, returns null
 const extractToken = (req) => {
-  const header = req.get('Authorization');
-  console.log(`extractToken(${req}) called: ${header} found`);
-  if (header)
-    return userIdFromJWT(header);
-  else
+  const header = req.get('Authorization')
+  try{
+    const token = header.split(' ')[1];
+    console.log(`extractToken(${req}) called: ${header} found`);
+    if (token)
+      return userIdFromJWT(token);
+    else
+      return null;
+  } catch (e) {
     return null;
+  }
 };
 
 module.exports = {getAuth};

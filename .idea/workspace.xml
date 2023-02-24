@@ -9,20 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="working on a lot of routes' authentication, lots untested, but it's been too long since a commit">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/t8-pa2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/professional-network-jjossie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/professional-network-jjossie.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middleware/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8">
       <change afterPath="$PROJECT_DIR$/frontend/src/components/Login.jsx" afterDir="false" />
@@ -75,6 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "idea.background.editor": "/Users/joel/My Drive/Pictures/Wallpapers/photo-1571294673609-a705657cb13c.jpg,16,scale,center",
     "last_opened_file_path": "/Users/joel/Documents/Development/CSE430/professional-network-jjossie",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -82,7 +73,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -105,10 +96,10 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.Run Backend">
-    <configuration name=" | Get Feed for User" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Get Feed for User" runType="Run single request">
+    <configuration name=" | Get new feed" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Get new feed" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name=" | Get new feed" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Get new feed" runType="Run single request">
+    <configuration name=" | Login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="2" requestIdentifier="Login" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name=" | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Register" runType="Run single request">
@@ -142,21 +133,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="HTTP Request. | Login" />
       <item itemvalue="HTTP Request. | Register" />
       <item itemvalue="HTTP Request. | Get new feed" />
       <item itemvalue="HTTP Request. | get all users" />
-      <item itemvalue="HTTP Request. | Get Feed for User" />
       <item itemvalue="npm.Run Backend" />
       <item itemvalue="npm.Run Frontend" />
       <item itemvalue="npm.seed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request. | Get new feed" />
+        <item itemvalue="HTTP Request. | Login" />
         <item itemvalue="HTTP Request. | Register" />
         <item itemvalue="HTTP Request. | get all users" />
-        <item itemvalue="HTTP Request. | Get new feed" />
         <item itemvalue="npm.seed" />
-        <item itemvalue="HTTP Request. | Get Feed for User" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +168,7 @@
       <workItem from="1676433840026" duration="12700000" />
       <workItem from="1676534777572" duration="2677000" />
       <workItem from="1676588347415" duration="2495000" />
-      <workItem from="1677167764679" duration="11465000" />
+      <workItem from="1677167764679" duration="16092000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -326,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676534748699</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="working on a lot of routes' authentication, lots untested, but it's been too long since a commit">
+      <created>1677272980227</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1677272980227</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,5 +355,17 @@
     <MESSAGE value="refactored routes to individual files and added authentication logic from t7-pa1" />
     <MESSAGE value="working on a lot of routes' authentication, lots untested, but it's been too long since a commit" />
     <option name="LAST_COMMIT_MESSAGE" value="working on a lot of routes' authentication, lots untested, but it's been too long since a commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/backend/middleware/auth.js</url>
+          <line>6</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

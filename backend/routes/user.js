@@ -16,6 +16,23 @@ const {UserModel} = require("../models");
 const routes      = Router();
 
 /****************************************
+ * Feed
+ ****************************************/
+
+routes.get("/feed", async (req, res) => {
+  if (!req.user)
+    return res.status(403).json({message: "Must be logged in."})
+
+  try {
+    const feed = await feedForUserId(req.user.userId);
+    return res.status(200).json(feed);
+  } catch (e) {
+    return res.status(400).json({message: "Could not get feed", error: e});
+  }
+});
+
+
+/****************************************
  * User Endpoints
  ****************************************/
 
@@ -64,21 +81,6 @@ routes.delete("/:userId", (request, response) => {
 });
 
 
-/****************************************
- * Feed
- ****************************************/
-
-routes.get("/feed", async (req, res) => {
-  if (!req.user)
-    return res.status(403).json({message: "Must be logged in."})
-
-  try {
-    const feed = await feedForUserId(req.user.userId);
-    return res.status(200).json(feed);
-  } catch (e) {
-    return res.status(400).json({message: "Could not get feed", error: e});
-  }
-});
 
 /****************************************
  * Additional GET Endpoints

@@ -1,9 +1,43 @@
 
-### Get Feed for User
+
+//****************************************
+//* LOGIN/AUTH Endpoints
+//****************************************/
+
+### Register
+POST http://localhost:3430/user/register
+Content-Type: application/json
+
+{
+  "firstName": "Joe",
+  "lastName": "Momma",
+  "email": "joemomma6969696@gmail.com",
+  "password": "bruh"
+}
+
+### Login
+POST http://localhost:3430/user/login
+Content-Type: application/json
+
+{
+  "email": "joemomma6969696@gmail.com",
+  "password": "bruh"
+}
+
+### Get Feed for User old
 GET https://professional-network-jjossie-backend.vercel.app/user/63dbfc0d187fe1e57908cfea/feed
 Accept: application/json
 
-###
+
+### get all users
+
+GET http://localhost:3430/user/
+Accept: application/json
+
+
+### Get new feed
+GET http://localhost:3430/user/feed
+Accept: application/json
 
 
 
@@ -105,3 +139,69 @@ DELETE http://localhost:3430/connection/connection:39f2db84-ce4f-4cf7-b9fb-7b036
 Accept: application/json
 
 
+
+
+#  EXAMPLE USERS
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfe5",
+#      "firstName": "Davon",
+#      "lastName": "Schaefer",
+#      "email": "Pfannerstill_Ofelia@Brekke.com",
+#      "__v": 0
+#    },
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfe8",
+#      "firstName": "Ryley",
+#      "lastName": "Watsica",
+#      "email": "Gutmann_Haylee@yahoo.com",
+#      "__v": 0
+#    },
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfe9",
+#      "firstName": "Clint",
+#      "lastName": "Harvey",
+#      "email": "Joelle.Lesch@hotmail.com",
+#      "__v": 0
+#    },
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfeb",
+#      "firstName": "Maximillian",
+#      "lastName": "Wyman",
+#      "email": "Elta_Denesik@Kayli.io",
+#      "__v": 0
+#    },
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfec",
+#      "firstName": "Mathilde",
+#      "lastName": "Kuhic",
+#      "email": "Jerry_Doyle@Kuvalis.org",
+#      "__v": 0
+#    },
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfea",
+#      "firstName": "Cordelia",
+#      "lastName": "Carroll",
+#      "email": "Lucinda.Cartwright@gmail.com",
+#      "__v": 0
+#    },
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfed",
+#      "firstName": "Emely",
+#      "lastName": "Labadie",
+#      "email": "Polly_Crist@Bruen.tv",
+#      "__v": 0
+#    },
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfc9",
+#      "firstName": "Johanna",
+#      "lastName": "Connelly",
+#      "email": "Shaina_Moen@yahoo.com",
+#      "__v": 0
+#    },
+#    {
+#      "_id": "63dbfc0d187fe1e57908cfcb",
+#      "firstName": "Monte",
+#      "lastName": "Fay",
+#      "email": "Yost_Soledad@Cassin.biz",
+#      "__v": 0
+#    }

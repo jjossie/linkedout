@@ -1,18 +1,17 @@
-import mongoose from "mongoose";
-import {checkPassword, createPasswordHash} from "../util/hash";
-import {UserModel, PasswordModel} from "../models";
-import {generateJWT} from "../util/token";
+const mongoose = require("mongoose");
+const {checkPassword, createPasswordHash} = require("../util/hash");
+const {UserModel, PasswordModel} = require("../models");
+const {generateJWT} = require("../util/token");
 
 async function createUser(req, res) {
   try {
-    const {username, password} = req.body;
+    const {firstName, lastName, email, password} = req.body;
     const hash = await createPasswordHash(password);
     console.log(hash);
-    const existingUser = await UserModel.findOne({username});
+    const existingUser = await UserModel.findOne({email});
 
-    if (existingUser) {
-      throw new Error("Oopsies");
-    }
+    if (existingUser)
+      return res.status(400).json({message: "User already exists 💀"});
 
     const session = await mongoose.startSession();
     await session.startTransaction();
@@ -20,7 +19,7 @@ async function createUser(req, res) {
 
     // Make the User
     const newUser = new UserModel({
-      username: username,
+      firstName, lastName, email
     });
     console.log(newUser);
     const newId = await newUser.save();
@@ -51,8 +50,8 @@ async function createUser(req, res) {
 
 
 async function loginUser(req, res) {
-  const {username, password} = req.body;
-  const user = await UserModel.findOne({username});
+  const {email, password} = req.body;
+  const user = await UserModel.findOne({email});
   if (!user)
     return res.status(400).json({message: "you fail 💀"});
   const userId = user._id.toString();
@@ -69,7 +68,7 @@ async function loginUser(req, res) {
 
 async function getProfile(req, res) {
   if (req.user)
-    return res.status(200).json({username: req.user.username});
+    return res.status(200).json({email: req.user.email});
   else
     return res.status(404).json({message: "user not logged in 💀"});
 }

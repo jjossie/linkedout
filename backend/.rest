@@ -9,9 +9,9 @@ POST http://localhost:3430/user/register
 Content-Type: application/json
 
 {
-  "firstName": "Joe",
-  "lastName": "Momma",
-  "email": "joemomma6969696@gmail.com",
+  "firstName": "Monte",
+  "lastName": "Fay",
+  "email": "Yost_Soledad@Cassin.biz",
   "password": "bruh"
 }
 
@@ -20,7 +20,7 @@ POST http://localhost:3430/user/login
 Content-Type: application/json
 
 {
-  "email": "joemomma6969696@gmail.com",
+  "email": "Elta_Denesik@Kayli.io",
   "password": "bruh"
 }
 

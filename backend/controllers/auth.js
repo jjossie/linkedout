@@ -10,36 +10,62 @@ async function createUser(req, res) {
     console.log(hash);
     const existingUser = await UserModel.findOne({email});
 
-    if (existingUser)
-      return res.status(400).json({message: "User already exists 💀"});
+    if (existingUser) {
+      //
+      // Email is registered
+      //
+      const existingPassword = await PasswordModel.findOne({
+        userId: existingUser._id.toString()
+      });
+      if (existingPassword)
+        return res.status(400).json({message: "User already exists 💀"});
 
-    const session = await mongoose.startSession();
-    await session.startTransaction();
-    console.log("Started transaction");
+      // User exists, but without a password
+      // Make the password entry
+      const newPassword = new PasswordModel({
+        userId: existingUser._id,
+        hash: hash
+      });
+      const newPasswordId = await newPassword.save();
 
-    // Make the User
-    const newUser = new UserModel({
-      firstName, lastName, email
-    });
-    console.log(newUser);
-    const newId = await newUser.save();
-    console.log(newId);
-    // Make the password entry
-    const newPassword = new PasswordModel({
-      userId: newId,
-      hash: hash
-    });
-    const newPasswordId = await newPassword.save();
+      return res.status(201).json({
+        user: existingUser._id,
+        password: newPasswordId,
+        message: "created!"
+      });
 
-    await session.commitTransaction();
-    console.log("Committed transaction");
+    } else {
+      //
+      // Email is not registered, so create a user
+      //
+      const session = await mongoose.startSession();
+      await session.startTransaction();
+      console.log("Started transaction");
 
-    return res.status(201).json({
-      user: newId,
-      password: newPasswordId,
-      message: "created!"
-    });
+      // Make the User
+      const newUser = new UserModel({
+        firstName, lastName, email
+      });
+      console.log(newUser);
+      const newId = await newUser.save();
+      console.log(newId);
+      // Make the password entry
+      const newPassword = new PasswordModel({
+        userId: newId,
+        hash: hash
+      });
+      const newPasswordId = await newPassword.save();
 
+      await session.commitTransaction();
+      console.log("Committed transaction");
+
+      return res.status(201).json({
+        user: newId,
+        password: newPasswordId,
+        message: "created!"
+      });
+
+    }
   } catch (e) {
     return res.status(500).json({
       error: e,
@@ -79,9 +105,6 @@ async function getUserById(userId) {
   console.log(`getUserById(${userId}) called: ${result} found`);
   return result;
 }
-
-
-
 
 
 module.exports = {createUser, loginUser, getUserById, getProfile};

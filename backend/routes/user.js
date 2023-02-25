@@ -16,7 +16,8 @@ const {UserModel} = require("../models");
 const routes      = Router();
 
 /****************************************
- * Feed
+ * Feed, Connections, & ConnectionRequests
+ * for the currently logged-in user
  ****************************************/
 
 routes.get("/feed", async (req, res) => {
@@ -30,6 +31,90 @@ routes.get("/feed", async (req, res) => {
     return res.status(400).json({message: "Could not get feed", error: e});
   }
 });
+
+
+routes.get("/connectionRequests", async (req, res) => {
+  if (!req.user)
+    return res.status(403).json({message: "Must be logged in."})
+
+  try {
+    const connectionRequests = await connectionRequestsForUserId(req.user.userId);
+    res.status(200).json(connectionRequests ?? {});
+  } catch (e) {
+    return res.status(400).json({message: "Could not get connection requests", error: e});
+  }
+});
+
+routes.get("/connections", async (req, res) => {
+  if (!req.user)
+    return res.status(403).json({message: "Must be logged in."})
+
+  try {
+    const connectionRequests = await connectionsForUserId(req.user.userId);
+    res.status(200).json(connectionRequests ?? {});
+  } catch (e) {
+    return res.status(400).json({message: "Could not get connection requests", error: e});
+  }
+});
+
+
+/****************************************
+ * Connections, Posts, & Chats for a
+ * particular user
+ ****************************************/
+
+routes.get("/:userId/connections", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    if (!req.user)
+      return res.status(403).json({message: "Must be logged in to view connections for this user"});
+
+    if (!await isAConnection(req.user.userId, userId))
+      return res.status(403).json({message: "This user is not a connection of the logged in user"});
+
+    const connections = await connectionsForUserId(userId);
+    if (!connections)
+      return res.status(404).json({message: "No connections found"});
+
+    else
+      return res.status(200).json(connections);
+  } catch (e) {
+    return res.status(400).json({message: "Failed to get Connections for user", error: e});
+  }
+});
+
+routes.get("/:userId/posts", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    if (!req.user)
+      return res.status(403).json({message: "Must be logged in to view posts for this user"});
+
+    if (!await isAConnection(req.user.userId, userId))
+      return res.status(403).json({message: "This user is not a connection of the logged in user"});
+
+    const posts = await postsForUserId(userId);
+    if (!posts)
+      return res.status(404).json({message: "No posts found"});
+
+    else
+      return res.status(200).json(posts);
+  } catch (e) {
+    return res.status(400).json({message: "Failed to get Connections for user", error: e});
+  }
+});
+
+routes.get("/:userId/chats", (req, res) => {
+  const userId = req.params.userId;
+  const chats  = allPrivateChats()
+    .filter(chat => {
+      return (chat.includes(userId));
+    });
+  if (chats)
+    res.status(200).json(chats);
+  else
+    res.status(404);
+});
+
 
 
 /****************************************
@@ -81,63 +166,6 @@ routes.delete("/:userId", (request, response) => {
 });
 
 
-
-/****************************************
- * Additional GET Endpoints
- ****************************************/
-routes.get("/connectionRequests", async (req, res) => {
-  if (!req.user)
-    return res.status(403).json({message: "Must be logged in."})
-
-  try {
-    const connectionRequests = await connectionRequestsForUserId(req.user.userId);
-    res.status(200).json(connectionRequests ?? {});
-  } catch (e) {
-    return res.status(400).json({message: "Could not get connection requests", error: e});
-  }
-});
-
-routes.get("/:userId/connections", async (req, res) => {
-  try {
-    const userId = req.params.userId;
-    if (!req.user)
-      return res.status(403).json({message: "Must be logged in to view connections for this user"});
-
-    if (!await isAConnection(req.user.userId, userId))
-      return res.status(403).json({message: "This user is not a connection of the logged in user"});
-
-    const connections = await connectionsForUserId(userId);
-    if (!connections)
-      return res.status(404).json({message: "No connections found"});
-
-    else
-      return res.status(200).json(connections);
-  } catch (e) {
-    return res.status(400).json({message: "Failed to get Connections for user", error: e});
-  }
-});
-
-routes.get("/:userId/chats", (req, res) => {
-  const userId = req.params.userId;
-  const chats  = allPrivateChats()
-    .filter(chat => {
-      return (chat.includes(userId));
-    });
-  if (chats)
-    res.status(200).json(chats);
-  else
-    res.status(404);
-});
-
-routes.get("/:userId/posts", async (req, res) => {
-  // TODO work this like the /:userId/connections route
-  const userId = req.params.userId;
-  const posts  = await postsForUserId(userId);
-  if (posts)
-    res.status(200).json(posts);
-  else
-    res.status(404);
-});
 
 
 module.exports = routes;

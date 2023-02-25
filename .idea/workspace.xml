@@ -8,10 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="working on a lot of routes' authentication, lots untested, but it's been too long since a commit">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="Fixed stuff like out-of-order routes and token extraction">
+      <change afterPath="$PROJECT_DIR$/backend/http-client.env.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middleware/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8">
@@ -29,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTTP Public Environment File" />
       </list>
     </option>
   </component>
@@ -96,6 +97,9 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.Run Backend">
+    <configuration name=" | Get new connection requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="6" requestIdentifier="Get new connection requests" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name=" | Get new feed" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Get new feed" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -122,32 +126,22 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/backend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="seed" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="HTTP Request. | Get new connection requests" />
       <item itemvalue="HTTP Request. | Login" />
       <item itemvalue="HTTP Request. | Register" />
       <item itemvalue="HTTP Request. | Get new feed" />
       <item itemvalue="HTTP Request. | get all users" />
       <item itemvalue="npm.Run Backend" />
       <item itemvalue="npm.Run Frontend" />
-      <item itemvalue="npm.seed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request. | Get new connection requests" />
         <item itemvalue="HTTP Request. | Get new feed" />
         <item itemvalue="HTTP Request. | Login" />
         <item itemvalue="HTTP Request. | Register" />
         <item itemvalue="HTTP Request. | get all users" />
-        <item itemvalue="npm.seed" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +162,7 @@
       <workItem from="1676433840026" duration="12700000" />
       <workItem from="1676534777572" duration="2677000" />
       <workItem from="1676588347415" duration="2495000" />
-      <workItem from="1677167764679" duration="16092000" />
+      <workItem from="1677167764679" duration="17538000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -324,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677272980227</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed stuff like out-of-order routes and token extraction">
+      <created>1677281643519</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1677281643519</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +355,8 @@
     <MESSAGE value="more setup for t7-pa2" />
     <MESSAGE value="refactored routes to individual files and added authentication logic from t7-pa1" />
     <MESSAGE value="working on a lot of routes' authentication, lots untested, but it's been too long since a commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on a lot of routes' authentication, lots untested, but it's been too long since a commit" />
+    <MESSAGE value="Fixed stuff like out-of-order routes and token extraction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed stuff like out-of-order routes and token extraction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

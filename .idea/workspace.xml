@@ -8,10 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="add /user/connections and fix /user/connectionRequests">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="users with existing emails but no passwords can be registered">
+      <change afterPath="$PROJECT_DIR$/backend/remote.rest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/auth.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8">
       <change afterPath="$PROJECT_DIR$/frontend/src/components/Login.jsx" afterDir="false" />
@@ -108,7 +107,7 @@
     <configuration name=" | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Register" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name=" | get all users" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="2" requestIdentifier="get all users" runType="Run single request">
+    <configuration name="remote | Login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/remote.rest" index="2" requestIdentifier="Login" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="Run Backend" type="js.build_tools.npm">
@@ -129,18 +128,18 @@
       <item itemvalue="HTTP Request. | Get new connection requests" />
       <item itemvalue="HTTP Request. | Login" />
       <item itemvalue="HTTP Request. | Register" />
+      <item itemvalue="HTTP Request.remote | Login" />
       <item itemvalue="HTTP Request. | Get new feed" />
-      <item itemvalue="HTTP Request. | get all users" />
       <item itemvalue="npm.Run Backend" />
       <item itemvalue="npm.Run Frontend" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request. | Register" />
-        <item itemvalue="HTTP Request. | Login" />
+        <item itemvalue="HTTP Request.remote | Login" />
         <item itemvalue="HTTP Request. | Get new connection requests" />
+        <item itemvalue="HTTP Request. | Login" />
+        <item itemvalue="HTTP Request. | Register" />
         <item itemvalue="HTTP Request. | Get new feed" />
-        <item itemvalue="HTTP Request. | get all users" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +160,7 @@
       <workItem from="1676433840026" duration="12700000" />
       <workItem from="1676534777572" duration="2677000" />
       <workItem from="1676588347415" duration="2495000" />
-      <workItem from="1677167764679" duration="19321000" />
+      <workItem from="1677167764679" duration="23487000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -331,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677284003696</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="users with existing emails but no passwords can be registered">
+      <created>1677285528060</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1677285528060</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +369,8 @@
     <MESSAGE value="working on a lot of routes' authentication, lots untested, but it's been too long since a commit" />
     <MESSAGE value="Fixed stuff like out-of-order routes and token extraction" />
     <MESSAGE value="add /user/connections and fix /user/connectionRequests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add /user/connections and fix /user/connectionRequests" />
+    <MESSAGE value="users with existing emails but no passwords can be registered" />
+    <option name="LAST_COMMIT_MESSAGE" value="users with existing emails but no passwords can be registered" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

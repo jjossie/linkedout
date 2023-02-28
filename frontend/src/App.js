@@ -10,6 +10,7 @@ import {getConnectionRequests, getConnections, getFeed, getPosts} from "./servic
 import Profile from "./components/top-level/Profile";
 import User from "./components/top-level/User";
 import ConnectionRequests from "./components/top-level/ConnectionRequests";
+import LoginPage from "./components/Login";
 
 
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
     path: "/connectionRequests",
     element: <ConnectionRequests/>,
     loader: getConnectionRequests
+  },
+  {
+    path: "/login",
+    element: <LoginPage/>,
   }
 ])
 

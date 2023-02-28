@@ -1,9 +1,14 @@
-const loggedInUserId = "63dbfc0d187fe1e57908cfe1" // Carolyn Lindgren
+import {getUserToken} from "../utils/storage";
+
+const loggedInUserId = "63dbfc0d187fe1e57908cf8b" //
 const baseUrl = process.env.REACT_APP_BACKEND_BASE_URL;
 
 export async function getFeed({params}) {
+  const headers = {
+    "Authorization": `Bearer ${getUserToken()}`
+  }
   const feedUrl = `${baseUrl}/user/${loggedInUserId}/feed`;
-  return await fetch(feedUrl).then(res => res.json());
+  return await fetch(feedUrl, {headers}).then(res => res.json());
 }
 
 
@@ -19,7 +24,7 @@ export async function getConnections() {
   const connectionsUrl = `${baseUrl}/user/${userId}/connections`;
   const connectionsArr = await fetch(connectionsUrl).then(res => res.json());
   let connectionUserIds = [];
-  connectionsArr.map(connection => {
+  connectionsArr.forEach(connection => {
     connectionUserIds.push(connection.userIds.filter(id => id !== userId)[0].toString());
   });
   // console.log(connectionUserIds);

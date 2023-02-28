@@ -8,10 +8,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="setup for t7-pa2">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="users with existing emails but no passwords can be registered">
+      <change afterPath="$PROJECT_DIR$/backend/remote.rest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/scripts/seed.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/scripts/seed.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/containers/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/containers/Header.jsx" afterDir="false" />
+    </list>
+    <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/utils/storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTTP Public Environment File" />
       </list>
     </option>
   </component>
@@ -31,6 +37,7 @@
         <entry key="$PROJECT_DIR$" value="t4-pa2" />
       </map>
     </option>
+    <option name="RECENT_COMMON_BRANCH" value="main" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="HttpClientSelectedEnvironments">
@@ -49,47 +56,58 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/joel/Documents/Development/CSE430/professional-network-jjossie&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "idea.background.editor": "/Users/joel/My Drive/Pictures/Wallpapers/photo-1571294673609-a705657cb13c.jpg,16,scale,center",
+    "last_opened_file_path": "/Users/joel/Documents/Development/CSE430/professional-network-jjossie",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.sourceCode.JavaScript",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mongo&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/utils" />
+      <recent name="$PROJECT_DIR$/frontend/src/services" />
+      <recent name="$PROJECT_DIR$/frontend/src/components" />
+      <recent name="$PROJECT_DIR$/backend/models" />
       <recent name="$PROJECT_DIR$/frontend/src/components/containers" />
-      <recent name="$PROJECT_DIR$/frontend/src/components/top-level" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.seed">
-    <configuration name=" | Create a new user (Joe Momma)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Create a new user (Joe Momma)" runType="Run single request">
+  <component name="RunManager" selected="npm.Run Backend">
+    <configuration name=" | Get new connection requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="6" requestIdentifier="Get new connection requests" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name=" | Delete a single user (Luke Skywalker)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="5" requestIdentifier="Delete a single user (Luke Skywalker)" runType="Run single request">
+    <configuration name=" | Get new feed" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Get new feed" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name=" | Get Feed for User" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Get Feed for User" runType="Run single request">
+    <configuration name=" | Login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="2" requestIdentifier="Login" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name=" | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="2" requestIdentifier="#2" runType="Run single request">
+    <configuration name=" | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Register" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="remote | Login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/remote.rest" index="2" requestIdentifier="Login" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="Run Backend" type="js.build_tools.npm">
@@ -106,32 +124,22 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/backend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="seed" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="HTTP Request. | #2" />
-      <item itemvalue="HTTP Request. | Create a new user (Joe Momma)" />
-      <item itemvalue="HTTP Request. | Delete a single user (Luke Skywalker)" />
-      <item itemvalue="HTTP Request. | Get Feed for User" />
+      <item itemvalue="HTTP Request. | Get new connection requests" />
+      <item itemvalue="HTTP Request. | Login" />
+      <item itemvalue="HTTP Request. | Register" />
+      <item itemvalue="HTTP Request.remote | Login" />
+      <item itemvalue="HTTP Request. | Get new feed" />
       <item itemvalue="npm.Run Backend" />
       <item itemvalue="npm.Run Frontend" />
-      <item itemvalue="npm.seed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.seed" />
-        <item itemvalue="HTTP Request. | Get Feed for User" />
-        <item itemvalue="HTTP Request. | Delete a single user (Luke Skywalker)" />
-        <item itemvalue="HTTP Request. | #2" />
-        <item itemvalue="HTTP Request. | Create a new user (Joe Momma)" />
+        <item itemvalue="HTTP Request.remote | Login" />
+        <item itemvalue="HTTP Request. | Get new connection requests" />
+        <item itemvalue="HTTP Request. | Login" />
+        <item itemvalue="HTTP Request. | Register" />
+        <item itemvalue="HTTP Request. | Get new feed" />
       </list>
     </recent_temporary>
   </component>
@@ -139,6 +147,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="git workspace" />
+      <changelist id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="" />
       <created>1675180973871</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -148,7 +157,10 @@
       <workItem from="1675557487318" duration="4693000" />
       <workItem from="1675576739554" duration="2247000" />
       <workItem from="1675736900696" duration="31534000" />
-      <workItem from="1676433840026" duration="4556000" />
+      <workItem from="1676433840026" duration="12700000" />
+      <workItem from="1676534777572" duration="2677000" />
+      <workItem from="1676588347415" duration="2495000" />
+      <workItem from="1677167764679" duration="23487000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -283,7 +295,49 @@
       <option name="project" value="LOCAL" />
       <updated>1676438239313</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="more setup for t7-pa2">
+      <created>1676515056758</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1676515056758</updated>
+    </task>
+    <task id="LOCAL-00021" summary="refactored routes to individual files and added authentication logic from t7-pa1">
+      <created>1676534748699</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1676534748699</updated>
+    </task>
+    <task id="LOCAL-00022" summary="working on a lot of routes' authentication, lots untested, but it's been too long since a commit">
+      <created>1677272980227</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1677272980227</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fixed stuff like out-of-order routes and token extraction">
+      <created>1677281643519</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1677281643519</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add /user/connections and fix /user/connectionRequests">
+      <created>1677284003696</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1677284003696</updated>
+    </task>
+    <task id="LOCAL-00025" summary="users with existing emails but no passwords can be registered">
+      <created>1677285528060</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1677285528060</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +364,24 @@
     <MESSAGE value="dramatic improvements to frontend" />
     <MESSAGE value="improved header" />
     <MESSAGE value="setup for t7-pa2" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup for t7-pa2" />
+    <MESSAGE value="more setup for t7-pa2" />
+    <MESSAGE value="refactored routes to individual files and added authentication logic from t7-pa1" />
+    <MESSAGE value="working on a lot of routes' authentication, lots untested, but it's been too long since a commit" />
+    <MESSAGE value="Fixed stuff like out-of-order routes and token extraction" />
+    <MESSAGE value="add /user/connections and fix /user/connectionRequests" />
+    <MESSAGE value="users with existing emails but no passwords can be registered" />
+    <option name="LAST_COMMIT_MESSAGE" value="users with existing emails but no passwords can be registered" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/backend/middleware/auth.js</url>
+          <line>6</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

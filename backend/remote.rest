@@ -1,0 +1,45 @@
+
+//****************************************
+//* LOGIN/AUTH Endpoints
+//****************************************/
+
+### Register
+POST https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/register
+Content-Type: application/json
+
+{
+  "firstName": "Monte",
+  "lastName": "Fay",
+  "email": "Yost_Soledad@Cassin.biz",
+  "password": "bruh"
+}
+
+### Login
+POST https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/login
+Content-Type: application/json
+
+{
+  "email": "Elta_Denesik@Kayli.io",
+  "password": "bruh"
+}
+
+### Get Feed for User old
+GET https://professional-network-jjossie-backend.vercel.app/user/63dbfc0d187fe1e57908cfea/feed
+Accept: application/json
+
+
+### get all users
+
+GET https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/
+Accept: application/json
+
+
+### Get new feed
+GET https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/feed
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
+
+### Get new connection requests
+GET https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/connectionRequests
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I

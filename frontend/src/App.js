@@ -6,11 +6,11 @@ import {RouterProvider, createBrowserRouter} from "react-router-dom";
 import './App.css';
 
 import Main from "./components/top-level/Main";
-import {getConnectionRequests, getConnections, getFeed, getPosts} from "./services/loaders";
+import {loadConnectionRequests, loadProfile, loadFeed, loadPostsForUser} from "./services/loaders";
 import Profile from "./components/top-level/Profile";
 import User from "./components/top-level/User";
 import ConnectionRequests from "./components/top-level/ConnectionRequests";
-import LoginPage from "./components/Login";
+import LoginPage from "./components/top-level/Login";
 
 
 
@@ -18,22 +18,22 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main/>,
-    loader: getFeed,
+    loader: loadFeed,
   },
   {
     path: "/profile",
     element: <Profile/>,
-    loader: getConnections
+    loader: loadProfile
   },
   {
     path: "/user/:userId",
     element: <User/>,
-    loader: getPosts
+    loader: loadPostsForUser
   },
   {
     path: "/connectionRequests",
     element: <ConnectionRequests/>,
-    loader: getConnectionRequests
+    loader: loadConnectionRequests
   },
   {
     path: "/login",

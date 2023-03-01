@@ -1,10 +1,19 @@
 import React from 'react';
 import Post from "./Post";
-import {Box} from "@mui/material";
+import {Alert, Box, Snackbar} from "@mui/material";
 
 
 const Feed = props => {
   const postComponents = [];
+
+  if (!props.posts){
+    return (<Snackbar
+      open={true}
+      autoHideDuration={2000}
+      anchorOrigin={{vertical: "top", horizontal: "center"}}>
+      <Alert severity="error">Couldn't load feed</Alert>
+    </Snackbar>);
+  }
 
   props.posts.map(post => {
     console.log(post);

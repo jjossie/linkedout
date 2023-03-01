@@ -4,22 +4,22 @@
 //****************************************/
 
 ### Register
-POST https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/register
+POST https://professional-network-jjossie-backend.onrender.com/user/register
 Content-Type: application/json
 
 {
-  "firstName": "Monte",
-  "lastName": "Fay",
-  "email": "Yost_Soledad@Cassin.biz",
+  "firstName": "Jose",
+  "lastName": "Kilback",
+  "email": "Kirstin.Erdman@yahoo.com",
   "password": "bruh"
 }
 
 ### Login
-POST https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/login
+POST https://professional-network-jjossie-backend.onrender.com/user/login
 Content-Type: application/json
 
 {
-  "email": "Elta_Denesik@Kayli.io",
+  "email": "Kirstin.Erdman@yahoo.com",
   "password": "bruh"
 }
 
@@ -30,16 +30,21 @@ Accept: application/json
 
 ### get all users
 
-GET https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/
+GET https://professional-network-jjossie-backend.onrender.com/user/
 Accept: application/json
 
 
 ### Get new feed
-GET https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/feed
+GET https://professional-network-jjossie-backend.onrender.com/user/feed
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzc2NDQyMzUsImRhdGEiOnsidXNlcklkIjoiNjNmZDdlYjFhMTYzMGZkOTA4MjI1MDExIn0sImlhdCI6MTY3NzU1NzgzNX0.wmwHqz8YwzUgtkrkrhQAiByTLcIB72Q2T6VOleZhgj4
 
 ### Get new connection requests
-GET https://professional-network-jjossie-backend-git-t7-pa2-kjjossie.vercel.app/user/connectionRequests
+GET https://professional-network-jjossie-backend.onrender.com/user/connectionRequests
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzc2NDQyMzUsImRhdGEiOnsidXNlcklkIjoiNjNmZDdlYjFhMTYzMGZkOTA4MjI1MDExIn0sImlhdCI6MTY3NzU1NzgzNX0.wmwHqz8YwzUgtkrkrhQAiByTLcIB72Q2T6VOleZhgj4
+
+
+### get all users
+GET https://professional-network-jjossie-backend.onrender.com/user/
+Accept: application/json

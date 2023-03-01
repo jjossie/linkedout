@@ -1,47 +1,44 @@
-import {getUserToken} from "../utils/storage";
+import {loggedInFetch} from "../utils/fetch";
+import {redirect} from "react-router-dom";
 
-const loggedInUserId = "63dbfc0d187fe1e57908cf8b" //
 const baseUrl = process.env.REACT_APP_BACKEND_BASE_URL;
 
-export async function getFeed({params}) {
-  const headers = {
-    "Authorization": `Bearer ${getUserToken()}`
-  }
-  const feedUrl = `${baseUrl}/user/${loggedInUserId}/feed`;
-  return await fetch(feedUrl, {headers}).then(res => res.json());
+export async function loadFeed({params}) {
+  return loggedInFetch(`${baseUrl}/user/feed`)
+    .then(res => res.json())
+    .catch(reason => redirect("/login"));
 }
 
 
-export async function getConnections() {
-  const userId = loggedInUserId;
-
-  // Get the logged-in user
-  const userUrl = `${baseUrl}/user/${userId}`;
-  const userObj = await fetch(userUrl).then(res => res.json());
-  // console.log(userObj)
+export async function loadProfile() {
 
   // Get the connections
-  const connectionsUrl = `${baseUrl}/user/${userId}/connections`;
-  const connectionsArr = await fetch(connectionsUrl).then(res => res.json());
+  const connectionsArr = await loggedInFetch(`${baseUrl}/user/connections`)
+    .then(res => res.json())
+    .catch(reason => redirect("/login"));
   let connectionUserIds = [];
-  connectionsArr.forEach(connection => {
-    connectionUserIds.push(connection.userIds.filter(id => id !== userId)[0].toString());
-  });
+  if (connectionsArr) {
+    // connectionsArr.forEach(connection => {
+    //   connectionUserIds.push(connection.userIds.filter(id => id !== userId)[0].toString());
+    // });
+  }
   // console.log(connectionUserIds);
 
   return {
-    loggedInUser: userObj,
+    // loggedInUser: userObj,
     connectionUserIds: connectionUserIds,
   };
 }
 
 
-export async function getPosts(request) {
-  const postsUrl = `${baseUrl}/user/${request.params.userId}/posts`;
-  const posts = await fetch(postsUrl).then(res => res.json());
+export async function loadPostsForUser(request) {
+  const posts = await loggedInFetch(`${baseUrl}/user/${request.params.userId}/posts`)
+    .then(res => res.json())
+    .catch(reason => redirect("/login"));
   // console.log(posts)
-  const userUrl = `${baseUrl}/user/${request.params.userId}`;
-  const user = await fetch(userUrl).then(res => res.json());
+  const user = await loggedInFetch(`${baseUrl}/user/${request.params.userId}`)
+    .then(res => res.json())
+    .catch(reason => redirect("/login"));
   // console.log(user)
   return {
     user: user,
@@ -50,10 +47,12 @@ export async function getPosts(request) {
 }
 
 
-export async function getConnectionRequests(request) {
+export async function loadConnectionRequests(request) {
   // Get the connection requests for the logged-in user
-  const connectionRequestUrl = `${baseUrl}/user/${loggedInUserId}/connectionRequests`;
-  const connectionRequests = await fetch(connectionRequestUrl).then(res => res.json());
+  const connectionRequests = await loggedInFetch(`${baseUrl}/user/connectionRequests`)
+    .then(res => res.json())
+    .catch(reason => redirect("/login"));
   // console.log(connectionRequests);
   return connectionRequests;
 }
+

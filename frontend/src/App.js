@@ -11,6 +11,7 @@ import Profile from "./components/top-level/Profile";
 import User from "./components/top-level/User";
 import ConnectionRequests from "./components/top-level/ConnectionRequests";
 import LoginPage from "./components/top-level/Login";
+import RegisterPage from "./components/top-level/Register";
 
 
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage/>,
+  },
+  {
+    path: "/register",
+    element: <RegisterPage/>,
   }
 ])
 

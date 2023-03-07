@@ -6,3 +6,6 @@ export function setUserToken(token) {
   // Add code to set a new token in local storage
   return localStorage.setItem("token", token);
 }
+export function clearToken() {
+  localStorage.removeItem("token");
+}

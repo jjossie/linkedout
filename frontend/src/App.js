@@ -12,6 +12,7 @@ import User from "./components/top-level/User";
 import ConnectionRequests from "./components/top-level/ConnectionRequests";
 import LoginPage from "./components/top-level/Login";
 import RegisterPage from "./components/top-level/Register";
+import SignInSide from "./components/top-level/NewLogin";
 
 
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage/>,
+  },
+  {
+    path: "/new-login",
+    element: <SignInSide/>
   }
 ])
 

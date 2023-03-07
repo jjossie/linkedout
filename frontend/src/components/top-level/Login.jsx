@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {
   TextField,
@@ -10,7 +10,7 @@ import {
   Alert,
 } from "@mui/material";
 import {loginUser} from "../../services/user";
-import {setUserToken} from "../../utils/storage";
+import {getUserToken, setUserToken} from "../../utils/storage";
 import LinkButton from "../LinkButton";
 
 export default function LoginPage() {
@@ -19,29 +19,36 @@ export default function LoginPage() {
   //    password
   //    isLoading
   //    isError
-  const [email, setEmail]         = useState(null);
-  const [password, setPassword]   = useState("");
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError]     = useState(false);
-  const navigate                  = useNavigate();
+  const [isError, setIsError] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getUserToken() && navigate("/");
+  }, []);
+
+  useEffect(() => {
+    console.log(email);
+  }, [email]);
 
   // The button should trigger this function
-  const handleLoginUser = async () => {
-    // This function should call the user service login function
-    setIsError(false);
-    setIsLoading(true);
-    const token = await loginUser(email, password);
-    setIsLoading(false);
-    if (token) {
-      setUserToken(token);
-      navigate("/");
-    } else
-      setIsError(true);
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    //   setIsError(true);
-    // }, 2000);
-  };
+  const handleLoginUser = useCallback(
+    async (event) => {
+      // This function should call the user service login function
+      setIsError(false);
+      setIsLoading(true);
+      const token = await loginUser(email, password);
+      setIsLoading(false);
+      if (token) {
+        setUserToken(token);
+        navigate("/");
+      } else
+        setIsError(true);
+    },
+    [email, password, navigate]
+    );
 
   const ProgressStyling = {
     margin: "0 auto 0 auto"
@@ -51,7 +58,7 @@ export default function LoginPage() {
   return (
     <Container>
       <Box component="form" style={BoxStyle}>
-      <h3>Login</h3>
+        <h3>Login</h3>
         <TextField
           id="email"
           label="Email"

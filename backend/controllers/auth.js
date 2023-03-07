@@ -101,9 +101,7 @@ async function getProfile(req, res) {
 
 
 async function getUserById(userId) {
-  const result = await UserModel.findOne({_id: userId});
-  console.log(`getUserById(${userId}) called: ${result} found`);
-  return result;
+  return UserModel.findOne({_id: userId});
 }
 
 

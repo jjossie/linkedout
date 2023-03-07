@@ -11,21 +11,21 @@ export async function loadFeed({params}) {
 
 
 export async function loadProfile() {
+  // Get the logged-in User
+  const user = await loggedInFetch("/user", "GET")
 
   // Get the connections
   const connectionsArr = await loggedInFetch(`${baseUrl}/user/connections`)
     .then(res => res.json())
     .catch(reason => redirect("/login"));
   let connectionUserIds = [];
-  if (connectionsArr) {
-    // connectionsArr.forEach(connection => {
-    //   connectionUserIds.push(connection.userIds.filter(id => id !== userId)[0].toString());
-    // });
-  }
+  connectionsArr?.forEach(connection => {
+    connectionUserIds.push(connection.userIds.filter(id => id !== user._id)[0].toString());
+  });
   // console.log(connectionUserIds);
 
   return {
-    // loggedInUser: userObj,
+    user: user,
     connectionUserIds: connectionUserIds,
   };
 }
@@ -49,6 +49,7 @@ export async function loadPostsForUser(request) {
 
 export async function loadConnectionRequests(request) {
   // Get the connection requests for the logged-in user
+  // TODO fix this!!!
   const connectionRequests = await loggedInFetch(`${baseUrl}/user/connectionRequests`)
     .then(res => res.json())
     .catch(reason => redirect("/login"));

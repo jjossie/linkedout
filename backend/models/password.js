@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
-const {Schema, ObjectId, model} = mongoose;
+const mongoose = require('mongoose');
 
-const PasswordSchema = new Schema({
-  userId: {type: ObjectId, required: true, index: true},
-  hash: {type: String, required: true}
+const Schema = mongoose.Schema;
+
+const Password = new Schema({
+  userId: String,
+  hash: String
 });
 
-const PasswordModel = model("password", PasswordSchema);
-
+const PasswordModel = mongoose.model('password', Password);
 module.exports = PasswordModel;

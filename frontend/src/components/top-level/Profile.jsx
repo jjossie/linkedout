@@ -8,16 +8,17 @@ import CenterPanel from "../containers/CenterPanel";
 import LeftPanel from "../containers/LeftPanel";
 
 const Profile = (props) => {
-  const info = useLoaderData();
+  const {user, connectionUserIds} = useLoaderData();
   // const fullName = info.loggedInUser.firstName + " " + info.loggedInUser.lastName;
-  const fullName = "billy bob";
+  // const fullName = "billy bob";
+
   return (
     <div>
       <Header/>
       <MainPanelContainer>
         <LeftPanel/>
         <CenterPanel>
-          <ProfileHeader name={fullName}/>
+          <ProfileHeader name={user.firstName + " " + user.lastName}/>
           <PostPrompt/>
         </CenterPanel>
       </MainPanelContainer>

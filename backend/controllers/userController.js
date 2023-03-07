@@ -200,6 +200,10 @@ const isAConnection = async (userIdOne, userIdTwo) => {
   return !!(await ConnectionModel.find({userIds: {$all: [userIdOne, userIdTwo]}}));
 }
 
+const suggestedConnections = async (userId) => {
+  return UserModel.find({_id: {$nin: [userId]}});
+}
+
 
 module.exports = {
   connectionRequestsForUserId,
@@ -237,5 +241,6 @@ module.exports = {
   privateChatMessageById,
   allPrivateChatMessages,
   feedForUserId,
-  isAConnection
+  isAConnection,
+  suggestedConnections
 };

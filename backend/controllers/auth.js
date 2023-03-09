@@ -23,14 +23,13 @@ async function createUser(req, res) {
       // User exists, but without a password
       // Make the password entry
       const newPassword = new PasswordModel({
-        userId: existingUser._id,
+        userId: existingUser._id.toString(),
         hash: hash
       });
       const newPasswordId = await newPassword.save();
 
       return res.status(201).json({
-        user: existingUser._id,
-        password: newPasswordId,
+        token: generateJWT(existingUser._id.toString()),
         message: "created!"
       });
 
@@ -47,11 +46,11 @@ async function createUser(req, res) {
         firstName, lastName, email
       });
       console.log(newUser);
-      const newId = await newUser.save();
-      console.log(newId);
+      const newUserId = await newUser.save();
+      console.log(newUserId);
       // Make the password entry
       const newPassword = new PasswordModel({
-        userId: newId,
+        userId: newUserId,
         hash: hash
       });
       const newPasswordId = await newPassword.save();
@@ -60,8 +59,7 @@ async function createUser(req, res) {
       console.log("Committed transaction");
 
       return res.status(201).json({
-        user: newId,
-        password: newPasswordId,
+        token: generateJWT(newUserId),
         message: "created!"
       });
 

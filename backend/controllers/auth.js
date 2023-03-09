@@ -4,8 +4,13 @@ const {UserModel, PasswordModel} = require("../models");
 const {generateJWT} = require("../util/token");
 
 async function createUser(req, res) {
+  // This whole function is garbage spaghetti code.
   try {
     const {firstName, lastName, email, password} = req.body;
+
+    if (password.length < 4) // so secure lmao
+      return res.status(400).json({errorCode: "BAD_PASSWORD", message: "Password too short lmao"});
+
     const hash = await createPasswordHash(password);
     console.log(hash);
     const existingUser = await UserModel.findOne({email});
@@ -18,7 +23,10 @@ async function createUser(req, res) {
         userId: existingUser._id.toString()
       });
       if (existingPassword)
-        return res.status(400).json({message: "User already exists 💀"});
+        return res.status(400).json({
+          message: "User already exists 💀",
+          errorCode: "EMAIL_ADDRESS_IN_USE"
+        });
 
       // User exists, but without a password
       // Make the password entry
@@ -65,9 +73,10 @@ async function createUser(req, res) {
 
     }
   } catch (e) {
-    return res.status(500).json({
+    return res.status(400).json({
       error: e,
-      message: "Something went wrong oopsie daisy 💀"
+      message: "Something went wrong oopsie daisy 💀",
+      errorCode: "REGISTRATION_FAILED"
     });
   }
 }

@@ -14,7 +14,7 @@ import {registerUser} from "../../services/user";
 import {setUserToken} from "../../utils/storage";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {Alert, Snackbar} from "@mui/material";
+import {Alert, CircularProgress, Snackbar} from "@mui/material";
 
 function Copyright(props) {
   return (
@@ -65,7 +65,7 @@ export default function SignUp() {
           break;
         case "REGISTRATION_FAILED":
         default:
-          setErrorMessage("Registration failed. Try again. 🫠")
+          setErrorMessage("Registration failed. 🫠 Make sure you filled out all the fields.")
           break;
       }
     }
@@ -150,7 +150,7 @@ export default function SignUp() {
             </Button>
             <Snackbar
               open={isError}
-              autoHideDuration={2000}
+              autoHideDuration={4000}
               anchorOrigin={{vertical: "top", horizontal: "center"}}
               onClose={() => {
                 setIsError(false);
@@ -173,3 +173,7 @@ export default function SignUp() {
     </ThemeProvider>
   );
 }
+
+const ProgressStyling = {
+  margin: "0 auto 0 auto"
+};

@@ -8,13 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="HOLY FETCH">
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/NewLogin.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/NewRegister.jsx" beforeDir="false" />
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="remove old Register page and add error handling for registration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/user.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +96,7 @@
       <recent name="$PROJECT_DIR$/frontend/src/utils/fetch.js" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Run Backend">
+  <component name="RunManager" selected="npm.Run Frontend">
     <configuration name=" | Get Suggested Connections" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Get Suggested Connections" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -415,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678384954607</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="remove old Register page and add error handling for registration">
+      <created>1678389105495</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1678389105495</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +438,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="got dotenvs working" />
     <MESSAGE value="add vercel.json" />
     <MESSAGE value="ADD OPTIONS" />
     <MESSAGE value="AAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHH" />
@@ -459,6 +462,7 @@
     <MESSAGE value="still need to fix the undefined undefined error but the suggestedConnections endpoint works better now" />
     <MESSAGE value="merge conflicts resolved" />
     <MESSAGE value="HOLY FETCH" />
-    <option name="LAST_COMMIT_MESSAGE" value="HOLY FETCH" />
+    <MESSAGE value="remove old Register page and add error handling for registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove old Register page and add error handling for registration" />
   </component>
 </project>

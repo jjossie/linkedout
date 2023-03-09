@@ -13,14 +13,16 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {loginUser} from "../../services/user";
-import {setUserToken} from "../../utils/storage";
+import {getUserToken, setUserToken} from "../../utils/storage";
+import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        LinkedOut
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -35,7 +37,19 @@ const theme = createTheme();
 export default function SignInSide() {
 
   // Hooks
+  // const [email, setEmail] = useState(null);
+  // const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    getUserToken() && navigate("/");
+  }, []);
+
+  // useEffect(() => {
+  //   console.log(email);
+  // }, [email]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -93,6 +107,11 @@ export default function SignInSide() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                // onChange={(e) => {
+                //   setEmail(e.target.value);
+                // }}
+                error={isError}
+                disabled={isLoading}
                 autoFocus
               />
               <TextField
@@ -104,6 +123,11 @@ export default function SignInSide() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                // onChange={(e) => {
+                //   setPassword(e.target.value);
+                // }}
+                error={isError}
+                disabled={isLoading}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary"/>}
@@ -124,7 +148,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href="/new-register" variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>

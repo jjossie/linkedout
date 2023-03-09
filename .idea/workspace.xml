@@ -9,12 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="HOLY FETCH">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/containers/CenterPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/containers/CenterPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/containers/LeftPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/containers/LeftPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/fetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/NewLogin.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/NewRegister.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/user.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="t10-pa2" />
+        <entry key="$PROJECT_DIR$" value="t9-pa2" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="main" />

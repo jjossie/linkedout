@@ -5,7 +5,8 @@ import Feed from "../Feed";
 import PostPrompt from "../PostPrompt";
 import MainPanelContainer from "../containers/MainPanelContainer";
 import CenterPanel from "../containers/CenterPanel";
-import LeftPanel from "../containers/LeftPanel";
+import SidePanel from "../containers/LeftPanel";
+import SuggestedConnections from "../SuggestedConnections";
 
 const Main = () => {
   const info = useLoaderData();
@@ -14,11 +15,14 @@ const Main = () => {
     <div>
       <Header/>
       <MainPanelContainer>
-        <LeftPanel/>
+        <SidePanel/>
         <CenterPanel>
           <PostPrompt/>
           <Feed posts={info?.posts}/>
         </CenterPanel>
+        <SidePanel>
+          <SuggestedConnections/>
+        </SidePanel>
       </MainPanelContainer>
     </div>
   );

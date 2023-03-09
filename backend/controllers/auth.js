@@ -74,20 +74,24 @@ async function createUser(req, res) {
 
 
 async function loginUser(req, res) {
-  const {email, password} = req.body;
-  const user = await UserModel.findOne({email});
-  if (!user)
-    return res.status(400).json({message: "you fail 💀"});
-  const userId = user._id.toString();
-  const passwordObject = await PasswordModel.findOne({userId});
-  const {hash} = passwordObject;
-  if (!(await checkPassword(password, hash))) {
-    return res.status(400).json({message: "you fail 💀"});
+  try {
+    const {email, password} = req.body;
+    const user = await UserModel.findOne({email});
+    if (!user)
+      return res.status(400).json({message: "you fail 💀"});
+    const userId = user._id.toString();
+    const passwordObject = await PasswordModel.findOne({userId});
+    const {hash} = passwordObject;
+    if (!(await checkPassword(password, hash))) {
+      return res.status(400).json({message: "you fail 💀"});
+    }
+
+    const token = generateJWT(userId);
+
+    return res.status(200).json({token});
+  } catch (e) {
+    return res.status(400).json({message: "Something went wrong when logging in", error: e});
   }
-
-  const token = generateJWT(userId);
-
-  return res.status(200).json({token});
 }
 
 async function getProfile(req, res) {

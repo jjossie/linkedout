@@ -1,3 +1,5 @@
+import {loggedInFetch} from "../utils/fetch";
+
 const loginUser = async (email, password) => {
   // Construct headers needed for a JSON request
   const headers = {
@@ -47,4 +49,12 @@ const registerUser = async (firstName, lastName, email, password) => {
   return null;
 }
 
-export { loginUser, registerUser};
+
+const getSuggestedConnections = async () => {
+  const response = await loggedInFetch("/user/suggestedConnections");
+  console.log(response);
+  const data = await response.json();
+  return data;
+}
+
+export { loginUser, registerUser, getSuggestedConnections};

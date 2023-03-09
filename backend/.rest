@@ -9,9 +9,9 @@ POST http://localhost:3430/user/register
 Content-Type: application/json
 
 {
-  "firstName": "Monte",
-  "lastName": "Fay",
-  "email": "Yost_Soledad@Cassin.biz",
+  "firstName": "Joel",
+  "lastName": "Jossie",
+  "email": "joeljossie@gmail.com",
   "password": "bruh"
 }
 
@@ -20,13 +20,13 @@ POST http://localhost:3430/user/login
 Content-Type: application/json
 
 {
-  "email": "Elta_Denesik@Kayli.io",
+  "email": "joeljossie@gmail.com",
   "password": "bruh"
 }
 
 ### Get Suggested Connections
 GET http://localhost:3430/user/suggestedConnections
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzgyOTYwMjksImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODIwOTYyOX0.uI-eSoETsODFNmnQwxM3sOPR8I7_m1JCU9jCBUMrOwA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzg0NjgxNjUsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODM4MTc2NX0.dTby5T0joxJUFqWGX0XuirXsxHXqOLqzyKqHOt3PFmE
 
 ### get all users
 
@@ -43,3 +43,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwN
 GET http://localhost:3430/user/connectionRequests
 Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
+

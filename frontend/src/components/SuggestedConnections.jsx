@@ -2,12 +2,10 @@ import React, {useEffect, useState} from 'react';
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import {getSuggestedConnections} from "../services/user";
-import {useNavigate} from "react-router-dom";
+import SuggestedConnection from "./SuggestedConnection";
 
 const SuggestedConnections = (props) => {
   const [suggestedConnections, setSuggestedConnections] = useState(null);
-
-  // const navigate = useNavigate();
 
   useEffect(() => {
     console.log("Using Effect!");
@@ -22,8 +20,8 @@ const SuggestedConnections = (props) => {
   return (
     <Paper elevation={2} style={style}>
       <Typography>Suggested Connections</Typography>
-      {suggestedConnections?.map(conn => {
-        return <span>{conn.firstName} {conn.lastName}</span>
+      {suggestedConnections?.map((conn) => {
+        return <SuggestedConnection key={conn._id} user={conn}/>
       })}
     </Paper>
   );

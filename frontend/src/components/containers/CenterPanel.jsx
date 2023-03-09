@@ -2,7 +2,8 @@ import React from 'react';
 
 const CenterPanel = (props) => {
   const style = {
-    width: "65vw",
+    width: "40vw",
+    boxSizing: "border-box"
     // marginLeft: "15vw",
   }
   return (

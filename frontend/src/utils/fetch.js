@@ -1,7 +1,7 @@
 import {getUserToken} from "./storage";
 const baseUrl = process.env.REACT_APP_BACKEND_BASE_URL;
 
-export function loggedInFetch(url, method = "GET") {
+export function loggedInFetch(url, method = "GET", body=null) {
   const token = getUserToken();
   if (!token){
     // throw new Error("Must be logged in");
@@ -16,6 +16,8 @@ export function loggedInFetch(url, method = "GET") {
     headers: headers,
     method: method
   }
+  if (body)
+    options.body = body;
   const fetchUrl = `${baseUrl}${url}`;
   console.log("Sending loggedInFetch: ");
   console.log({

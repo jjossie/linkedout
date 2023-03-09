@@ -8,18 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="merge conflicts resolved">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" afterDir="false" />
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="HOLY FETCH">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/containers/CenterPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/containers/CenterPanel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/containers/LeftPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/containers/LeftPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/NewLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/NewLogin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/NewRegister.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/NewRegister.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/utils/fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/fetch.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
@@ -414,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678380880459</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="HOLY FETCH">
+      <created>1678384954607</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1678384954607</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +434,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="modularize backend base url" />
     <MESSAGE value="got dotenvs working" />
     <MESSAGE value="add vercel.json" />
     <MESSAGE value="ADD OPTIONS" />
@@ -458,6 +458,7 @@
     <MESSAGE value="suggested Connections API" />
     <MESSAGE value="still need to fix the undefined undefined error but the suggestedConnections endpoint works better now" />
     <MESSAGE value="merge conflicts resolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge conflicts resolved" />
+    <MESSAGE value="HOLY FETCH" />
+    <option name="LAST_COMMIT_MESSAGE" value="HOLY FETCH" />
   </component>
 </project>

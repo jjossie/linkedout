@@ -9,7 +9,7 @@ import LeftPanel from "../containers/LeftPanel";
 
 const User = () => {
   const {user, posts} = useLoaderData();
-  const fullName = user.firstName + " " + user.lastName;
+  const fullName = (user)? user.firstName + " " + user.lastName : "Danny Default";
 
   return (
     <div>

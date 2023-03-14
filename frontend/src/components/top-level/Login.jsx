@@ -9,8 +9,8 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
-import {loginUser} from "../services/user";
-import {setUserToken} from "../utils/storage";
+import {loginUser} from "../../services/user";
+import {setUserToken} from "../../utils/storage";
 
 export default function LoginPage() {
   // Add 4 state variables:

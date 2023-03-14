@@ -12,12 +12,12 @@ const Main = () => {
   console.log(info);
   return (
     <div>
-      <Header />
+      <Header/>
       <MainPanelContainer>
         <LeftPanel/>
         <CenterPanel>
           <PostPrompt/>
-          <Feed posts={info.posts}/>
+          <Feed posts={info?.posts}/>
         </CenterPanel>
       </MainPanelContainer>
     </div>

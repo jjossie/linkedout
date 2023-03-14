@@ -4,11 +4,14 @@ import PostModel from "../models/Post.js";
 import UserModel from "../models/User.js";
 import casual from "casual";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 mongoose.set("strictQuery", false);
 
 await mongoose.connect(
-  "mongodb+srv://students:RILnPuIPTo92RCu4@winter2023.inr9f0r.mongodb.net/Jackson?retryWrites=true&w=majority"
+  process.env.MONGODB_URI
 );
 
 await ConnectionModel.deleteMany();

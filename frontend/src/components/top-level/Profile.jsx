@@ -9,7 +9,8 @@ import LeftPanel from "../containers/LeftPanel";
 
 const Profile = (props) => {
   const info = useLoaderData();
-  const fullName = info.loggedInUser.firstName + " " + info.loggedInUser.lastName;
+  // const fullName = info.loggedInUser.firstName + " " + info.loggedInUser.lastName;
+  const fullName = "billy bob";
   return (
     <div>
       <Header/>

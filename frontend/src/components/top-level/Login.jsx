@@ -57,11 +57,11 @@ export default function SignInSide() {
     const email = data.get('email');
     const password = data.get('password');
     const token = await loginUser(email, password);
-    // if (token) {
-    //   setUserToken(token);
-    //   navigate("/");
-    // } else
-    //   setIsError(true);
+    if (token) {
+      setUserToken(token);
+      navigate("/");
+    } else
+      setIsError(true);
   };
 
   return (

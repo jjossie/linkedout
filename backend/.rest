@@ -1,5 +1,4 @@
 
-
 //****************************************
 //* LOGIN/AUTH Endpoints
 //****************************************/
@@ -24,9 +23,17 @@ Content-Type: application/json
   "password": "bruh"
 }
 
+
+
 ### Get Suggested Connections
 GET http://localhost:3430/user/suggestedConnections
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzg0NjgxNjUsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODM4MTc2NX0.dTby5T0joxJUFqWGX0XuirXsxHXqOLqzyKqHOt3PFmE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzg4OTcwNTQsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODgxMDY1NH0.NgG-mZYVh-2elShc2AdvmEdRRXWux4iD6uQkRUdP6b0
+
+### Get Connection Requests
+GET http://localhost:3430/user/connectionRequests
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzg4OTcwNTQsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODgxMDY1NH0.NgG-mZYVh-2elShc2AdvmEdRRXWux4iD6uQkRUdP6b0
+
+
 
 ### get all users
 

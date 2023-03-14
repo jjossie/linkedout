@@ -143,9 +143,18 @@ const allPrivateChatMessages = () => {
 /*********************************
  * "Complex" Operations
  *********************************/
-// const connectionRequestsForUserId = (userId) => {
-//   return ConnectionRequestModel.find({receiverId: userId});
-// };
+const connectionRequestsForUserId = (userId) => {
+  // return ConnectionRequestModel.find({receiverId: userId});
+  return ConnectionModel
+    .find({
+      receiverId: userId,
+      isAccepted: false
+    })
+    .populate({
+      path: "senderId",
+      model: UserModel
+    });
+};
 
 const connectionsForUserId = (userId) => {
   return ConnectionModel.find({userIds: userId}).where("isAccepted", true); // userId contained in list
@@ -215,7 +224,7 @@ const suggestedConnections = async (userId) => {
 
 
 module.exports = {
-  // connectionRequestsForUserId,
+  connectionRequestsForUserId,
   connectionsForUserId,
   privateChatsForUserId,
   postsForUserId,
@@ -224,10 +233,6 @@ module.exports = {
   deleteUser,
   userById,
   allUsers,
-  // createConnectionRequest,
-  // updateConnectionRequest,
-  // deleteConnectionRequest,
-  // connectionRequestById,
   allConnectionRequests,
   createConnection,
   updateConnection,

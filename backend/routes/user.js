@@ -1,4 +1,4 @@
-const {Router}    = require("express");
+const {Router} = require("express");
 // const uc = require("../controllers/userController.js");
 const {
         userById,
@@ -9,11 +9,11 @@ const {
         connectionRequestsForUserId,
         connectionsForUserId,
         postsForUserId,
-        allPrivateChats, isAConnection,
-      }           = require("../controllers/userController");
-const mongoose    = require("mongoose");
+        allPrivateChats, isAConnection, allUsers, suggestedConnections,
+      } = require("../controllers/userController");
+const mongoose = require("mongoose");
 const {UserModel} = require("../models");
-const routes      = Router();
+const routes = Router();
 
 /****************************************
  * Feed, Connections, & ConnectionRequests
@@ -56,6 +56,14 @@ routes.get("/connections", async (req, res) => {
     return res.status(400).json({message: "Could not get connection requests", error: e});
   }
 });
+
+routes.get("/suggestedConnections", async (req, res) => {
+  if (!req.user)
+    return res.status(403).json({message: "Must be logged in to view posts for this user"});
+
+  const users = await suggestedConnections(req.user._id);
+  return res.json(users);
+})
 
 
 /****************************************
@@ -105,7 +113,7 @@ routes.get("/:userId/posts", async (req, res) => {
 
 routes.get("/:userId/chats", (req, res) => {
   const userId = req.params.userId;
-  const chats  = allPrivateChats()
+  const chats = allPrivateChats()
     .filter(chat => {
       return (chat.includes(userId));
     });
@@ -116,18 +124,26 @@ routes.get("/:userId/chats", (req, res) => {
 });
 
 
-
 /****************************************
  * User Endpoints
  ****************************************/
 
-routes.get("/", async (req, res) => {
-  try {
-    const users = await UserModel.find();
-    return res.status(200).json({users});
-  } catch (e) {
-    return res.status(400).json({message: "ok"});
-  }
+// routes.get("/", async (req, res) => {
+//   try {
+//     const users = await UserModel.find();
+//     return res.status(200).json({users});
+//   } catch (e) {
+//     return res.status(400).json({message: "ok"});
+//   }
+// })
+
+routes.get('/', async (req, res) => {
+  if (req.user)
+    return res.status(200).json(req.user);
+  else
+    return res.status(400).json({
+      message: "No user object found, probably not logged in"
+    });
 })
 
 routes.get("/:userId", async (request, response) => {
@@ -141,7 +157,7 @@ routes.get("/:userId", async (request, response) => {
 });
 
 routes.post("/", (request, response) => {
-  const newUserData   = request.body;
+  const newUserData = request.body;
   const newUserResult = createUser(newUserData);
   if (newUserResult)
     return response.status(201).json(newUserResult);
@@ -150,8 +166,8 @@ routes.post("/", (request, response) => {
 });
 
 routes.put("/:userId", (request, response) => {
-  const userId            = request.params.userId;
-  const newUserData       = request.body;
+  const userId = request.params.userId;
+  const newUserData = request.body;
   const updatedUserResult = updateUser(userId, newUserData);
   if (updatedUserResult)
     return response.status(200).json(updatedUserResult);
@@ -164,8 +180,6 @@ routes.delete("/:userId", (request, response) => {
   deleteUser(userId);
   return response.sendStatus(200);
 });
-
-
 
 
 module.exports = routes;

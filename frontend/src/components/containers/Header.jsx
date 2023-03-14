@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {Avatar, Button, Card, TextField} from "@mui/material";
 import pfp from "../../images/pfp.png";
 import {IoIosSearch} from "react-icons/io";
 
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {clearToken} from "../../utils/storage";
 
 const Header = (props) => {
 
@@ -12,6 +13,13 @@ const Header = (props) => {
 
   // const userId = props.loggedInUser.id;
   const userId = "63dbfc0d187fe1e57908cf8d";
+
+  const navigate = useNavigate();
+
+  const handleLogout = useCallback(() => {
+    clearToken();
+    navigate("/login");
+  }, [])
 
   return (
     <Card sx={{
@@ -59,6 +67,7 @@ const Header = (props) => {
           <Link style={linkStyle} key="profileAvatar" to="/profile">
             <Avatar id="header-avatar" src={pfp} sx={avatarStyle}/>
           </Link>
+          <Button variant="text" onClick={handleLogout}>Logout</Button>
         </div>
       </div>
     </Card>

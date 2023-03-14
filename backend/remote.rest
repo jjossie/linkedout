@@ -1,4 +1,8 @@
 
+### Ping
+GET https://professional-network-jjossie-backend.onrender.com/user/
+Accept: application/json
+
 //****************************************
 //* LOGIN/AUTH Endpoints
 //****************************************/
@@ -8,9 +12,9 @@ POST https://professional-network-jjossie-backend.onrender.com/user/register
 Content-Type: application/json
 
 {
-  "firstName": "Jose",
-  "lastName": "Kilback",
-  "email": "Kirstin.Erdman@yahoo.com",
+  "firstName": "Fluben",
+  "lastName": "Gruber",
+  "email": "flubengruber@yahoo.com",
   "password": "bruh"
 }
 

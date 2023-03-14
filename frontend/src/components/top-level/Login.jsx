@@ -1,101 +1,163 @@
-import React, {useState} from "react";
-import {useNavigate} from "react-router-dom";
-import {
-  TextField,
-  Box,
-  Button,
-  Container,
-  CircularProgress,
-  Snackbar,
-  Alert,
-} from "@mui/material";
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {loginUser} from "../../services/user";
-import {setUserToken} from "../../utils/storage";
+import {getUserToken, setUserToken} from "../../utils/storage";
+import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
-export default function LoginPage() {
-  // Add 4 state variables:
-  //    email
-  //    password
-  //    isLoading
-  //    isError
-  const [email, setEmail]         = useState(null);
-  const [password, setPassword]   = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError]     = useState(false);
-  const navigate                  = useNavigate();
-
-  // The button should trigger this function
-  const handleLoginUser = async () => {
-    // This function should call the user service login function
-    setIsError(false);
-    setIsLoading(true);
-    const token = await loginUser(email, password);
-    setIsLoading(false);
-    if (token) {
-      setUserToken(token);
-      navigate("/");
-    } else
-      setIsError(true);
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    //   setIsError(true);
-    // }, 2000);
-  };
-
-  const ProgressStyling = {
-    margin: "0 auto 0 auto"
-  };
-
-
+function Copyright(props) {
   return (
-    <Container>
-      <Box component="form" style={BoxStyle}>
-        <TextField
-          id="email"
-          label="Email"
-          variant="filled"
-          required
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          disabled={isLoading}
-          error={(email != null && email === "")}
-        />
-        <TextField
-          id="password"
-          label="Password"
-          variant="filled"
-          required
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          disabled={isLoading}
-          error={isError}
-        />
-        <Button onClick={handleLoginUser} disabled={isLoading}>Submit</Button>
-        <Snackbar
-          open={isError}
-          autoHideDuration={2000}
-          anchorOrigin={{vertical: "top", horizontal: "center"}}
-          onClose={() => {
-            setIsError(false);
-          }}
-        >
-          <Alert severity="error">You don't belong here 🤨</Alert>
-        </Snackbar>
-        {isLoading && <CircularProgress style={ProgressStyling}/>}
-      </Box>
-    </Container>
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        LinkedOut
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
 }
 
-const BoxStyle = {
-  display: "flex",
-  flexDirection: "column",
-  height: "100vh",
-  width: "400px",
-  justifyContent: "center",
-  margin: "auto",
-  textAlign: "center",
-};
+const theme = createTheme();
+
+
+
+export default function SignInSide() {
+
+  // Hooks
+  // const [email, setEmail] = useState(null);
+  // const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getUserToken() && navigate("/");
+  }, []);
+
+  // useEffect(() => {
+  //   console.log(email);
+  // }, [email]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get('email');
+    const password = data.get('password');
+    const token = await loginUser(email, password);
+    // if (token) {
+    //   setUserToken(token);
+    //   navigate("/");
+    // } else
+    //   setIsError(true);
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Grid container component="main" sx={{height: '100vh'}}>
+        <CssBaseline/>
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Avatar sx={{m: 1, bgcolor: 'secondary.main'}}>
+              <LockOutlinedIcon/>
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 1}}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                // onChange={(e) => {
+                //   setEmail(e.target.value);
+                // }}
+                error={isError}
+                disabled={isLoading}
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                // onChange={(e) => {
+                //   setPassword(e.target.value);
+                // }}
+                error={isError}
+                disabled={isLoading}
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary"/>}
+                label="Remember me"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{mt: 3, mb: 2}}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="/register" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+              </Grid>
+              <Copyright sx={{mt: 5}}/>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
+  );
+}

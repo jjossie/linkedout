@@ -1,12 +1,11 @@
 const {
-  ConnectionRequestModel,
   ConnectionModel,
   PrivateChatModel,
   PostModel,
   UserModel,
   PrivateChatMessageModel,
 } = require("../models/index.js");
-
+const {flatten} = require('lodash');
 
 // User Methods
 const createUser = (user) => {
@@ -31,24 +30,24 @@ const allUsers = () => {
 // End User Methods
 
 // Connection Request Methods
-const createConnectionRequest = (request) => {
-  return ConnectionRequestModel.create(request);
-}
-
-const updateConnectionRequest = (requestId, updates) => {
-  return ConnectionRequestModel.findByIdAndUpdate(requestId, updates);
-}
-
-const deleteConnectionRequest = (requestId) => {
-  return ConnectionRequestModel.findByIdAndDelete(requestId);
-}
-
-const connectionRequestById = (requestId) => {
-  return ConnectionRequestModel.findById(requestId);
-}
+// const createConnectionRequest = (request) => {
+//   return ConnectionRequestModel.create(request);
+// }
+//
+// const updateConnectionRequest = (requestId, updates) => {
+//   return ConnectionRequestModel.findByIdAndUpdate(requestId, updates);
+// }
+//
+// const deleteConnectionRequest = (requestId) => {
+//   return ConnectionRequestModel.findByIdAndDelete(requestId);
+// }
+//
+// const connectionRequestById = (requestId) => {
+//   return ConnectionRequestModel.findById(requestId);
+// }
 
 const allConnectionRequests = () => {
-  return ConnectionRequestModel.find();
+  return ConnectionModel.find().where("isAccepted", false);
 }
 // End Connection Request Methods
 
@@ -144,11 +143,15 @@ const allPrivateChatMessages = () => {
 /*********************************
  * "Complex" Operations
  *********************************/
-const connectionRequestsForUserId = (userId) => {
-  return ConnectionRequestModel.find({receiverId: userId});
-};
+// const connectionRequestsForUserId = (userId) => {
+//   return ConnectionRequestModel.find({receiverId: userId});
+// };
 
 const connectionsForUserId = (userId) => {
+  return ConnectionModel.find({userIds: userId}).where("isAccepted", true); // userId contained in list
+};
+
+const connectionsAndRequestsForUserId = (userId) => {
   return ConnectionModel.find({userIds: userId}); // userId contained in list
 };
 
@@ -182,7 +185,7 @@ const feedForUserId = async (userId) => {
     .sort({createdAt: "desc"})
     .limit(10);
 
-  const connectionRequests = await ConnectionRequestModel.find()
+  const connectionRequests = await allConnectionRequests()
     .populate({
       path: 'receiverId',
       model: UserModel
@@ -200,9 +203,19 @@ const isAConnection = async (userIdOne, userIdTwo) => {
   return !!(await ConnectionModel.find({userIds: {$all: [userIdOne, userIdTwo]}}));
 }
 
+const suggestedConnections = async (userId) => {
+  const connections = await connectionsAndRequestsForUserId(userId);
+  const uniqueConnectionIds = connections.map(connection => connection.userIds.filter(id => id !== userId)[0].toString());
+  console.log(`Unique Connection IDs: ${uniqueConnectionIds}`);
+
+  const users = await UserModel.find({_id: {$nin: [userId, ...uniqueConnectionIds]}});
+  console.log(`Suggested Connections: ${users}`);
+  return users;
+}
+
 
 module.exports = {
-  connectionRequestsForUserId,
+  // connectionRequestsForUserId,
   connectionsForUserId,
   privateChatsForUserId,
   postsForUserId,
@@ -211,10 +224,10 @@ module.exports = {
   deleteUser,
   userById,
   allUsers,
-  createConnectionRequest,
-  updateConnectionRequest,
-  deleteConnectionRequest,
-  connectionRequestById,
+  // createConnectionRequest,
+  // updateConnectionRequest,
+  // deleteConnectionRequest,
+  // connectionRequestById,
   allConnectionRequests,
   createConnection,
   updateConnection,
@@ -237,5 +250,6 @@ module.exports = {
   privateChatMessageById,
   allPrivateChatMessages,
   feedForUserId,
-  isAConnection
+  isAConnection,
+  suggestedConnections
 };

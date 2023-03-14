@@ -2,7 +2,9 @@ import React from 'react';
 
 const LeftPanel = (props) => {
   const style = {
-    width: "15vw",
+    width: "30vw",
+    padding: "2em",
+    boxSizing: "border-box"
     // marginLeft: "15vw",
   }
   return (

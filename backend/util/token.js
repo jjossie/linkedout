@@ -17,10 +17,10 @@ function generateJWT(userId) {
 async function userIdFromJWT(token) {
   try{
     const verifiedToken = await JWT.verify(token, JWT_SECRET);
-    console.log("userIdFromJwt() called:\n\n\n %o\n\n extracted\n\n", verifiedToken)
+    // console.log("userIdFromJwt() called:\n\n\n %o\n\n extracted\n\n", verifiedToken)
     return verifiedToken.data.userId || null;
   } catch (e) {
-    console.log("userIdFromJwt() called: something went wrong:\n%o", e);
+    // console.log("userIdFromJwt() called: something went wrong:\n%o", e);
     return null
   }
 }

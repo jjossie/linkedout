@@ -20,7 +20,7 @@ const SuggestedConnections = (props) => {
   return (
     <Paper elevation={2} style={style}>
       <Typography>Suggested Connections</Typography>
-      {suggestedConnections?.map((conn) => {
+      {suggestedConnections?.map?.((conn) => {
         return <SuggestedConnection key={conn._id} user={conn}/>
       })}
     </Paper>

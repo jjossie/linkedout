@@ -10,21 +10,17 @@ const ConnectionRequests = () => {
 
   const connectionRequests = useLoaderData();
 
-  const connectionRequestComponents = connectionRequests.map(conReq => {
-    return <ConnectionRequest
-      username={conReq.userId}
-    />
-  });
-
   return (
     <div>
       <Header/>
       <MainPanelContainer>
         <LeftPanel/>
         <CenterPanel>
-          {connectionRequestComponents}
-          { /* Single component for testing purposes */ }
-          <ConnectionRequest username="Joe Momma"/>
+          {connectionRequests?.map?.(conReq => {
+            return <ConnectionRequest
+              username={conReq.userId}
+            />
+          })}
         </CenterPanel>
       </MainPanelContainer>
     </div>

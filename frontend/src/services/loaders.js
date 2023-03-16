@@ -51,10 +51,14 @@ export async function loadPostsForUser(request) {
 export async function loadConnectionRequests(request) {
   // Get the connection requests for the logged-in user
   // TODO fix this!!!
-  const connectionRequests = await loggedInFetch(`/user/connectionRequests`)
-    .then(res => res.json())
+  console.log("loading connection requests");
+  return loggedInFetch(`/user/connectionRequests`)
+    .then(res => {
+      if (res.status === 403 || res.status === 400) {
+        throw new Error(`Fetch returned response ${res.status}`);
+      }
+      return res.json();
+    })
     .catch(reason => redirect("/login"));
-  // console.log(connectionRequests);
-  return connectionRequests;
 }
 

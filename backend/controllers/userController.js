@@ -1,10 +1,10 @@
 const {
-  ConnectionModel,
-  PrivateChatModel,
-  PostModel,
-  UserModel,
-  PrivateChatMessageModel,
-} = require("../models/index.js");
+        ConnectionModel,
+        PrivateChatModel,
+        PostModel,
+        UserModel,
+        PrivateChatMessageModel,
+      } = require("../models/index.js");
 const {flatten} = require('lodash');
 
 // User Methods
@@ -143,9 +143,8 @@ const allPrivateChatMessages = () => {
 /*********************************
  * "Complex" Operations
  *********************************/
-const connectionRequestsForUserId = (userId) => {
-  // return ConnectionRequestModel.find({receiverId: userId});
-  return ConnectionModel
+const connectionRequestsForUserId = async (userId) => {
+  const connectionRequests = await ConnectionModel
     .find({
       receiverId: userId,
       isAccepted: false
@@ -154,6 +153,10 @@ const connectionRequestsForUserId = (userId) => {
       path: "senderId",
       model: UserModel
     });
+
+  const result = connectionRequests.map(conn => {
+
+  });
 };
 
 const connectionsForUserId = (userId) => {
@@ -222,6 +225,23 @@ const suggestedConnections = async (userId) => {
   return users;
 }
 
+const requestConnection = async (userId, otherUserId) => {
+  if (userId === otherUserId)
+    throw new Error("Cannot connect with yourself 🤡");
+  // const existingConnection = await ConnectionModel.find({
+  //   userIds: {$all: [userId, otherUserId]}
+  // });
+  // if (existingConnection)
+  //   return null;
+  const newConnection = new ConnectionModel({
+    senderId: userId,
+    receiverId: otherUserId,
+    isAccepted: false,
+    userIds: [userId, otherUserId]
+  });
+  return await newConnection.save();
+}
+
 
 module.exports = {
   connectionRequestsForUserId,
@@ -256,5 +276,6 @@ module.exports = {
   allPrivateChatMessages,
   feedForUserId,
   isAConnection,
-  suggestedConnections
+  suggestedConnections,
+  requestConnection
 };

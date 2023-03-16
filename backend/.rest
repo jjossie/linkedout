@@ -33,7 +33,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzg4OTcwN
 GET http://localhost:3430/user/connectionRequests
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzg4OTcwNTQsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODgxMDY1NH0.NgG-mZYVh-2elShc2AdvmEdRRXWux4iD6uQkRUdP6b0
 
+### Request Connection
+POST http://localhost:3430/user/requestConnection
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzg5MDA0ODEsImRhdGEiOnsidXNlcklkIjoiNjQxMGFiNzM5ODMzNmY1ZmM5Mjc5ZmMwIn0sImlhdCI6MTY3ODgxNDA4MX0.OgAjyiE1Qi1kKYs-glCQW4zCn3B7rtIiSCWeXNeoAg0
+Content-Type: application/json
 
+{
+  "userId": "6407717f2c630cc52ff8d037"
+}
 
 ### get all users
 
@@ -43,11 +50,6 @@ Accept: application/json
 
 ### Get new feed
 GET http://localhost:3430/user/feed
-Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
-
-### Get new connection requests
-GET http://localhost:3430/user/connectionRequests
 Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
 

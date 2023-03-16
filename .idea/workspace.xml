@@ -8,11 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="backend registration error handling works now as well">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="drafted connectionRequestsForUserId">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,10 +102,10 @@
     <configuration name=" | Get Connection Requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="4" requestIdentifier="Get Connection Requests" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name=" | Login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="2" requestIdentifier="Login" runType="Run single request">
+    <configuration name=" | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Register" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name=" | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Register" runType="Run single request">
+    <configuration name=" | Request Connection" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="5" requestIdentifier="Request Connection" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="remote | Login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/remote.rest" index="2" requestIdentifier="Login" runType="Run single request">
@@ -129,7 +130,7 @@
     </configuration>
     <list>
       <item itemvalue="HTTP Request. | Get Connection Requests" />
-      <item itemvalue="HTTP Request. | Login" />
+      <item itemvalue="HTTP Request. | Request Connection" />
       <item itemvalue="HTTP Request. | Register" />
       <item itemvalue="HTTP Request.remote | Login" />
       <item itemvalue="HTTP Request.remote | get all users#2" />
@@ -139,10 +140,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request. | Get Connection Requests" />
+        <item itemvalue="HTTP Request. | Request Connection" />
         <item itemvalue="HTTP Request.remote | get all users#2" />
         <item itemvalue="HTTP Request.remote | Login" />
         <item itemvalue="HTTP Request. | Register" />
-        <item itemvalue="HTTP Request. | Login" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +168,7 @@
       <workItem from="1677517957431" duration="7567000" />
       <workItem from="1678208041350" duration="6573000" />
       <workItem from="1678231708640" duration="9540000" />
-      <workItem from="1678808224973" duration="2878000" />
+      <workItem from="1678808224973" duration="7483000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -421,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678389105495</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="drafted connectionRequestsForUserId">
+      <created>1678811659285</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1678811659285</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +460,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add vercel.json" />
     <MESSAGE value="ADD OPTIONS" />
     <MESSAGE value="AAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHH" />
     <MESSAGE value="Added some containers to the UI" />
@@ -477,6 +484,19 @@
     <MESSAGE value="merge conflicts resolved" />
     <MESSAGE value="HOLY FETCH" />
     <MESSAGE value="remove old Register page and add error handling for registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove old Register page and add error handling for registration" />
+    <MESSAGE value="drafted connectionRequestsForUserId" />
+    <option name="LAST_COMMIT_MESSAGE" value="drafted connectionRequestsForUserId" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/backend/routes/user.js</url>
+          <line>39</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

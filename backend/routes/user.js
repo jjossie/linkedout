@@ -1,5 +1,4 @@
 const {Router} = require("express");
-// const uc = require("../controllers/userController.js");
 const {
         userById,
         createUser,
@@ -9,7 +8,11 @@ const {
         connectionRequestsForUserId,
         connectionsForUserId,
         postsForUserId,
-        allPrivateChats, isAConnection, allUsers, suggestedConnections,
+        allPrivateChats,
+        isAConnection,
+        allUsers,
+        suggestedConnections,
+        requestConnection
       } = require("../controllers/userController");
 const mongoose = require("mongoose");
 const {UserModel} = require("../models");
@@ -38,11 +41,34 @@ routes.get("/connectionRequests", async (req, res) => {
     return res.status(403).json({message: "Must be logged in."})
 
   try {
-    const connectionRequests = await connectionRequestsForUserId(req.user.userId);
+    const connectionRequests = await connectionRequestsForUserId(req.user?._id);
     res.status(200).json(connectionRequests ?? {});
   } catch (e) {
     return res.status(400).json({message: "Could not get connection requests", error: e});
   }
+});
+
+routes.post("/requestConnection", async (req, res) => {
+  if (!req.user)
+    return res.status(403).json({message: "Must be logged in."})
+
+  try {
+    const {userId} = req.body;
+    if (!userId)
+      return res.status(400).json({message: "userId not included in request body"});
+    const result = await requestConnection(req.user?._id, userId);
+    console.log(result);
+    if (result)
+      return res.status(201).json({message: "Request created", result});
+    else
+      return res.status(204).json({message: "Connection request already exists"});
+  } catch (e) {
+    return res.status(400).json({
+      message: "Could not request connection",
+      error: e,
+    });
+  }
+
 });
 
 routes.get("/connections", async (req, res) => {

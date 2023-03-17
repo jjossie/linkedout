@@ -163,8 +163,13 @@ const connectionsForUserId = (userId) => {
   return ConnectionModel.find({userIds: userId}).where("isAccepted", true); // userId contained in list
 };
 
-const connectionsAndRequestsForUserId = (userId) => {
-  return ConnectionModel.find({userIds: userId}); // userId contained in list
+const connectionsAndRequestsForUserId = async (userId) => {
+  const connections = await ConnectionModel.find({userIds: userId});
+  console.log(`\n\nAll connections for ${userId}: `);
+  connections?.forEach?.((connection) => {
+    console.log(`${connection.userIds}`);
+  });
+  return connections; // userId contained in list
 };
 
 
@@ -217,16 +222,21 @@ const isAConnection = async (userIdOne, userIdTwo) => {
 
 const suggestedConnections = async (userId) => {
   const connections = await connectionsAndRequestsForUserId(userId);
-  const uniqueConnectionIds = connections.map(connection => connection.userIds.filter(id => id !== userId)[0].toString());
-  console.log(`Unique Connection IDs: ${uniqueConnectionIds}`);
+  const uniqueConnectionIds = new Set(
+    connections?.map?.(connection => {
+      return connection.userIds.filter(id => id.toString() !== userId.toString())[0].toString()
+    })
+  );
+  console.log(`\nUnique Connection IDs: `);
+  uniqueConnectionIds.forEach(e => console.log(e));
 
-  const users = await UserModel.find({_id: {$nin: [userId, ...uniqueConnectionIds]}});
-  console.log(`Suggested Connections: ${users}`);
-  return users;
+  const excludeList = [...uniqueConnectionIds];
+  console.log(`\nExclude list: ${excludeList.toString()}`)
+  return UserModel.find({_id: {$nin: excludeList}});
 }
 
 const requestConnection = async (userId, otherUserId) => {
-  if (userId === otherUserId)
+  if (userId.toString() === otherUserId.toString())
     throw new Error("Cannot connect with yourself 🤡");
   // const existingConnection = await ConnectionModel.find({
   //   userIds: {$all: [userId, otherUserId]}

@@ -49,13 +49,15 @@ routes.get("/connectionRequests", async (req, res) => {
 });
 
 routes.post("/requestConnection", async (req, res) => {
+  console.log(req.body);
   if (!req.user)
     return res.status(403).json({message: "Must be logged in."})
-
+  // TODO prevent creating duplicates
   try {
     const {userId} = req.body;
     if (!userId)
       return res.status(400).json({message: "userId not included in request body"});
+    console.log(`Requesting Connection between logged in user ${req.user?._id} and ${userId}`)
     const result = await requestConnection(req.user?._id, userId);
     console.log(result);
     if (result)
@@ -65,7 +67,7 @@ routes.post("/requestConnection", async (req, res) => {
   } catch (e) {
     return res.status(400).json({
       message: "Could not request connection",
-      error: e,
+      error: e.message,
     });
   }
 
@@ -88,6 +90,7 @@ routes.get("/suggestedConnections", async (req, res) => {
     return res.status(403).json({message: "Must be logged in to view posts for this user"});
 
   const users = await suggestedConnections(req.user._id);
+  console.log(`Suggested Users: ${users.length}`);
   return res.json(users);
 })
 

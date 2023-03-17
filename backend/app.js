@@ -4,6 +4,7 @@ const {mongoose} = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const {getAuth} = require("./middleware/auth");
+const {logRequestInfo} = require("./middleware/log");
 dotenv.config();
 
 const app = express();
@@ -13,6 +14,7 @@ const port = 3430;
 app.use(express.json());
 app.use(getAuth);
 app.use(cors());
+app.use(logRequestInfo);
 
 
 // I'm not sure why this is here 🤨

@@ -20,7 +20,6 @@ const extractToken = (req) => {
   const header = req.get('Authorization')
   try{
     const token = header.split(' ')[1];
-    // console.log(`extractToken(${req}) called: ${header} found`);
     if (token)
       return userIdFromJWT(token);
     else

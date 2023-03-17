@@ -165,12 +165,7 @@ const connectionsForUserId = (userId) => {
 };
 
 const connectionsAndRequestsForUserId = async (userId) => {
-  const connections = await ConnectionModel.find({userIds: userId});
-  console.log(`\n\nAll connections for ${userId}: `);
-  connections?.forEach?.((connection) => {
-    console.log(`${connection.userIds}`);
-  });
-  return connections; // userId contained in list
+  return ConnectionModel.find({userIds: userId}); // userId contained in list
 };
 
 
@@ -203,15 +198,8 @@ const feedForUserId = async (userId) => {
     .sort({createdAt: "desc"})
     .limit(10);
 
-  const connectionRequests = await allConnectionRequests()
-    .populate({
-      path: 'receiverId',
-      model: UserModel
-    })
-    .find({
-      'receiverId': userId
-    });
-  console.log('\n\n\nconnectionRequests: \n');
+  const connectionRequests = await connectionRequestsForUserId(userId);
+  console.log('connectionRequests: \n');
   console.log(connectionRequests);
 
   return {posts, connectionRequests};
@@ -234,11 +222,7 @@ const suggestedConnections = async (userId) => {
       return connection.userIds.filter(id => id.toString() !== userId.toString())[0].toString();
     })
   );
-  console.log(`\nUnique Connection IDs: `);
-  uniqueConnectionIds.forEach(e => console.log(e));
-
   const excludeList = [...uniqueConnectionIds];
-  console.log(`\nExclude list: ${excludeList.toString()}`);
   return UserModel.find({_id: {$nin: excludeList}});
 };
 

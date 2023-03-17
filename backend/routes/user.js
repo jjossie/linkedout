@@ -29,7 +29,7 @@ routes.get("/feed", requiresAuth, async (req, res) => {
     const feed = await feedForUserId(req.user.userId);
     return res.status(200).json(feed);
   } catch (e) {
-    return res.status(400).json({message: "Could not get feed", error: e});
+    return res.status(400).json({message: "Could not get feed", error: e.message});
   }
 });
 
@@ -39,7 +39,7 @@ routes.get("/connectionRequests", requiresAuth, async (req, res) => {
     const connectionRequests = await connectionRequestsForUserId(req.user?._id);
     res.status(200).json(connectionRequests ?? {});
   } catch (e) {
-    return res.status(400).json({message: "Could not get connection requests", error: e});
+    return res.status(400).json({message: "Could not get connection requests", error: e.message});
   }
 });
 
@@ -69,17 +69,17 @@ routes.get("/connections", requiresAuth, async (req, res) => {
     const connectionRequests = await connectionsForUserId(req.user.userId);
     res.status(200).json(connectionRequests ?? {});
   } catch (e) {
-    return res.status(400).json({message: "Could not get connection requests", error: e});
+    return res.status(400).json({message: "Could not get connection requests", error: e.message});
   }
 });
 
-routes.get("/suggestedConnections", async (req, res) => {
-  if (!req.user)
-    return res.status(403).json({message: "Must be logged in to view posts for this user"});
-
-  const users = await suggestedConnections(req.user._id);
-  console.log(`Suggested Users: ${users.length}`);
-  return res.json(users);
+routes.get("/suggestedConnections", requiresAuth, async (req, res) => {
+  try {
+    const users = await suggestedConnections(req.user._id);
+    return res.json(users);
+  } catch (e) {
+    return res.status(400).json({message: "Could not get suggested users", error: e.message});
+  }
 })
 
 
@@ -104,7 +104,7 @@ routes.get("/:userId/connections", async (req, res) => {
     else
       return res.status(200).json(connections);
   } catch (e) {
-    return res.status(400).json({message: "Failed to get Connections for user", error: e});
+    return res.status(400).json({message: "Failed to get Connections for user", error: e.message});
   }
 });
 
@@ -124,7 +124,7 @@ routes.get("/:userId/posts", async (req, res) => {
     else
       return res.status(200).json(posts);
   } catch (e) {
-    return res.status(400).json({message: "Failed to get Connections for user", error: e});
+    return res.status(400).json({message: "Failed to get Connections for user", error: e.message});
   }
 });
 
@@ -144,15 +144,6 @@ routes.get("/:userId/chats", (req, res) => {
 /****************************************
  * User Endpoints
  ****************************************/
-
-// routes.get("/", async (req, res) => {
-//   try {
-//     const users = await UserModel.find();
-//     return res.status(200).json({users});
-//   } catch (e) {
-//     return res.status(400).json({message: "ok"});
-//   }
-// })
 
 routes.get('/', async (req, res) => {
   if (req.user)

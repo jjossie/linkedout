@@ -16,13 +16,13 @@ All changes we make will be in the backend project.
   - **Post** (in models/post.js)
   - **PrivateChat** (in models/privateChat.js)
   - **PrivateChatMessage** (in models/privateChatMessage.js)
-- Create the methods in `controllers/userController.js` with the following method signatures:
+- Create the methods in `controllers/user.js` with the following method signatures:
   - `connectionRequestsForUserId(userId) {}`
   - `connectionForUserId(userId) {}`
   - `privateChatsForUserId(userId) {}`
   - `postsForUserId(userId) {}`
 - Modify `app.js` to use these new controller methods instead of the methods in database.js
-- Create another new method in `controllers/userController.js` called `feedForUserId(userId) {}`, with the following requirements:
+- Create another new method in `controllers/user.js` called `feedForUserId(userId) {}`, with the following requirements:
   - The feed should consist of two different resources that would be useful to the user:
     - New connections requests
     - Posts from established connections
@@ -31,4 +31,4 @@ All changes we make will be in the backend project.
 
 ## Hints:
 
-- The new methods in `userController.js` should no longer user `filter` to find the correct documents like they did in `app.js`. You must use queries to find the appropriate data.
+- The new methods in `user.js` should no longer user `filter` to find the correct documents like they did in `app.js`. You must use queries to find the appropriate data.

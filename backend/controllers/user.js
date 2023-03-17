@@ -7,6 +7,7 @@ const {
       } = require("../models/index.js");
 const {flatten} = require('lodash');
 const {Connection} = require("mongoose");
+const {connectionsForUserId, connectionRequestsForUserId} = require("./connection");
 
 // User Methods
 const createUser = (user) => {
@@ -30,22 +31,6 @@ const allUsers = () => {
 };
 // End User Methods
 
-// Connection Request Methods
-// const createConnectionRequest = (request) => {
-//   return ConnectionRequestModel.create(request);
-// }
-//
-// const updateConnectionRequest = (requestId, updates) => {
-//   return ConnectionRequestModel.findByIdAndUpdate(requestId, updates);
-// }
-//
-// const deleteConnectionRequest = (requestId) => {
-//   return ConnectionRequestModel.findByIdAndDelete(requestId);
-// }
-//
-// const connectionRequestById = (requestId) => {
-//   return ConnectionRequestModel.findById(requestId);
-// }
 
 const allConnectionRequests = () => {
   return ConnectionModel.find().where("isAccepted", false);
@@ -141,33 +126,6 @@ const allPrivateChatMessages = () => {
 // End Private Chat Message Methods
 
 
-/*********************************
- * "Complex" Operations
- *********************************/
-const connectionRequestsForUserId = async (userId) => {
-  const connectionRequests = await ConnectionModel
-    .find({
-      receiverId: userId,
-      isAccepted: false
-    })
-    .populate({
-      path: "senderId",
-      model: UserModel
-    });
-
-  const result = connectionRequests.map(conn => {
-
-  });
-};
-
-const connectionsForUserId = (userId) => {
-  return ConnectionModel.find({userIds: userId}).where("isAccepted", true); // userId contained in list
-};
-
-const connectionsAndRequestsForUserId = async (userId) => {
-  return ConnectionModel.find({userIds: userId}); // userId contained in list
-};
-
 
 const privateChatsForUserId = (userId) => {
   return PrivateChatModel.find({userIds: userId}); // userId contained in list
@@ -181,6 +139,9 @@ const postsForUserId = (userId) => {
 };
 
 
+/*********************************
+ * Feed
+ *********************************/
 const feedForUserId = async (userId) => {
   const connections = await connectionsForUserId(userId);
   const friendIds = connections.map(connection => {
@@ -205,49 +166,10 @@ const feedForUserId = async (userId) => {
   return {posts, connectionRequests};
 };
 
-const isAConnection = async (userId, otherUserId) => {
-  const existingConnection = await ConnectionModel
-    .find()
-    .and([
-      {userIds: userId},
-      {userIds: otherUserId},
-    ]);
-  return (existingConnection?.length > 0);
-};
 
-const suggestedConnections = async (userId) => {
-  const connections = await connectionsAndRequestsForUserId(userId);
-  const uniqueConnectionIds = new Set(
-    connections?.map?.(connection => {
-      return connection.userIds.filter(id => id.toString() !== userId.toString())[0].toString();
-    })
-  );
-  const excludeList = [...uniqueConnectionIds];
-  return UserModel.find({_id: {$nin: excludeList}});
-};
-
-const requestConnection = async (userId, otherUserId) => {
-  // Can't connect with self
-  if (userId.toString() === otherUserId.toString())
-    throw new Error("Cannot connect with yourself 🤡");
-
-  // Do not allow duplicates
-  if (await isAConnection(userId, otherUserId))
-    return null;
-
-  const newConnection = new ConnectionModel({
-    senderId: userId,
-    receiverId: otherUserId,
-    isAccepted: false,
-    userIds: [userId, otherUserId]
-  });
-  return await newConnection.save();
-};
 
 
 module.exports = {
-  connectionRequestsForUserId,
-  connectionsForUserId,
   privateChatsForUserId,
   postsForUserId,
   createUser,
@@ -277,7 +199,4 @@ module.exports = {
   privateChatMessageById,
   allPrivateChatMessages,
   feedForUserId,
-  isAConnection,
-  suggestedConnections,
-  requestConnection
 };

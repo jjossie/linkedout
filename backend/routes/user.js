@@ -5,15 +5,17 @@ const {
         updateUser,
         deleteUser,
         feedForUserId,
-        connectionRequestsForUserId,
-        connectionsForUserId,
         postsForUserId,
         allPrivateChats,
-        isAConnection,
         allUsers,
+      } = require("../controllers/user");
+const {
+        connectionsForUserId,
+        connectionRequestsForUserId,
+        isAConnection,
         suggestedConnections,
-        requestConnection
-      } = require("../controllers/userController");
+        requestConnection,
+      } = require("../controllers/connection")
 const mongoose = require("mongoose");
 const {UserModel} = require("../models");
 const {requiresAuth} = require("../middleware/auth");
@@ -36,7 +38,8 @@ routes.get("/feed", requiresAuth, async (req, res) => {
 
 routes.get("/connectionRequests", requiresAuth, async (req, res) => {
   try {
-    const connectionRequests = await connectionRequestsForUserId(req.user?._id);
+    const connectionRequests = await connectionRequestsForUserId(req.user._id);
+    console.log(connectionRequests);
     res.status(200).json(connectionRequests ?? {});
   } catch (e) {
     return res.status(400).json({message: "Could not get connection requests", error: e.message});
@@ -88,13 +91,11 @@ routes.get("/suggestedConnections", requiresAuth, async (req, res) => {
  * particular user
  ****************************************/
 
-routes.get("/:userId/connections", async (req, res) => {
+routes.get("/:userId/connections", requiresAuth, async (req, res) => {
   try {
     const userId = req.params.userId;
-    if (!req.user)
-      return res.status(403).json({message: "Must be logged in to view connections for this user"});
 
-    if (!await isAConnection(req.user.userId, userId))
+    if (!await isAConnection(req.user._id, userId))
       return res.status(403).json({message: "This user is not a connection of the logged in user"});
 
     const connections = await connectionsForUserId(userId);
@@ -108,11 +109,9 @@ routes.get("/:userId/connections", async (req, res) => {
   }
 });
 
-routes.get("/:userId/posts", async (req, res) => {
+routes.get("/:userId/posts", requiresAuth, async (req, res) => {
   try {
     const userId = req.params.userId;
-    if (!req.user)
-      return res.status(403).json({message: "Must be logged in to view posts for this user"});
 
     if (!await isAConnection(req.user.userId, userId))
       return res.status(403).json({message: "This user is not a connection of the logged in user"});
@@ -128,7 +127,7 @@ routes.get("/:userId/posts", async (req, res) => {
   }
 });
 
-routes.get("/:userId/chats", (req, res) => {
+routes.get("/:userId/chats", requiresAuth, (req, res) => {
   const userId = req.params.userId;
   const chats = allPrivateChats()
     .filter(chat => {

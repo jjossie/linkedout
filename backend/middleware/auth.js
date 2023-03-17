@@ -30,4 +30,10 @@ const extractToken = (req) => {
   }
 };
 
-module.exports = {getAuth};
+const requiresAuth = (req, res, next) => {
+  if (!req.user)
+    return res.status(403).json({message: "Must be logged in."});
+  next();
+}
+
+module.exports = {getAuth, requiresAuth};

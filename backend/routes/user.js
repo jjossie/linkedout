@@ -16,6 +16,7 @@ const {
       } = require("../controllers/userController");
 const mongoose = require("mongoose");
 const {UserModel} = require("../models");
+const {requiresAuth} = require("../middleware/auth");
 const routes = Router();
 
 /****************************************
@@ -23,10 +24,7 @@ const routes = Router();
  * for the currently logged-in user
  ****************************************/
 
-routes.get("/feed", async (req, res) => {
-  if (!req.user)
-    return res.status(403).json({message: "Must be logged in."})
-
+routes.get("/feed", requiresAuth, async (req, res) => {
   try {
     const feed = await feedForUserId(req.user.userId);
     return res.status(200).json(feed);
@@ -36,10 +34,7 @@ routes.get("/feed", async (req, res) => {
 });
 
 
-routes.get("/connectionRequests", async (req, res) => {
-  if (!req.user)
-    return res.status(403).json({message: "Must be logged in."})
-
+routes.get("/connectionRequests", requiresAuth, async (req, res) => {
   try {
     const connectionRequests = await connectionRequestsForUserId(req.user?._id);
     res.status(200).json(connectionRequests ?? {});
@@ -48,19 +43,18 @@ routes.get("/connectionRequests", async (req, res) => {
   }
 });
 
-routes.post("/requestConnection", async (req, res) => {
-  if (!req.user)
-    return res.status(403).json({message: "Must be logged in."})
+routes.post("/requestConnection", requiresAuth, async (req, res) => {
   try {
     const {userId} = req.body;
     if (!userId)
       return res.status(400).json({message: "userId not included in request body"});
     console.log(`Requesting Connection between logged in user ${req.user?._id} and ${userId}`)
     const result = await requestConnection(req.user?._id, userId);
-    if (result)
-      return res.status(201).json({message: "Request created", result});
-    else
-      return res.status(204).json({message: "Connection request already exists"});
+    if (!result)
+      return res.status(409).json({message: "Connection request already exists"});
+
+    return res.status(201).json({message: "Request created", result});
+
   } catch (e) {
     return res.status(400).json({
       message: "Could not request connection",
@@ -70,10 +64,7 @@ routes.post("/requestConnection", async (req, res) => {
 
 });
 
-routes.get("/connections", async (req, res) => {
-  if (!req.user)
-    return res.status(403).json({message: "Must be logged in."})
-
+routes.get("/connections", requiresAuth, async (req, res) => {
   try {
     const connectionRequests = await connectionsForUserId(req.user.userId);
     res.status(200).json(connectionRequests ?? {});

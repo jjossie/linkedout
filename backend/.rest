@@ -27,7 +27,7 @@ Content-Type: application/json
 
 ### Get Suggested Connections
 GET http://localhost:3430/user/suggestedConnections
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkwNzI0ODksImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODk4NjA4OX0.em48uKo-05XXgwA2tMDGHWyzKMT7JoHCpcRjREWbVjs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkxMDQ0NjIsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3OTAxODA2Mn0.opOHmzG1bjTDuwnfNhhSNJ9EyCXy24lPWvSYCOgczZ0
 
 ### Get Connection Requests
 GET http://localhost:3430/user/connectionRequests
@@ -35,7 +35,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkwNzI0O
 
 ### Request Connection
 POST http://localhost:3430/user/requestConnection
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkwNzI0ODksImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODk4NjA4OX0.em48uKo-05XXgwA2tMDGHWyzKMT7JoHCpcRjREWbVjs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkxMDQ0NjIsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3OTAxODA2Mn0.opOHmzG1bjTDuwnfNhhSNJ9EyCXy24lPWvSYCOgczZ0
 Content-Type: application/json
 
 {

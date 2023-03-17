@@ -6,27 +6,28 @@ const {
         PrivateChatMessageModel,
       } = require("../models/index.js");
 const {flatten} = require('lodash');
+const {Connection} = require("mongoose");
 
 // User Methods
 const createUser = (user) => {
   return UserModel.create(user);
-}
+};
 
 const updateUser = (userId, updates) => {
   return UserModel.findByIdAndUpdate(userId, updates);
-}
+};
 
 const deleteUser = (userId) => {
   return UserModel.findByIdAndDelete(userId);
-}
+};
 
 const userById = (userId) => {
   return UserModel.findById(userId);
-}
+};
 
 const allUsers = () => {
   return UserModel.find();
-}
+};
 // End User Methods
 
 // Connection Request Methods
@@ -48,95 +49,95 @@ const allUsers = () => {
 
 const allConnectionRequests = () => {
   return ConnectionModel.find().where("isAccepted", false);
-}
+};
 // End Connection Request Methods
 
 // Connection Methods
 const createConnection = (connection) => {
   return ConnectionModel.create(connection);
-}
+};
 
 const updateConnection = (connectionId, updates) => {
   return ConnectionModel.findByIdAndUpdate(connectionId, updates);
-}
+};
 
 const deleteConnection = (requestId) => {
   ConnectionModel.findByIdAndDelete(requestId);
-}
+};
 
 const connectionById = (requestId) => {
   return ConnectionModel.findById(requestId);
-}
+};
 
 const allConnections = () => {
   return ConnectionModel.find();
-}
+};
 // End Connection Methods
 
 // Post Methods
 const createPost = (post) => {
   return PostModel.create(post);
-}
+};
 
 const updatePost = (postId, updates) => {
   return PostModel.findByIdAndUpdate(postId, updates);
-}
+};
 
 const deletePost = (postId) => {
   PostModel.findByIdAndDelete(postId);
-}
+};
 
 const postById = (postId) => {
   return PostModel.findById(postId);
-}
+};
 
 const allPosts = () => {
   return PostModel.find();
-}
+};
 // End Post Methods
 
 // Private Chat Methods
 const createPrivateChat = (chat) => {
   return PrivateChatModel.create(chat);
-}
+};
 
 const updatePrivateChat = (chatId, updates) => {
   return PrivateChatModel.findByIdAndUpdate(chatId, updates);
-}
+};
 
 const deletePrivateChat = (chatId) => {
   PrivateChatModel.findByIdAndDelete(chatId);
-}
+};
 
 const privateChatById = (chatId) => {
   return PrivateChatModel.findById(chatId);
-}
+};
 
 const allPrivateChats = () => {
   return PrivateChatModel.find();
-}
+};
 // End Private Chat Methods
 
 // Private Chat Message Methods
 const createPrivateChatMessage = (message) => {
   return PrivateChatMessageModel.create(message);
-}
+};
 
 const updatePrivateChatMessage = (messageId, updates) => {
   return PrivateChatMessageModel.findByIdAndUpdate(messageId, updates);
-}
+};
 
 const deletePrivateChatMessage = (messageId) => {
   PrivateChatMessageModel.findByIdAndDelete(messageId);
-}
+};
 
 const privateChatMessageById = (messageId) => {
   return PrivateChatMessageModel.findById(messageId);
-}
+};
 
 const allPrivateChatMessages = () => {
   return PrivateChatMessageModel.find();
-}
+};
 // End Private Chat Message Methods
 
 
@@ -210,39 +211,46 @@ const feedForUserId = async (userId) => {
     .find({
       'receiverId': userId
     });
-  console.log('\n\n\nconnectionRequests: \n')
+  console.log('\n\n\nconnectionRequests: \n');
   console.log(connectionRequests);
 
-  return {posts, connectionRequests}
+  return {posts, connectionRequests};
 };
 
-const isAConnection = async (userIdOne, userIdTwo) => {
-  return !!(await ConnectionModel.find({userIds: {$all: [userIdOne, userIdTwo]}}));
-}
+const isAConnection = async (userId, otherUserId) => {
+  const existingConnection = await ConnectionModel
+    .find()
+    .and([
+      {userIds: userId},
+      {userIds: otherUserId},
+    ]);
+  return (existingConnection?.length > 0);
+};
 
 const suggestedConnections = async (userId) => {
   const connections = await connectionsAndRequestsForUserId(userId);
   const uniqueConnectionIds = new Set(
     connections?.map?.(connection => {
-      return connection.userIds.filter(id => id.toString() !== userId.toString())[0].toString()
+      return connection.userIds.filter(id => id.toString() !== userId.toString())[0].toString();
     })
   );
   console.log(`\nUnique Connection IDs: `);
   uniqueConnectionIds.forEach(e => console.log(e));
 
   const excludeList = [...uniqueConnectionIds];
-  console.log(`\nExclude list: ${excludeList.toString()}`)
+  console.log(`\nExclude list: ${excludeList.toString()}`);
   return UserModel.find({_id: {$nin: excludeList}});
-}
+};
 
 const requestConnection = async (userId, otherUserId) => {
+  // Can't connect with self
   if (userId.toString() === otherUserId.toString())
     throw new Error("Cannot connect with yourself 🤡");
-  // const existingConnection = await ConnectionModel.find({
-  //   userIds: {$all: [userId, otherUserId]}
-  // });
-  // if (existingConnection)
-  //   return null;
+
+  // Do not allow duplicates
+  if (await isAConnection(userId, otherUserId))
+    return null;
+
   const newConnection = new ConnectionModel({
     senderId: userId,
     receiverId: otherUserId,
@@ -250,7 +258,7 @@ const requestConnection = async (userId, otherUserId) => {
     userIds: [userId, otherUserId]
   });
   return await newConnection.save();
-}
+};
 
 
 module.exports = {

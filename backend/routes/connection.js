@@ -24,20 +24,32 @@ routes.post("", (request, response) => {
     return response.sendStatus(400);
 });
 
-routes.put("/:connectionId", (request, response) => {
-  const connectionId = request.params.connectionId;
-  const newConnectionData = request.body;
-  const updatedConnectionResult = uc.updateConnection(connectionId, newConnectionData);
-  if (updatedConnectionResult)
+routes.put("/:connectionId", async (request, response) => {
+  try {
+    const connectionId = request.params.connectionId;
+    const newConnectionData = request.body;
+    const updatedConnectionResult = await uc.updateConnection(connectionId, newConnectionData);
+    if (!updatedConnectionResult)
+      return response.sendStatus(400);
+
     return response.status(200).json(updatedConnectionResult);
-  else
-    return response.sendStatus(400);
+  } catch (e) {
+    return response.status(400).json({message: "Failed to update connection", error: e.message});
+  }
 });
 
-routes.delete("/:connectionId", (request, response) => {
-  const connectionId = request.params.connectionId;
-  uc.deleteConnection(connectionId);
-  return response.sendStatus(200);
+routes.delete("/:connectionId", async (request, response) => {
+  try {
+    const connectionId = request.params.connectionId;
+    const result = await uc.deleteConnection(connectionId);
+    console.log(result);
+    return response.status(200).json({
+      message: "Connection rejected successfully",
+      connection: result
+    });
+  } catch (e) {
+    return response.status(400).json({message: "Failed to delete connection", error: e.message});
+  }
 });
 
 module.exports = routes;

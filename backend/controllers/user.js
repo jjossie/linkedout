@@ -46,8 +46,8 @@ const updateConnection = (connectionId, updates) => {
   return ConnectionModel.findByIdAndUpdate(connectionId, updates);
 };
 
-const deleteConnection = (requestId) => {
-  ConnectionModel.findByIdAndDelete(requestId);
+const deleteConnection = (connectionId) => {
+  return ConnectionModel.findByIdAndDelete(connectionId);
 };
 
 const connectionById = (requestId) => {

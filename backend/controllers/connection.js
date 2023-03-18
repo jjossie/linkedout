@@ -53,6 +53,7 @@ const connectionRequestsForUserId = async (userId) => {
 
   return connectionRequests?.map?.(conn => {
     return {
+      connectionId: conn._id,
       userId: conn.senderId._id.toString(),
       firstName: conn.senderId.firstName,
       lastName: conn.senderId.lastName,

@@ -27,6 +27,7 @@ const ConnectionRequests = () => {
                 firstName={conReq.firstName}
                 lastName={conReq.lastName}
                 userId={conReq.userId}
+                connectionId={conReq.connectionId}
                 key={conReq.userId}
               />;
             })}

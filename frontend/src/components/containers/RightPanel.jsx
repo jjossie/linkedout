@@ -4,13 +4,13 @@ const RightPanel = (props) => {
   const style = {
     width: "30vw",
     padding: "2em",
-    boxSizing: "border-box"
-    // marginLeft: "15vw",
+    boxSizing: "border-box",
+    flexShrink: "3"
   }
   return (
-    <div style={style}>
+    <section style={style}>
       {props.children}
-    </div>
+    </section>
   );
 };
 

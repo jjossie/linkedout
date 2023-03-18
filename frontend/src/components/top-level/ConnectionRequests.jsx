@@ -18,7 +18,10 @@ const ConnectionRequests = () => {
         <CenterPanel>
           {connectionRequests?.map?.(conReq => {
             return <ConnectionRequest
-              username={conReq.userId}
+              firstName={conReq.firstName}
+              lastName={conReq.lastName}
+              userId={conReq.userId}
+              key={conReq.userId}
             />
           })}
         </CenterPanel>

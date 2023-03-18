@@ -5,7 +5,8 @@ const MainPanelContainer = (props) => {
     <main style={{
       marginTop: "6em",
       display: "flex",
-
+      flexWrap: "wrap",
+      flexShrink: 0
     }}>
       {props.children}
     </main>

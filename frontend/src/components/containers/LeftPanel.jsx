@@ -4,12 +4,13 @@ const LeftPanel = (props) => {
   const style = {
     width: "20vw",
     padding: "2em",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
+    flexShrink: "3"
   }
   return (
-    <div style={style}>
+    <section style={style}>
       {props.children}
-    </div>
+    </section>
   );
 };
 

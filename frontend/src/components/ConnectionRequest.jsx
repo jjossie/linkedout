@@ -17,7 +17,7 @@ const ConnectionRequest = (props) => {
     <Card sx={containerStyle}>
       <div style={subContainerStyle}>
         <Avatar src={pfp}/>
-        <h3>{props.username}</h3>
+        <h3>{props.firstName} {props.lastName}</h3>
       </div>
       <div style={subContainerStyle}>
         <Button variant="contained">Accept</Button>

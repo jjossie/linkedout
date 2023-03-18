@@ -52,7 +52,6 @@ const connectionRequestsForUserId = async (userId) => {
     });
 
   return connectionRequests?.map?.(conn => {
-    console.log(conn);
     return {
       userId: conn.senderId._id.toString(),
       firstName: conn.senderId.firstName,

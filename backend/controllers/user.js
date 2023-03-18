@@ -158,11 +158,7 @@ const feedForUserId = async (userId) => {
     })
     .sort({createdAt: "desc"})
     .limit(10);
-
   const connectionRequests = await connectionRequestsForUserId(userId);
-  console.log('connectionRequests: \n');
-  console.log(connectionRequests);
-
   return {posts, connectionRequests};
 };
 

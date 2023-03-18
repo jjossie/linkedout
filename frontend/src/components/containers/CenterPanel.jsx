@@ -2,14 +2,14 @@ import React from 'react';
 
 const CenterPanel = (props) => {
   const style = {
-    width: "40vw",
-    boxSizing: "border-box"
-    // marginLeft: "15vw",
+    maxWidth: "70vw",
+    boxSizing: "border-box",
+    flexGrow: 1,
   }
   return (
-    <div style={style}>
+    <section style={style}>
       {props.children}
-    </div>
+    </section>
   );
 };
 

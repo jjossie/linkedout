@@ -39,7 +39,6 @@ routes.get("/feed", requiresAuth, async (req, res) => {
 routes.get("/connectionRequests", requiresAuth, async (req, res) => {
   try {
     const connectionRequests = await connectionRequestsForUserId(req.user._id);
-    console.log(connectionRequests);
     res.status(200).json(connectionRequests ?? {});
   } catch (e) {
     return res.status(400).json({message: "Could not get connection requests", error: e.message});

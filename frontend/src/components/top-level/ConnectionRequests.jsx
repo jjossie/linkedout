@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "../containers/Header";
 import {useLoaderData} from "react-router-dom";
-import ConnectionRequest from "../ConnectionRequest";
 import MainPanelContainer from "../containers/MainPanelContainer";
 import CenterPanel from "../containers/CenterPanel";
 import LeftPanel from "../containers/LeftPanel";
-import Container from "@mui/material/Container";
+import ConnectionRequestList from "../ConnectionRequestList";
 
 const ConnectionRequests = () => {
+  console.log("Rendering ConnectionRequests Page");
+
+  const [state, setState] = useState(false);
 
   const connectionRequests = useLoaderData();
 
@@ -17,21 +19,9 @@ const ConnectionRequests = () => {
       <MainPanelContainer>
         <LeftPanel/>
         <CenterPanel>
-          <Container sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1em"
-          }}>
-            {connectionRequests?.map?.(conReq => {
-              return <ConnectionRequest
-                firstName={conReq.firstName}
-                lastName={conReq.lastName}
-                userId={conReq.userId}
-                connectionId={conReq.connectionId}
-                key={conReq.userId}
-              />;
-            })}
-          </Container>
+          <ConnectionRequestList setState={() => {
+            setState(!state);
+          }} connectionRequests={connectionRequests}/>
         </CenterPanel>
       </MainPanelContainer>
     </div>

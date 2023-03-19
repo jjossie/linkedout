@@ -3,32 +3,42 @@ import {Avatar, Button, Card} from "@mui/material";
 import pfp from "../images/pfp.png";
 import {loggedInFetch} from "../utils/fetch";
 
-const ConnectionRequest = (props) => {
-
+const ConnectionRequest = ({
+  setState,
+  connectionId,
+  firstName,
+  lastName,
+}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isAccepted, setIsAccepted] = useState(false);
+  const [isRejected, setIsRejected] = useState(false);
 
   const handleAcceptConnection = useCallback(async () => {
     setIsError(false);
     setIsLoading(true);
-    const result = await loggedInFetch(`/connection/${props.connectionId}`, "PUT", {
+    const result = await loggedInFetch(`/connection/${connectionId}`, "PUT", {
       "isAccepted": true
     })
       .catch(e => {
         setIsError(true);
       });
     setIsLoading(false);
+    setIsAccepted(true);
+    // setState();
     console.log(result);
   }, []);
 
   const handleRejectConnection = useCallback(async () => {
     setIsError(false);
     setIsLoading(true);
-    const result = await loggedInFetch(`/connection/${props.connectionId}`, "DELETE")
+    const result = await loggedInFetch(`/connection/${connectionId}`, "DELETE")
       .catch(e => {
         setIsError(true);
       });
     setIsLoading(false);
+    setIsRejected(true);
+    // setState();
     console.log(result);
   }, []);
 
@@ -36,11 +46,23 @@ const ConnectionRequest = (props) => {
     <Card sx={containerStyle}>
       <div style={subContainerStyle}>
         <Avatar src={pfp}/>
-        <h3>{props.firstName} {props.lastName}</h3>
+        <h3>{firstName} {lastName}</h3>
       </div>
       <div style={subContainerStyle}>
-        <Button onClick={handleAcceptConnection} variant="contained">Accept</Button>
-        <Button onClick={handleRejectConnection} variant="outlined">Decline</Button>
+        {!isRejected &&
+         <Button
+           onClick={handleAcceptConnection}
+           variant={isAccepted ? "outlined" : "contained"}
+           disabled={isLoading || isAccepted}>
+           {isAccepted ? "Accepted" : "Accept"}
+         </Button>}
+        {!isAccepted &&
+         <Button
+           onClick={handleRejectConnection}
+           variant="outlined"
+           disabled={isLoading || isRejected}>
+           {isRejected ? "Declined" : "Decline"}
+         </Button>}
       </div>
     </Card>
   );

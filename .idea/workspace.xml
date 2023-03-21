@@ -8,12 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="drafted connectionRequestsForUserId">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="Some progress on connectionRequest acceptance/rejection on frontend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,37 +52,39 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "idea.background.editor": "/Users/joel/My Drive/Pictures/Wallpapers/photo-1571294673609-a705657cb13c.jpg,24,scale,center",
-    "last_opened_file_path": "/Users/joel/Documents/Development/CSE430/professional-network-jjossie",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.editor",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;idea.background.editor&quot;: &quot;/Users/joel/My Drive/Pictures/Wallpapers/photo-1571294673609-a705657cb13c.jpg,24,scale,center&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/joel/Documents/Development/CSE430/professional-network-jjossie/frontend/src/components/containers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;
     ],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JSON"
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/components/containers" />
       <recent name="$PROJECT_DIR$/backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -98,11 +98,11 @@
       <recent name="$PROJECT_DIR$/frontend/src/utils/fetch.js" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Run Backend">
+  <component name="RunManager" selected="npm.Run Frontend">
     <configuration name=" | Get Connection Requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="4" requestIdentifier="Get Connection Requests" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name=" | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" requestIdentifier="Register" runType="Run single request">
+    <configuration name=" | Get Suggested Connections" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Get Suggested Connections" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name=" | Request Connection" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="5" requestIdentifier="Request Connection" runType="Run single request">
@@ -129,9 +129,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="HTTP Request. | Get Suggested Connections" />
       <item itemvalue="HTTP Request. | Get Connection Requests" />
       <item itemvalue="HTTP Request. | Request Connection" />
-      <item itemvalue="HTTP Request. | Register" />
       <item itemvalue="HTTP Request.remote | Login" />
       <item itemvalue="HTTP Request.remote | get all users#2" />
       <item itemvalue="npm.Run Backend" />
@@ -139,11 +139,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request. | Get Connection Requests" />
         <item itemvalue="HTTP Request. | Request Connection" />
+        <item itemvalue="HTTP Request. | Get Suggested Connections" />
+        <item itemvalue="HTTP Request. | Get Connection Requests" />
         <item itemvalue="HTTP Request.remote | get all users#2" />
         <item itemvalue="HTTP Request.remote | Login" />
-        <item itemvalue="HTTP Request. | Register" />
       </list>
     </recent_temporary>
   </component>
@@ -169,6 +169,8 @@
       <workItem from="1678208041350" duration="6573000" />
       <workItem from="1678231708640" duration="9540000" />
       <workItem from="1678808224973" duration="7483000" />
+      <workItem from="1678981801191" duration="49221000" />
+      <workItem from="1679414045888" duration="2795000" />
     </task>
     <task id="LOCAL-00001" summary="got halfway through t4-pa2">
       <created>1675356816193</created>
@@ -429,7 +431,84 @@
       <option name="project" value="LOCAL" />
       <updated>1678811659285</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="connectionRequests frontend page is broken but SuggestedConnections component mostly works? but sometimes gives the undefined error">
+      <created>1678984617951</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1678984617951</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fixed &quot;*.map() is not a function&quot; errors">
+      <created>1678986515164</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1678986515164</updated>
+    </task>
+    <task id="LOCAL-00040" summary="fixed SuggestedConnections">
+      <created>1679086160645</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1679086160645</updated>
+    </task>
+    <task id="LOCAL-00041" summary="fixed duplicates issue with requesting connections">
+      <created>1679088338401</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1679088338401</updated>
+    </task>
+    <task id="LOCAL-00042" summary="added middleware for requesting authentication">
+      <created>1679088988970</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1679088988970</updated>
+    </task>
+    <task id="LOCAL-00043" summary="more middleware and clean up logs">
+      <created>1679091727072</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1679091727072</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refactor a lot, move connection functions to a connection.js controller, fix suggesting self connection, fix connectionRequests endpoint">
+      <created>1679094048106</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1679094048106</updated>
+    </task>
+    <task id="LOCAL-00045" summary="improve layout/container styling slightly, refactor a lil bit">
+      <created>1679098088072</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1679098088072</updated>
+    </task>
+    <task id="LOCAL-00046" summary="add a gap to ConnectionRequests">
+      <created>1679164049399</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1679164049399</updated>
+    </task>
+    <task id="LOCAL-00047" summary="endpoints and buttons work for accepting and rejecting connections">
+      <created>1679170081005</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1679170081005</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Some progress on connectionRequest acceptance/rejection on frontend">
+      <created>1679193910229</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1679193910229</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,18 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ADD OPTIONS" />
-    <MESSAGE value="AAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHH" />
-    <MESSAGE value="Added some containers to the UI" />
-    <MESSAGE value="dramatic improvements to frontend" />
-    <MESSAGE value="improved header" />
-    <MESSAGE value="setup for t7-pa2" />
-    <MESSAGE value="more setup for t7-pa2" />
-    <MESSAGE value="refactored routes to individual files and added authentication logic from t7-pa1" />
-    <MESSAGE value="working on a lot of routes' authentication, lots untested, but it's been too long since a commit" />
-    <MESSAGE value="Fixed stuff like out-of-order routes and token extraction" />
-    <MESSAGE value="add /user/connections and fix /user/connectionRequests" />
-    <MESSAGE value="users with existing emails but no passwords can be registered" />
     <MESSAGE value="try deleting package-lock.json" />
     <MESSAGE value="try removing vercel config" />
     <MESSAGE value="add back the config" />
@@ -485,18 +552,19 @@
     <MESSAGE value="HOLY FETCH" />
     <MESSAGE value="remove old Register page and add error handling for registration" />
     <MESSAGE value="drafted connectionRequestsForUserId" />
-    <option name="LAST_COMMIT_MESSAGE" value="drafted connectionRequestsForUserId" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/backend/routes/user.js</url>
-          <line>39</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="connectionRequests frontend page is broken but SuggestedConnections component mostly works? but sometimes gives the undefined error" />
+    <MESSAGE value="fixed &quot;*.map() is not a function&quot; errors" />
+    <MESSAGE value="fixed SuggestedConnections" />
+    <MESSAGE value="fixed duplicates issue with requesting connections" />
+    <MESSAGE value="added middleware for requesting authentication" />
+    <MESSAGE value="more middleware and clean up logs" />
+    <MESSAGE value="refactor a lot, move connection functions to a connection.js controller, fix suggesting self connection" />
+    <MESSAGE value="refactor a lot, move connection functions to a connection.js controller, fix suggesting self connection, fix connectionRequests endpoint" />
+    <MESSAGE value="improve layout/container styling slightly, refactor a lil bit" />
+    <MESSAGE value="add a gap to ConnectionRequests" />
+    <MESSAGE value="endpoints and buttons work for accepting and rejecting connections" />
+    <MESSAGE value="Some progress on connectionRequest acceptance/rejection on frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some progress on connectionRequest acceptance/rejection on frontend" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

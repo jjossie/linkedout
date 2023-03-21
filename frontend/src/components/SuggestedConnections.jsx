@@ -8,7 +8,6 @@ const SuggestedConnections = (props) => {
   const [suggestedConnections, setSuggestedConnections] = useState(null);
 
   useEffect(() => {
-    console.log("Using Effect!");
     getSuggestedConnections()
       .then((scs) => {
         console.log(scs);
@@ -21,7 +20,12 @@ const SuggestedConnections = (props) => {
     <Paper elevation={2} style={style}>
       <Typography>Suggested Connections</Typography>
       {suggestedConnections?.map?.((conn) => {
-        return <SuggestedConnection key={conn._id} user={conn}/>
+        return <SuggestedConnection
+          key={conn._id}
+          user={conn}
+          // onRequested={onConnectionRequested}
+          setSuggestedConnections={setSuggestedConnections}
+        />;
       })}
     </Paper>
   );

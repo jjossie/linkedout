@@ -10,14 +10,15 @@ export function loggedInFetch(url, method = "GET", body=null) {
   }
 
   const headers = {
-    "Authorization": `Bearer ${token}`
+    "Authorization": `Bearer ${token}`,
+    "Content-Type": "application/json"
   };
   const options = {
     headers: headers,
     method: method
   }
   if (body)
-    options.body = body;
+    options.body = JSON.stringify(body);
   const fetchUrl = `${baseUrl}${url}`;
   console.log("Sending loggedInFetch: ");
   console.log({

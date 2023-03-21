@@ -20,7 +20,6 @@ const extractToken = (req) => {
   const header = req.get('Authorization')
   try{
     const token = header.split(' ')[1];
-    // console.log(`extractToken(${req}) called: ${header} found`);
     if (token)
       return userIdFromJWT(token);
     else
@@ -30,4 +29,10 @@ const extractToken = (req) => {
   }
 };
 
-module.exports = {getAuth};
+const requiresAuth = (req, res, next) => {
+  if (!req.user)
+    return res.status(403).json({message: "Must be logged in."});
+  next();
+}
+
+module.exports = {getAuth, requiresAuth};

@@ -1,10 +1,11 @@
 import React from 'react';
 
-const CenterPanel = (props) => {
+const RightPanel = (props) => {
   const style = {
-    maxWidth: "70vw",
+    width: "30vw",
+    padding: "2em",
     boxSizing: "border-box",
-    flexGrow: 1,
+    flexShrink: "3"
   }
   return (
     <section style={style}>
@@ -13,4 +14,4 @@ const CenterPanel = (props) => {
   );
 };
 
-export default CenterPanel;
+export default RightPanel;

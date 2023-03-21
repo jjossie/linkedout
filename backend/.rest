@@ -1,5 +1,4 @@
 
-
 //****************************************
 //* LOGIN/AUTH Endpoints
 //****************************************/
@@ -24,9 +23,24 @@ Content-Type: application/json
   "password": "bruh"
 }
 
+
+
 ### Get Suggested Connections
 GET http://localhost:3430/user/suggestedConnections
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzg0NjgxNjUsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODM4MTc2NX0.dTby5T0joxJUFqWGX0XuirXsxHXqOLqzyKqHOt3PFmE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkxMDQ0NjIsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3OTAxODA2Mn0.opOHmzG1bjTDuwnfNhhSNJ9EyCXy24lPWvSYCOgczZ0
+
+### Get Connection Requests
+GET http://localhost:3430/user/connectionRequests
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkwNzI0ODksImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3ODk4NjA4OX0.em48uKo-05XXgwA2tMDGHWyzKMT7JoHCpcRjREWbVjs
+
+### Request Connection
+POST http://localhost:3430/user/requestConnection
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkxMDQ0NjIsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3OTAxODA2Mn0.opOHmzG1bjTDuwnfNhhSNJ9EyCXy24lPWvSYCOgczZ0
+Content-Type: application/json
+
+{
+  "userId": "6410b0a8343406674d5e2fb4"
+}
 
 ### get all users
 
@@ -36,11 +50,6 @@ Accept: application/json
 
 ### Get new feed
 GET http://localhost:3430/user/feed
-Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
-
-### Get new connection requests
-GET http://localhost:3430/user/connectionRequests
 Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzczNjMwNjgsImRhdGEiOnsidXNlcklkIjoiNjNmN2JhZGY5Y2NjNjFlMDk3YTUwMDQxIn0sImlhdCI6MTY3NzI3NjY2OH0.PBmorMFBbAiIyBm9polu0fWC0ntngUQaiQewmjTcx4I
 

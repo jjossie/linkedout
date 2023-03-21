@@ -5,7 +5,8 @@ import Feed from "../Feed";
 import PostPrompt from "../PostPrompt";
 import MainPanelContainer from "../containers/MainPanelContainer";
 import CenterPanel from "../containers/CenterPanel";
-import SidePanel from "../containers/LeftPanel";
+import LeftPanel from "../containers/LeftPanel";
+import RightPanel from "../containers/RightPanel";
 import SuggestedConnections from "../SuggestedConnections";
 
 const Main = () => {
@@ -15,14 +16,14 @@ const Main = () => {
     <div>
       <Header/>
       <MainPanelContainer>
-        <SidePanel/>
+        <LeftPanel/>
         <CenterPanel>
           <PostPrompt/>
           <Feed posts={info?.posts}/>
         </CenterPanel>
-        <SidePanel>
+        <RightPanel>
           <SuggestedConnections/>
-        </SidePanel>
+        </RightPanel>
       </MainPanelContainer>
     </div>
   );

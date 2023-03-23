@@ -1,15 +1,15 @@
 import React, {useCallback, useState} from 'react';
 import {Avatar, Box, Button} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import {loggedInFetch} from "../utils/fetch";
 import SendIcon from "@mui/icons-material/Send";
 import CheckIcon from "@mui/icons-material/Check";
 
 
 const requestConnection = async (userId) => {
-  await loggedInFetch('/user/requestConnection', "POST", {
-    userId: userId
-  });
+  // await loggedInFetch('/user/requestConnection', "POST", {
+  //   userId: userId
+  // });
+  return null;
 };
 
 const SuggestedConnection = ({user, setSuggestedConnections}) => {
@@ -32,7 +32,7 @@ const SuggestedConnection = ({user, setSuggestedConnections}) => {
           setSuggestedConnections(old => {
             return old.filter(sc => sc._id !== _id);
           });
-        }, 3000);
+        }, 2000);
         console.log("Connection Requested!");
       })
       .catch(e => {

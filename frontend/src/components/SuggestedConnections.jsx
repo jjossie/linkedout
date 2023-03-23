@@ -3,6 +3,8 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import {getSuggestedConnections} from "../services/user";
 import SuggestedConnection from "./SuggestedConnection";
+import {TransitionGroup} from "react-transition-group";
+import {Collapse} from "@mui/material";
 
 const SuggestedConnections = (props) => {
   const [suggestedConnections, setSuggestedConnections] = useState(null);
@@ -19,14 +21,18 @@ const SuggestedConnections = (props) => {
   return (
     <Paper elevation={2} style={style}>
       <Typography>Suggested Connections</Typography>
-      {suggestedConnections?.map?.((conn) => {
-        return <SuggestedConnection
-          key={conn._id}
-          user={conn}
-          // onRequested={onConnectionRequested}
-          setSuggestedConnections={setSuggestedConnections}
-        />;
-      })}
+      <TransitionGroup enter={true}>
+        {suggestedConnections?.map?.((conn) => {
+          return <Collapse key={conn._id + "-collapse"}>
+            <SuggestedConnection
+              key={conn._id}
+              user={conn}
+              // onRequested={onConnectionRequested}
+              setSuggestedConnections={setSuggestedConnections}
+            />
+          </Collapse>;
+        })}
+      </TransitionGroup>
     </Paper>
   );
 };

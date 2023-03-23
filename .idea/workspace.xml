@@ -8,10 +8,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="Some progress on connectionRequest acceptance/rejection on frontend">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="SuggestedConnections Re-render parent all nice and fancy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NewComp.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="t9-pa2" />
+        <entry key="$PROJECT_DIR$" value="t10-pa2" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="main" />

@@ -8,14 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="SuggestedConnections Re-render parent all nice and fancy">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="fancy animations for SuggestedConnections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NewComp.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/ConnectionRequests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/ConnectionRequests.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
@@ -513,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679193910229</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="fancy animations for SuggestedConnections">
+      <created>1679589536220</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1679589536220</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="try deleting package-lock.json" />
     <MESSAGE value="try removing vercel config" />
     <MESSAGE value="add back the config" />
     <MESSAGE value="Pages work for now on frontend" />
@@ -569,7 +574,8 @@
     <MESSAGE value="add a gap to ConnectionRequests" />
     <MESSAGE value="endpoints and buttons work for accepting and rejecting connections" />
     <MESSAGE value="Some progress on connectionRequest acceptance/rejection on frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some progress on connectionRequest acceptance/rejection on frontend" />
+    <MESSAGE value="fancy animations for SuggestedConnections" />
+    <option name="LAST_COMMIT_MESSAGE" value="fancy animations for SuggestedConnections" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

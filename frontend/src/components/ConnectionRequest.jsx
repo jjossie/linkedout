@@ -1,20 +1,26 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import {Avatar, Button, Card} from "@mui/material";
 import pfp from "../images/pfp.png";
 import {loggedInFetch} from "../utils/fetch";
 
 const ConnectionRequest = ({
-  setState,
   connectionId,
   firstName,
   lastName,
+  setCrList
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isAccepted, setIsAccepted] = useState(false);
   const [isRejected, setIsRejected] = useState(false);
 
-  const handleAcceptConnection = useCallback(async () => {
+  const removeFromParentDelayed = () => {
+    window.setTimeout(() => {
+      setCrList(oldList => oldList.filter(cr => cr.connectionId !== connectionId));
+    }, 2000)
+  }
+
+  const handleAcceptConnection = async () => {
     setIsError(false);
     setIsLoading(true);
     const result = await loggedInFetch(`/connection/${connectionId}`, "PUT", {
@@ -25,11 +31,11 @@ const ConnectionRequest = ({
       });
     setIsLoading(false);
     setIsAccepted(true);
-    // setState();
+    removeFromParentDelayed();
     console.log(result);
-  }, []);
+  }
 
-  const handleRejectConnection = useCallback(async () => {
+  const handleRejectConnection = async () => {
     setIsError(false);
     setIsLoading(true);
     const result = await loggedInFetch(`/connection/${connectionId}`, "DELETE")
@@ -38,9 +44,9 @@ const ConnectionRequest = ({
       });
     setIsLoading(false);
     setIsRejected(true);
-    // setState();
+    removeFromParentDelayed();
     console.log(result);
-  }, []);
+  }
 
   return (
     <Card sx={containerStyle}>

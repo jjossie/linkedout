@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Header from "../containers/Header";
 import {useLoaderData} from "react-router-dom";
 import MainPanelContainer from "../containers/MainPanelContainer";
@@ -9,7 +9,6 @@ import ConnectionRequestList from "../ConnectionRequestList";
 const ConnectionRequests = () => {
   console.log("Rendering ConnectionRequests Page");
 
-  const [state, setState] = useState(false);
 
   const connectionRequests = useLoaderData();
 
@@ -19,9 +18,7 @@ const ConnectionRequests = () => {
       <MainPanelContainer>
         <LeftPanel/>
         <CenterPanel>
-          <ConnectionRequestList setState={() => {
-            setState(!state);
-          }} connectionRequests={connectionRequests}/>
+          <ConnectionRequestList connectionRequests={connectionRequests}/>
         </CenterPanel>
       </MainPanelContainer>
     </div>

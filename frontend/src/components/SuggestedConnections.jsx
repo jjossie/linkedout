@@ -21,7 +21,7 @@ const SuggestedConnections = (props) => {
   return (
     <Paper elevation={2} style={style}>
       <Typography>Suggested Connections</Typography>
-      <TransitionGroup enter={true}>
+      <TransitionGroup>
         {suggestedConnections?.map?.((conn) => {
           return <Collapse key={conn._id + "-collapse"}>
             <SuggestedConnection

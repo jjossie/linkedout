@@ -8,18 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="suggestedConnection and connectionRequest components now animate and remove selves from parent properly">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" afterDir="false" />
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/containers/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/containers/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,13 +173,6 @@
       <workItem from="1678808224973" duration="7483000" />
       <workItem from="1678981801191" duration="49221000" />
       <workItem from="1679414045888" duration="2795000" />
-    </task>
-    <task id="LOCAL-00002" summary="Made lots of progress on the mongoose front">
-      <created>1675547023537</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1675547023537</updated>
     </task>
     <task id="LOCAL-00003" summary="edit .gitignore">
       <created>1675555495017</created>
@@ -523,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679627329795</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links">
+      <created>1679698006746</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1679698006746</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add back the config" />
     <MESSAGE value="Pages work for now on frontend" />
     <MESSAGE value="add register page" />
     <MESSAGE value="working on login/register component changes" />
@@ -579,7 +572,8 @@
     <MESSAGE value="Some progress on connectionRequest acceptance/rejection on frontend" />
     <MESSAGE value="fancy animations for SuggestedConnections" />
     <MESSAGE value="suggestedConnection and connectionRequest components now animate and remove selves from parent properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="suggestedConnection and connectionRequest components now animate and remove selves from parent properly" />
+    <MESSAGE value="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links" />
+    <option name="LAST_COMMIT_MESSAGE" value="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

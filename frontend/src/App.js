@@ -58,6 +58,7 @@ function App() {
             desktop: 1280,
           },
         },
+
       })}
     >
       <RouterProvider router={router}/>

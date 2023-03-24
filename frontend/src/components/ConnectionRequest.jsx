@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {Avatar, Button, Card} from "@mui/material";
-import pfp from "../images/pfp.png";
+import {Button, Card} from "@mui/material";
 import {loggedInFetch} from "../utils/fetch";
+import UserNameAvatar from "./UserNameAvatar";
 
 const ConnectionRequest = ({
   connectionId,
+  userId,
   firstName,
   lastName,
   setCrList
@@ -50,10 +51,7 @@ const ConnectionRequest = ({
 
   return (
     <Card sx={containerStyle}>
-      <div style={subContainerStyle}>
-        <Avatar src={pfp}/>
-        <h3>{firstName} {lastName}</h3>
-      </div>
+      <UserNameAvatar userId={userId} firstName={firstName} lastName={lastName} bold/>
       <div style={subContainerStyle}>
         {!isRejected &&
          <Button

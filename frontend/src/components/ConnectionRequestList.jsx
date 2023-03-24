@@ -24,12 +24,12 @@ const ConnectionRequestList = ({connectionRequests}) => {
         {crList?.map?.(cr => {
           return <Collapse key={cr.connectionId}>
             <ConnectionRequest
+              connectionId={cr.connectionId}
+              userId={cr.userId}
               firstName={cr.firstName}
               lastName={cr.lastName}
-              userId={cr.userId}
-              connectionId={cr.connectionId}
-              key={cr.userId}
               setCrList={setCrList}
+              key={cr.userId}
             />
           </Collapse>;
         })}

@@ -8,11 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="Improved UserNameAvatar to have pretty colors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
@@ -173,13 +173,6 @@
       <workItem from="1678808224973" duration="7483000" />
       <workItem from="1678981801191" duration="49221000" />
       <workItem from="1679414045888" duration="2795000" />
-    </task>
-    <task id="LOCAL-00003" summary="edit .gitignore">
-      <created>1675555495017</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1675555495017</updated>
     </task>
     <task id="LOCAL-00004" summary="edit workspace.xml">
       <created>1675555846616</created>
@@ -517,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679698006746</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Improved UserNameAvatar to have pretty colors">
+      <created>1679699099339</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1679699099339</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Pages work for now on frontend" />
     <MESSAGE value="add register page" />
     <MESSAGE value="working on login/register component changes" />
     <MESSAGE value="suggested COnnections API" />
@@ -573,7 +572,8 @@
     <MESSAGE value="fancy animations for SuggestedConnections" />
     <MESSAGE value="suggestedConnection and connectionRequest components now animate and remove selves from parent properly" />
     <MESSAGE value="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links" />
-    <option name="LAST_COMMIT_MESSAGE" value="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links" />
+    <MESSAGE value="Improved UserNameAvatar to have pretty colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved UserNameAvatar to have pretty colors" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

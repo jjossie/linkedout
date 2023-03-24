@@ -60,8 +60,13 @@ const allConnections = () => {
 // End Connection Methods
 
 // Post Methods
-const createPost = (post) => {
-  return PostModel.create(post);
+const createPost = (post, userId) => {
+  const newPost = {
+    ...post,
+    userId,
+    createdAt: Date.now().toString()
+  }
+  return PostModel.create(newPost);
 };
 
 const updatePost = (postId, updates) => {

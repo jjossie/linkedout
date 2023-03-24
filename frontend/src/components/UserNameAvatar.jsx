@@ -11,12 +11,11 @@ import {
   lightBlue,
   lightGreen,
   orange,
-  purple
+  purple,
+  red
 } from "@mui/material/colors";
 
 function numberFromText(text) {
-  // numberFromText("AA");
-   // => "6565"
   return text
     .split('') // => ["A", "A"]
     .map(char => char.charCodeAt(0)) // => [65, 65]
@@ -24,24 +23,26 @@ function numberFromText(text) {
 }
 
 const colors = [
-  blue[400],
-  blue[200],
-  blueGrey[400],
-  blueGrey[200],
-  lightBlue[400],
-  lightBlue[200],
-  green[400],
-  green[200],
   lightGreen[400],
-  lightGreen[200],
-  orange[400],
-  orange[200],
+  blue[400],
+  blueGrey[400],
+  blueGrey[300],
+  green[300],
+  lightBlue[400],
   deepOrange[400],
-  deepOrange[200],
+  orange[400],
+  deepOrange[500],
+  blue[300],
+  lightGreen[300],
+  lightBlue[300],
+  deepPurple[300],
+  purple[300],
   purple[400],
-  purple[200],
   deepPurple[400],
-  deepPurple[200],
+  green[400],
+  orange[600],
+  red[400],
+  red[300],
 ]
 
 const UserNameAvatar = ({userId, firstName, lastName, bold=false}) => {

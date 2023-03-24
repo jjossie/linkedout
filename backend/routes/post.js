@@ -1,5 +1,6 @@
 const {Router} = require("express");
 const uc = require("../controllers/user.js");
+const {requiresAuth} = require("../middleware/auth");
 const routes = Router();
 
 /****************************************
@@ -15,9 +16,9 @@ routes.get("/:postId", (request, response) => {
     return response.sendStatus(400);
 });
 
-routes.post("", (request, response) => {
+routes.post("", requiresAuth, async (request, response) => {
   const postData = request.body;
-  const newPostResult = uc.createPost(postData);
+  const newPostResult = await uc.createPost(postData, request.user._id);
   if (newPostResult)
     return response.status(201).json(newPostResult);
   else

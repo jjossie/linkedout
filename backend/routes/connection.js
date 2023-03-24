@@ -1,14 +1,15 @@
 const {Router} = require("express");
 const uc = require("../controllers/user.js");
+const {requiresAuth} = require("../middleware/auth");
 const routes = Router();
 
 /****************************************
  * Connection Endpoints
  ****************************************/
 
-routes.get("/:connectionId", (request, response) => {
+routes.get("/:connectionId", requiresAuth, async (request, response) => {
   const connectionId = request.params.connectionId;
-  const connection = uc.connectionById(connectionId);
+  const connection = await uc.connectionById(connectionId);
   if (connection)
     return response.status(200).json(connection);
   else

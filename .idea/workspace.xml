@@ -8,12 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="Improved UserNameAvatar to have pretty colors">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="Post creation works!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,17 +100,17 @@
       <recent name="$PROJECT_DIR$/frontend/src/utils/fetch.js" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Main.jsx">
+  <component name="RunManager" selected="HTTP Request. | Get Connections">
     <configuration name=" | Get Connection Requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="4" requestIdentifier="Get Connection Requests" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name=" | Get Connections" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="5" requestIdentifier="Get Connections" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name=" | Get Suggested Connections" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="3" requestIdentifier="Get Suggested Connections" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name=" | Request Connection" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="5" requestIdentifier="Request Connection" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="remote | get all users#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/remote.rest" index="7" requestIdentifier="get all users#2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="Main.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" working-dir="$PROJECT_DIR$/frontend/src/components/top-level">
@@ -131,21 +131,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="HTTP Request. | Get Connections" />
       <item itemvalue="HTTP Request. | Get Suggested Connections" />
       <item itemvalue="HTTP Request. | Get Connection Requests" />
       <item itemvalue="HTTP Request. | Request Connection" />
-      <item itemvalue="HTTP Request.remote | get all users#2" />
       <item itemvalue="Node.js.Main.jsx" />
       <item itemvalue="npm.Run Backend" />
       <item itemvalue="npm.Run Frontend" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request. | Get Connections" />
         <item itemvalue="Node.js.Main.jsx" />
         <item itemvalue="HTTP Request. | Request Connection" />
         <item itemvalue="HTTP Request. | Get Suggested Connections" />
         <item itemvalue="HTTP Request. | Get Connection Requests" />
-        <item itemvalue="HTTP Request.remote | get all users#2" />
       </list>
     </recent_temporary>
   </component>
@@ -173,13 +173,6 @@
       <workItem from="1678808224973" duration="7483000" />
       <workItem from="1678981801191" duration="49221000" />
       <workItem from="1679414045888" duration="2795000" />
-    </task>
-    <task id="LOCAL-00004" summary="edit workspace.xml">
-      <created>1675555846616</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1675555846616</updated>
     </task>
     <task id="LOCAL-00005" summary="create t5-pa2">
       <created>1675565121938</created>
@@ -517,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679699099339</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Post creation works!">
+      <created>1679701152418</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1679701152418</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add register page" />
     <MESSAGE value="working on login/register component changes" />
     <MESSAGE value="suggested COnnections API" />
     <MESSAGE value="suggested Connections API" />
@@ -573,7 +572,8 @@
     <MESSAGE value="suggestedConnection and connectionRequest components now animate and remove selves from parent properly" />
     <MESSAGE value="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links" />
     <MESSAGE value="Improved UserNameAvatar to have pretty colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved UserNameAvatar to have pretty colors" />
+    <MESSAGE value="Post creation works!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Post creation works!" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

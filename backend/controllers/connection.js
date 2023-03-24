@@ -61,8 +61,19 @@ const connectionRequestsForUserId = async (userId) => {
   });
 };
 
-const connectionsForUserId = (userId) => {
-  return ConnectionModel.find({userIds: userId}).where("isAccepted", true); // userId contained in list
+const connectionsForUserId = async (userId) => {
+  const acceptedConnections = await ConnectionModel.find({userIds: userId}).where("isAccepted", true); // userId contained in list
+  const uniqueConnectionUserIds = new Set(
+    acceptedConnections.map?.(connection => {
+      return connection.userIds.filter(id => id.toString() !== userId.toString())[0].toString();
+    })
+  );
+  const connectionUserPromises = [...uniqueConnectionUserIds].map(userId => {
+    return UserModel.findById(userId);
+  });
+  const users = await Promise.all(connectionUserPromises);
+  console.log(users);
+  return users;
 };
 
 const connectionsAndRequestsForUserId = async (userId) => {

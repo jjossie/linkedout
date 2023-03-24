@@ -15,7 +15,7 @@ const {
         isAConnection,
         suggestedConnections,
         requestConnection,
-      } = require("../controllers/connection")
+      } = require("../controllers/connection");
 const mongoose = require("mongoose");
 const {UserModel} = require("../models");
 const {requiresAuth} = require("../middleware/auth");
@@ -50,7 +50,7 @@ routes.post("/requestConnection", requiresAuth, async (req, res) => {
     const {userId} = req.body;
     if (!userId)
       return res.status(400).json({message: "userId not included in request body"});
-    console.log(`Requesting Connection between logged in user ${req.user?._id} and ${userId}`)
+    console.log(`Requesting Connection between logged in user ${req.user?._id} and ${userId}`);
     const result = await requestConnection(req.user?._id, userId);
     if (!result)
       return res.status(409).json({message: "Connection request already exists"});
@@ -68,9 +68,11 @@ routes.post("/requestConnection", requiresAuth, async (req, res) => {
 
 routes.get("/connections", requiresAuth, async (req, res) => {
   try {
-    const connectionRequests = await connectionsForUserId(req.user.userId);
-    res.status(200).json(connectionRequests ?? {});
+    const connections = await connectionsForUserId(req.user._id);
+    console.log(connections);
+    res.status(200).json(connections);
   } catch (e) {
+    console.log(e);
     return res.status(400).json({message: "Could not get connection requests", error: e.message});
   }
 });
@@ -82,7 +84,7 @@ routes.get("/suggestedConnections", requiresAuth, async (req, res) => {
   } catch (e) {
     return res.status(400).json({message: "Could not get suggested users", error: e.message});
   }
-})
+});
 
 
 /****************************************
@@ -150,7 +152,7 @@ routes.get('/', async (req, res) => {
     return res.status(400).json({
       message: "No user object found, probably not logged in"
     });
-})
+});
 
 routes.get("/:userId", async (request, response) => {
   const userId = request.params.userId;

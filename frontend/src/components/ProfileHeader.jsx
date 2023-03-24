@@ -7,9 +7,9 @@ import RecentExperience from "./RecentExperience";
 import vanguardImg from "../images/vanguard.jpeg";
 import byuiImg from "../images/byui.jpeg";
 
-import pfp from "../images/pfp.png"
+import pfp from "../images/pfp.png";
 
-const ProfileHeader = (props) => {
+const ProfileHeader = ({name}) => {
   const containerStyle = {
     // width: "75vw",
     // boxSizing: "border-box",
@@ -35,7 +35,7 @@ const ProfileHeader = (props) => {
         display: "flex", flexDirection: "row", alignItems: "start",
       }}>
         <ProfileInfo
-          name={props.name ?? "Danny Default"}
+          name={name ?? "Danny Default"}
           description="User Description because there's none in the DB"
           location="Rexburg, Idaho, United States"
           contactLink="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwithZePiuL8AhX7hIkEHS5WBOcQwqsBegQIDRAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU"

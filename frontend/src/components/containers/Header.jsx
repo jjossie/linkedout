@@ -11,9 +11,6 @@ const Header = (props) => {
   const avatarStyle = {};
   const linkStyle = {all: "unset"};
 
-  // const userId = props.loggedInUser.id;
-  const userId = "63dbfc0d187fe1e57908cf8d";
-
   const navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
@@ -57,9 +54,6 @@ const Header = (props) => {
           </Link>
           <Link style={linkStyle} key="profile" to="/profile">
             <Button variant="text">Profile</Button>
-          </Link>
-          <Link style={linkStyle} key="user" to={`/user/${userId}`}>
-            <Button variant="text">User</Button>
           </Link>
           <Link style={linkStyle} key="connectionRequests" to="/connectionRequests">
             <Button variant="text">Connection Requests</Button>

@@ -8,14 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="fancy animations for SuggestedConnections">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="suggestedConnection and connectionRequest components now animate and remove selves from parent properly">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequest.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SuggestedConnections.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/ConnectionRequests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/ConnectionRequests.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/containers/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/containers/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +106,7 @@
       <recent name="$PROJECT_DIR$/frontend/src/utils/fetch.js" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Run Frontend">
+  <component name="RunManager" selected="Node.js.Main.jsx">
     <configuration name=" | Get Connection Requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="4" requestIdentifier="Get Connection Requests" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -112,10 +116,10 @@
     <configuration name=" | Request Connection" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="5" requestIdentifier="Request Connection" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="remote | Login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/remote.rest" index="2" requestIdentifier="Login" runType="Run single request">
+    <configuration name="remote | get all users#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/remote.rest" index="7" requestIdentifier="get all users#2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="remote | get all users#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/remote.rest" index="7" requestIdentifier="get all users#2" runType="Run single request">
+    <configuration name="Main.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/src/components/top-level/Main.jsx" working-dir="$PROJECT_DIR$/frontend/src/components/top-level">
       <method v="2" />
     </configuration>
     <configuration name="Run Backend" type="js.build_tools.npm">
@@ -136,18 +140,18 @@
       <item itemvalue="HTTP Request. | Get Suggested Connections" />
       <item itemvalue="HTTP Request. | Get Connection Requests" />
       <item itemvalue="HTTP Request. | Request Connection" />
-      <item itemvalue="HTTP Request.remote | Login" />
       <item itemvalue="HTTP Request.remote | get all users#2" />
+      <item itemvalue="Node.js.Main.jsx" />
       <item itemvalue="npm.Run Backend" />
       <item itemvalue="npm.Run Frontend" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.Main.jsx" />
         <item itemvalue="HTTP Request. | Request Connection" />
         <item itemvalue="HTTP Request. | Get Suggested Connections" />
         <item itemvalue="HTTP Request. | Get Connection Requests" />
         <item itemvalue="HTTP Request.remote | get all users#2" />
-        <item itemvalue="HTTP Request.remote | Login" />
       </list>
     </recent_temporary>
   </component>
@@ -175,13 +179,6 @@
       <workItem from="1678808224973" duration="7483000" />
       <workItem from="1678981801191" duration="49221000" />
       <workItem from="1679414045888" duration="2795000" />
-    </task>
-    <task id="LOCAL-00001" summary="got halfway through t4-pa2">
-      <created>1675356816193</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1675356816193</updated>
     </task>
     <task id="LOCAL-00002" summary="Made lots of progress on the mongoose front">
       <created>1675547023537</created>
@@ -519,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679589536220</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="suggestedConnection and connectionRequest components now animate and remove selves from parent properly">
+      <created>1679627329794</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1679627329795</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +554,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="try removing vercel config" />
     <MESSAGE value="add back the config" />
     <MESSAGE value="Pages work for now on frontend" />
     <MESSAGE value="add register page" />
@@ -575,7 +578,8 @@
     <MESSAGE value="endpoints and buttons work for accepting and rejecting connections" />
     <MESSAGE value="Some progress on connectionRequest acceptance/rejection on frontend" />
     <MESSAGE value="fancy animations for SuggestedConnections" />
-    <option name="LAST_COMMIT_MESSAGE" value="fancy animations for SuggestedConnections" />
+    <MESSAGE value="suggestedConnection and connectionRequest components now animate and remove selves from parent properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="suggestedConnection and connectionRequest components now animate and remove selves from parent properly" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

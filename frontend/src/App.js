@@ -1,20 +1,18 @@
 import 'react-icons';
-import {RouterProvider, createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 
 // Project Imports
 import './App.css';
 
 import Main from "./components/top-level/Main";
-import {loadConnectionRequests, loadProfile, loadFeed, loadPostsForUser} from "./services/loaders";
+import {loadConnectionRequests, loadFeed, loadPostsForUser, loadProfile} from "./services/loaders";
 import Profile from "./components/top-level/Profile";
 import User from "./components/top-level/User";
 import ConnectionRequests from "./components/top-level/ConnectionRequests";
-import LoginPage from "./components/top-level/Login";
-import RegisterPage from "./components/top-level/Register";
 import SignInSide from "./components/top-level/Login";
 import SignUp from "./components/top-level/Register";
-
+import {createTheme, ThemeProvider} from "@mui/material";
 
 
 const router = createBrowserRouter([
@@ -49,7 +47,22 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={router}/>;
+  return (
+    <ThemeProvider
+      theme={createTheme({
+        breakpoints: {
+          values: {
+            laptop: 1080,
+            tablet: 640,
+            mobile: 0,
+            desktop: 1280,
+          },
+        },
+      })}
+    >
+      <RouterProvider router={router}/>
+    </ThemeProvider>
+  );
 }
 
 export default App;

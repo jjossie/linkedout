@@ -1,9 +1,9 @@
 import React, {useCallback, useState} from 'react';
-import {Avatar, Box, Button} from "@mui/material";
-import Typography from "@mui/material/Typography";
+import {Box, Button} from "@mui/material";
 import {loggedInFetch} from "../utils/fetch";
 import SendIcon from "@mui/icons-material/Send";
 import CheckIcon from "@mui/icons-material/Check";
+import UserNameAvatar from "./UserNameAvatar";
 
 
 const requestConnection = async (userId) => {
@@ -45,15 +45,9 @@ const SuggestedConnection = ({user, setSuggestedConnections}) => {
       });
   }, [_id, setSuggestedConnections]);
 
-  const name = `${firstName} ${lastName}`;
-  const initials = `${firstName[0]}${lastName[0]}`;
   return (
     <Box style={{display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.5em"}}>
-      {/*<Avatar {...stringAvatar(name)} />*/}
-      <Box style={{display: "flex", alignItems: "center", gap: "0 0.5em"}}>
-        <Avatar sx={{bgColor: "blue"}}>{initials}</Avatar>
-        <Typography>{name}</Typography>
-      </Box>
+      <UserNameAvatar userId={_id} firstName={firstName} lastName={lastName}/>
       <Button variant={"contained"}
               color={isError ? "error" : "primary"}
               onClick={requestSingleConnection}

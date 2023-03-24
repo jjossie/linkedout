@@ -3,25 +3,33 @@ import ProfileHeader from "../ProfileHeader";
 import {useLoaderData} from "react-router-dom";
 import Header from "../containers/Header";
 import PostPrompt from "../PostPrompt";
-import MainPanelContainer from "../containers/MainPanelContainer";
-import CenterPanel from "../containers/CenterPanel";
-import LeftPanel from "../containers/LeftPanel";
+import Grid2 from "@mui/material/Unstable_Grid2";
+import {Stack} from "@mui/material";
+import Feed from "../Feed";
+import SuggestedConnections from "../SuggestedConnections";
 
 const Profile = (props) => {
-  const {user, connectionUserIds} = useLoaderData();
-  // const fullName = info.loggedInUser.firstName + " " + info.loggedInUser.lastName;
-  // const fullName = "billy bob";
+  const {user, connectionUserIds, posts} = useLoaderData();
+  const name = user.firstName + " " + user.lastName;
 
   return (
     <div>
       <Header/>
-      <MainPanelContainer>
-        <LeftPanel/>
-        <CenterPanel>
-          <ProfileHeader name={user.firstName + " " + user.lastName}/>
-          <PostPrompt/>
-        </CenterPanel>
-      </MainPanelContainer>
+      <Grid2 container py={12} px={2}>
+        <Grid2 laptop={1} mobile={0}></Grid2>
+        <Grid2 container laptop={10} mobile={12}>
+          <Grid2 laptop={8} tablet={10} mobile={12}>
+            <Stack p={2} spacing={4}>
+              <ProfileHeader name={name}/>
+              <PostPrompt/>
+              {posts && <Feed posts={posts}/>}
+            </Stack>
+          </Grid2>
+          <Grid2 laptop={4} p={2} tablet={10} mobile={12}>
+            <SuggestedConnections/>
+          </Grid2>
+        </Grid2>
+      </Grid2>
     </div>
   );
 };

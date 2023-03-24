@@ -3,11 +3,9 @@ import {useLoaderData} from "react-router-dom";
 import Header from "../containers/Header";
 import Feed from "../Feed";
 import PostPrompt from "../PostPrompt";
-import MainPanelContainer from "../containers/MainPanelContainer";
-import CenterPanel from "../containers/CenterPanel";
-import LeftPanel from "../containers/LeftPanel";
-import RightPanel from "../containers/RightPanel";
 import SuggestedConnections from "../SuggestedConnections";
+import Grid2 from "@mui/material/Unstable_Grid2";
+import {Stack} from "@mui/material";
 
 const Main = () => {
   const info = useLoaderData();
@@ -15,16 +13,20 @@ const Main = () => {
   return (
     <div>
       <Header/>
-      <MainPanelContainer>
-        <LeftPanel/>
-        <CenterPanel>
-          <PostPrompt/>
-          <Feed posts={info?.posts}/>
-        </CenterPanel>
-        <RightPanel>
-          <SuggestedConnections/>
-        </RightPanel>
-      </MainPanelContainer>
+      <Grid2 container p={12}>
+        <Grid2 laptop={2} mobile={0}></Grid2>
+        <Grid2 container laptop={10} mobile={12}>
+          <Grid2 laptop={7} tablet={10} mobile={12}>
+            <Stack p={2}>
+              <PostPrompt/>
+              <Feed posts={info?.posts}/>
+            </Stack>
+          </Grid2>
+          <Grid2 laptop={5} p={2} tablet={10} mobile={12}>
+            <SuggestedConnections/>
+          </Grid2>
+        </Grid2>
+      </Grid2>
     </div>
   );
 };

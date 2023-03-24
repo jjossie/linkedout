@@ -13,8 +13,9 @@ export async function loadFeed({params}) {
 
 export async function loadProfile() {
   // Get the logged-in User
-  const user = await loggedInFetch("/user", "GET")
-
+  const userRes = await loggedInFetch("/user", "GET")
+  const user = await userRes.json();
+  console.log(user);
   // Get the connections
   const connectionsArr = await loggedInFetch(`/user/connections`)
     .then(res => res.json())
@@ -23,24 +24,28 @@ export async function loadProfile() {
   connectionsArr?.forEach(connection => {
     connectionUserIds.push(connection.userIds.filter(id => id !== user._id)[0].toString());
   });
-  // console.log(connectionUserIds);
+
+  // TODO fix
+  // Get the user's posts
+  // const posts = await loggedInFetch("/user/")
 
   return {
     user: user,
     connectionUserIds: connectionUserIds,
+    posts: null
   };
 }
 
 
 export async function loadPostsForUser(request) {
+  console.log("Loading page for user:");
+  console.log(request.params.userId);
   const posts = await loggedInFetch(`/user/${request.params.userId}/posts`)
     .then(res => res.json())
     .catch(reason => redirect("/login"));
-  // console.log(posts)
   const user = await loggedInFetch(`/user/${request.params.userId}`)
     .then(res => res.json())
     .catch(reason => redirect("/login"));
-  // console.log(user)
   return {
     user: user,
     posts: posts

@@ -1,17 +1,13 @@
 import React from 'react';
 import InputTextField from "./InputTextField";
 import PostMediaButton from "./PostMediaButton";
-import {RiVideoLine, RiArticleLine} from "react-icons/ri";
-import {RiCalendar2Line} from "react-icons/ri";
+import {RiArticleLine, RiCalendar2Line, RiVideoLine} from "react-icons/ri";
 import {HiOutlinePhotograph} from "react-icons/hi";
 import {Avatar, Card} from "@mui/material";
 
 import pfp from "../images/pfp.png";
 
 const PostPrompt = () => {
-  const containerStyle = {
-    margin: "2em 0"
-  }
   const subContainerStyle = {
     display: "flex",
     flexDirection: "row",
@@ -21,7 +17,7 @@ const PostPrompt = () => {
   }
   const avatarStyle = {}
   return (
-    <Card sx={containerStyle}>
+    <Card>
       <div style={subContainerStyle}>
         <Avatar src={pfp} sx={avatarStyle}/>
         <InputTextField name="newPostInputText" placeholder="Write a post"/>

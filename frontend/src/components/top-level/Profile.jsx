@@ -10,7 +10,7 @@ import SuggestedConnections from "../SuggestedConnections";
 
 const Profile = (props) => {
   const {user, connectionUserIds, posts} = useLoaderData();
-  const name = user.firstName + " " + user.lastName;
+  // const name = user.firstName + " " + user.lastName;
 
   return (
     <div>
@@ -20,7 +20,7 @@ const Profile = (props) => {
         <Grid2 container laptop={10} mobile={12}>
           <Grid2 laptop={8} tablet={10} mobile={12}>
             <Stack p={2} spacing={4}>
-              <ProfileHeader name={name}/>
+              <ProfileHeader user={user} connectionUserIds={connectionUserIds}/>
               <PostPrompt/>
               {posts && <Feed posts={posts}/>}
             </Stack>

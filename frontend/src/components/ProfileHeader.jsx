@@ -9,11 +9,11 @@ import byuiImg from "../images/byui.jpeg";
 
 import pfp from "../images/pfp.png";
 
-const ProfileHeader = ({name}) => {
+const ProfileHeader = ({
+  user,
+  connectionUserIds,
+}) => {
   const containerStyle = {
-    // width: "75vw",
-    // boxSizing: "border-box",
-    // margin: "8em"
     position: "relative"
   };
   const experienceItems = [
@@ -28,6 +28,9 @@ const ProfileHeader = ({name}) => {
     top: "12em",
     float: "left"
   }
+
+  const name = `${user.firstName} ${user.lastName}`;
+
   return (<Card sx={containerStyle}>
       <BackgroundImage/>
       <Avatar id="profile-header-avatar" src={pfp} sx={avatarStyle}/>
@@ -36,10 +39,11 @@ const ProfileHeader = ({name}) => {
       }}>
         <ProfileInfo
           name={name ?? "Danny Default"}
-          description="User Description because there's none in the DB"
+          description={user.bio ?? "User Description because there's none in the DB"}
           location="Rexburg, Idaho, United States"
           contactLink="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwithZePiuL8AhX7hIkEHS5WBOcQwqsBegQIDRAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU"
           connectionsLink="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwithZePiuL8AhX7hIkEHS5WBOcQwqsBegQIDRAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU"
+          connectionCount={connectionUserIds.length}
         />
         <RecentExperience experienceItems={experienceItems}/>
       </div>

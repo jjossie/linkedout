@@ -20,10 +20,6 @@ export async function loadProfile() {
   const connectionsArr = await loggedInFetch(`/user/connections`)
     .then(res => res.json())
     .catch(reason => redirect("/login"));
-  let connectionUserIds = [];
-  connectionsArr?.forEach(connection => {
-    connectionUserIds.push(connection.userIds.filter(id => id !== user._id)[0].toString());
-  });
 
   // TODO fix
   // Get the user's posts
@@ -31,7 +27,7 @@ export async function loadProfile() {
 
   return {
     user: user,
-    connectionUserIds: connectionUserIds,
+    connectionUserIds: connectionsArr.map(conn => conn._id),
     posts: null
   };
 }

@@ -8,12 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="Post creation works!">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="fixed getting connections for a user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.rest" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/top-level/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,13 +173,6 @@
       <workItem from="1678808224973" duration="7483000" />
       <workItem from="1678981801191" duration="49221000" />
       <workItem from="1679414045888" duration="2795000" />
-    </task>
-    <task id="LOCAL-00005" summary="create t5-pa2">
-      <created>1675565121938</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1675565121938</updated>
     </task>
     <task id="LOCAL-00006" summary="put framework in place for t5-pa2">
       <created>1675568159854</created>
@@ -517,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679701152418</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="fixed getting connections for a user">
+      <created>1679702084148</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1679702084148</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="working on login/register component changes" />
     <MESSAGE value="suggested COnnections API" />
     <MESSAGE value="suggested Connections API" />
     <MESSAGE value="still need to fix the undefined undefined error but the suggestedConnections endpoint works better now" />
@@ -573,7 +572,8 @@
     <MESSAGE value="adapt Feed, User and Profile views to use Grid2 &amp; componentize UserNameAvatars with clickable links" />
     <MESSAGE value="Improved UserNameAvatar to have pretty colors" />
     <MESSAGE value="Post creation works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Post creation works!" />
+    <MESSAGE value="fixed getting connections for a user" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed getting connections for a user" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

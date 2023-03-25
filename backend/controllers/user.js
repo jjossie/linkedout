@@ -148,14 +148,11 @@ const postsForUserId = (userId) => {
  * Feed
  *********************************/
 const feedForUserId = async (userId) => {
-  const connections = await connectionsForUserId(userId);
-  const friendIds = connections.map(connection => {
-    return connection.userIds.filter(id => (id !== userId))[0].toString();
-  });
-
+  const connectionUsers = await connectionsForUserId(userId);
+  const connectionUserIds = connectionUsers.map(cu => cu._id);
   const posts = await PostModel
     .find({
-      'userId': {$in: friendIds}
+      'userId': {$in: connectionUserIds}
     })
     .populate({
       path: 'userId',

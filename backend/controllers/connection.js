@@ -71,9 +71,7 @@ const connectionsForUserId = async (userId) => {
   const connectionUserPromises = [...uniqueConnectionUserIds].map(userId => {
     return UserModel.findById(userId);
   });
-  const users = await Promise.all(connectionUserPromises);
-  console.log(users);
-  return users;
+  return await Promise.all(connectionUserPromises);
 };
 
 const connectionsAndRequestsForUserId = async (userId) => {

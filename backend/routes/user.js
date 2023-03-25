@@ -28,7 +28,7 @@ const routes = Router();
 
 routes.get("/feed", requiresAuth, async (req, res) => {
   try {
-    const feed = await feedForUserId(req.user.userId);
+    const feed = await feedForUserId(req.user._id);
     return res.status(200).json(feed);
   } catch (e) {
     return res.status(400).json({message: "Could not get feed", error: e.message});

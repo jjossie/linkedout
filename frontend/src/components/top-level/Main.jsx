@@ -9,6 +9,7 @@ import {Stack} from "@mui/material";
 
 const Main = () => {
   const info = useLoaderData();
+  console.log("Feed: ");
   console.log(info);
   return (
     <div>

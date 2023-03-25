@@ -152,7 +152,7 @@ const feedForUserId = async (userId) => {
   const connectionUserIds = connectionUsers.map(cu => cu._id);
   const posts = await PostModel
     .find({
-      'userId': {$in: connectionUserIds}
+      'userId': {$in: [...connectionUserIds, userId]}
     })
     .populate({
       path: 'userId',

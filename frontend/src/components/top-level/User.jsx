@@ -19,7 +19,7 @@ const User = () => {
         <Grid2 container laptop={10} mobile={12}>
           <Grid2 laptop={8} tablet={10} mobile={12}>
             <Stack p={2} spacing={4}>
-              <ProfileHeader name={name}/>
+              <ProfileHeader user={user}/>
               <PostPrompt/>
               {posts && <Feed posts={posts}/>}
             </Stack>

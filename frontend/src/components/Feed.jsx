@@ -13,9 +13,9 @@ const Feed = (props) => {
       console.log(post);
       postComponents.push(
         <Post key={post.createdAt + post.userId.firstName}
-              username={post.userId.firstName + " " + post.userId.lastName}
-              content={post.text}
-              date={post.createdAt}/>
+              user={post.userId} // This one is called userId, but it's a populated user object
+              text={post.text}
+              createdAt={post.createdAt}/>
       );
     });
   }

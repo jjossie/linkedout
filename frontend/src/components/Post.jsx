@@ -1,8 +1,12 @@
 import React from 'react';
-import {Avatar, Card, Divider} from "@mui/material";
-import pfp from "../images/pfp.png";
+import {Card, Divider} from "@mui/material";
+import UserNameAvatar from "./UserNameAvatar";
 
-const Post = props => {
+const Post = ({
+  user,
+  createdAt,
+  text,
+}) => {
 
   return (
     <Card style={{
@@ -15,12 +19,11 @@ const Post = props => {
         alignItems: "center",
         gap: "16px"
       }}>
-        <Avatar id="post-avatar-image" src={pfp}/>
-        <h4>{props.username}</h4>
-        <em>{props.date}</em>
+        <UserNameAvatar userId={user._id} firstName={user.firstName} lastName={user.lastName} />
+        <em>{createdAt}</em>
       </div>
       <Divider/>
-      <p>{props.content}</p>
+      <p>{text}</p>
     </Card>
   );
 };

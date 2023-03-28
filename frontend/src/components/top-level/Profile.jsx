@@ -2,11 +2,10 @@ import React from 'react';
 import ProfileHeader from "../ProfileHeader";
 import {useLoaderData} from "react-router-dom";
 import Header from "../containers/Header";
-import PostPrompt from "../PostPrompt";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import {Stack} from "@mui/material";
-import Feed from "../Feed";
 import SuggestedConnections from "../SuggestedConnections";
+import FeedInteractive from "../FeedInteractive";
 
 const Profile = (props) => {
   const {user, connectionUserIds, posts} = useLoaderData();
@@ -21,8 +20,7 @@ const Profile = (props) => {
           <Grid2 laptop={8} tablet={10} mobile={12}>
             <Stack p={2} spacing={4}>
               <ProfileHeader user={user} connectionUserIds={connectionUserIds}/>
-              <PostPrompt/>
-              {posts && <Feed posts={posts}/>}
+              <FeedInteractive posts={posts}/>
             </Stack>
           </Grid2>
           <Grid2 laptop={4} p={2} tablet={10} mobile={12}>

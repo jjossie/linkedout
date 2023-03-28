@@ -60,13 +60,19 @@ const allConnections = () => {
 // End Connection Methods
 
 // Post Methods
-const createPost = (post, userId) => {
+const createPost = async (post, userId) => {
   const newPost = {
     ...post,
     userId,
     createdAt: Date.now().toString()
   }
-  return PostModel.create(newPost);
+  const newPostModel = new PostModel(newPost);
+  const newPostResult = await newPostModel.save();
+  // Pull it with a query
+  return PostModel.findById(newPostResult._id).populate({
+    path: "userId",
+    model: UserModel
+  });
 };
 
 const updatePost = (postId, updates) => {

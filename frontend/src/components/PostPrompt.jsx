@@ -8,16 +8,16 @@ import pfp from "../images/pfp.png";
 import SendIcon from "@mui/icons-material/Send";
 import {loggedInFetch} from "../utils/fetch";
 
-const PostPrompt = () => {
+const PostPrompt = ({onPostCreated}) => {
 
   const [postText, setPostText] = useState("");
 
   const handleCreatePost = async () => {
     const result = await loggedInFetch("/post", "POST", {
       text: postText
-    });
+    }).then(res => res.json());
     console.log(result);
-
+    onPostCreated(result);
   }
 
   const subContainerStyle = {

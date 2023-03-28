@@ -8,10 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="POSTS SHOW UP AGAIN LETS GOOOOOO">
-      <change beforePath="$PROJECT_DIR$/backend/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Feed.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Feed.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Post.jsx" afterDir="false" />
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="fixed the user page being broken bug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,13 +170,6 @@
       <workItem from="1678808224973" duration="7483000" />
       <workItem from="1678981801191" duration="49221000" />
       <workItem from="1679414045888" duration="2795000" />
-    </task>
-    <task id="LOCAL-00009" summary="added lots">
-      <created>1675840233744</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1675840233744</updated>
     </task>
     <task id="LOCAL-00010" summary="export backend and delete old db">
       <created>1675963383548</created>
@@ -515,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679705031169</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="fixed the user page being broken bug">
+      <created>1679705568381</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1679705568381</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="merge conflicts resolved" />
     <MESSAGE value="HOLY FETCH" />
     <MESSAGE value="remove old Register page and add error handling for registration" />
     <MESSAGE value="drafted connectionRequestsForUserId" />
@@ -571,7 +569,8 @@
     <MESSAGE value="connection count is accurate now" />
     <MESSAGE value="fixed the feed error snackbar" />
     <MESSAGE value="POSTS SHOW UP AGAIN LETS GOOOOOO" />
-    <option name="LAST_COMMIT_MESSAGE" value="POSTS SHOW UP AGAIN LETS GOOOOOO" />
+    <MESSAGE value="fixed the user page being broken bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the user page being broken bug" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

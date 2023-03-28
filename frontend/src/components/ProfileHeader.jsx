@@ -31,7 +31,8 @@ const ProfileHeader = ({
 
   const name = `${user.firstName} ${user.lastName}`;
 
-  return (<Card sx={containerStyle}>
+  return (
+    <Card sx={containerStyle}>
       <BackgroundImage/>
       <Avatar id="profile-header-avatar" src={pfp} sx={avatarStyle}/>
       <div style={{

@@ -51,8 +51,6 @@ export async function loadPostsForUser(request) {
 
 export async function loadConnectionRequests(request) {
   // Get the connection requests for the logged-in user
-  // TODO fix this!!!
-  console.log("loading connection requests");
   return loggedInFetch(`/user/connectionRequests`)
     .then(res => {
       if (res.status === 403 || res.status === 400) {

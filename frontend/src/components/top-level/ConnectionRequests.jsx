@@ -7,9 +7,6 @@ import LeftPanel from "../containers/LeftPanel";
 import ConnectionRequestList from "../ConnectionRequestList";
 
 const ConnectionRequests = () => {
-  console.log("Rendering ConnectionRequests Page");
-
-
   const connectionRequests = useLoaderData();
 
   return (

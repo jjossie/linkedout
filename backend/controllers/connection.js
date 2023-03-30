@@ -14,7 +14,7 @@ const suggestedConnections = async (userId) => {
   const connections = await connectionsAndRequestsForUserId(userId);
   const uniqueConnectionIds = new Set(
     connections?.map?.(connection => {
-      return connection.userIds.filter(id => id.toString() !== userId.toString())[0].toString();
+      return connection.userIds.filter(id => id?.toString() !== userId?.toString())[0]?.toString();
     })
   );
   const excludeList = [userId, ...uniqueConnectionIds];

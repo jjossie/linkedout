@@ -27,7 +27,7 @@ Content-Type: application/json
 
 ### Get Suggested Connections
 GET http://localhost:3430/user/suggestedConnections
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzkxMDQ0NjIsImRhdGEiOnsidXNlcklkIjoiNjQwNzcxN2YyYzYzMGNjNTJmZjhkMDM3In0sImlhdCI6MTY3OTAxODA2Mn0.opOHmzG1bjTDuwnfNhhSNJ9EyCXy24lPWvSYCOgczZ0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODAyODA1NDksImRhdGEiOnsidXNlcklkIjoiNjQwYTMyM2QxNzE5ZmU0MzUwMjllYzExIn0sImlhdCI6MTY4MDE5NDE0OX0.pV_R8pvuE_PM9wRtZIOfW6hMoWdrRGE5JQZh2mzGTaw
 
 ### Get Connection Requests
 GET http://localhost:3430/user/connectionRequests

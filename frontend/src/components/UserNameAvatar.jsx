@@ -12,7 +12,7 @@ const UserNameAvatar = ({user, bold=false}) => {
         all: "unset",
         cursor: "pointer"
       }}
-      to={`/user/${user.userId}`} >
+      to={`/user/${user._id}`} >
       <Box style={{display: "flex", alignItems: "center", gap: "0 0.5em"}}>
         <AvatarImage user={user}/>
         <Typography variant={bold? "h6" : "" }>{name}</Typography>

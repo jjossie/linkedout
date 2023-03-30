@@ -26,7 +26,7 @@ const ConnectionRequestList = ({connectionRequests}) => {
         flexDirection: "column",
         gap: "1em"
       }}>
-        {(crListComponents.length === 0)
+        {!crListComponents || (crListComponents?.length === 0)
           ? <Collapse key="blank"><Typography>Nobody wants to be friends with you 🥲</Typography></Collapse>
           : crListComponents
         }

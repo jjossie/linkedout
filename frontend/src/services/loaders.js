@@ -41,6 +41,8 @@ export async function loadProfile() {
 export async function loadPostsForUser(request) {
   console.log("Loading page for user:");
   console.log(request.params.userId);
+  if (!request.params.userId)
+    return redirect("/login"); // This aint working
   const posts = await loggedInFetch(`/user/${request.params.userId}/posts`)
     .then(res => res.json())
     .catch(reason => redirect("/login"));

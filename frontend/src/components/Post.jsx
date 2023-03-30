@@ -33,7 +33,7 @@ const Post = ({
         padding: "0 0 1em 0",
         gap: "16px"
       }}>
-        <UserNameAvatar userId={user._id} firstName={user.firstName} lastName={user.lastName}/>
+        <UserNameAvatar user={user}/>
         <em>{timeAgoMessage}</em>
       </div>
       <Divider/>

@@ -6,13 +6,14 @@ import Feed from "../Feed";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import {Stack} from "@mui/material";
 import PostPrompt from "../PostPrompt";
+import {UserContext} from "../../services/UserContext";
 
 const User = () => {
   const {user, posts} = useLoaderData();
   const name = (user)? user.firstName + " " + user.lastName : "Danny Default";
 
   return (
-    <>
+    <UserContext.Provider value={user}>
       <Header/>
       <Grid2 container py={12} px={2}>
         <Grid2 laptop={1} mobile={0}></Grid2>
@@ -26,7 +27,7 @@ const User = () => {
           </Grid2>
         </Grid2>
       </Grid2>
-    </>
+    </UserContext.Provider>
   );
 };
 

@@ -51,7 +51,7 @@ const ConnectionRequest = ({
 
   return (
     <Card sx={containerStyle}>
-      <UserNameAvatar userId={userId} firstName={firstName} lastName={lastName} bold/>
+      <UserNameAvatar user={{firstName, lastName, _id: userId}} bold/>
       <div style={subContainerStyle}>
         {!isRejected &&
          <Button

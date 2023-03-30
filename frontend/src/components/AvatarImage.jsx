@@ -41,16 +41,20 @@ const colors = [
   red[400],
   purple[400],
   red[300],
-]
+];
 
 
-const AvatarImage = ({firstName, lastName}) => {
+const AvatarImage = ({user}) => {
 
-  const initials = `${firstName[0]}${lastName[0]}`;
-  const color = colors[numberFromText(firstName + " " + lastName) % colors.length];
+  const image = user?.imageUrl;
+  const initials = `${user?.firstName[0]}${user?.lastName[0]}`;
+  const color = colors[numberFromText(user?.firstName + " " + user?.lastName) % colors.length];
 
   return (
-    <Avatar sx={{bgcolor: color}}>{initials}</Avatar>
+    <>
+      {(!image) && <Avatar sx={{bgcolor: color}}>{initials}</Avatar>}
+      {( image) && <Avatar src={image}/> }
+    </>
   );
 };
 

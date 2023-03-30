@@ -47,7 +47,7 @@ const SuggestedConnection = ({user, setSuggestedConnections}) => {
 
   return (
     <Box style={{display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.5em"}}>
-      <UserNameAvatar userId={_id} firstName={firstName} lastName={lastName}/>
+      <UserNameAvatar user={user}/>
       <Button variant={"contained"}
               color={isError ? "error" : "primary"}
               onClick={requestSingleConnection}

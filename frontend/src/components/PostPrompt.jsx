@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
-import {Avatar, Box, Button, Card, TextField} from "@mui/material";
+import React, {useContext, useState} from 'react';
+import {Box, Button, Card, TextField} from "@mui/material";
 
-import pfp from "../images/pfp.png";
 import SendIcon from "@mui/icons-material/Send";
 import {loggedInFetch} from "../utils/fetch";
+import {UserContext} from "../services/UserContext";
+import AvatarImage from "./AvatarImage";
 
 const PostPrompt = ({onPostCreated}) => {
 
   const [postText, setPostText] = useState("");
+  const loggedInUser = useContext(UserContext);
 
   const handleCreatePost = async () => {
     const result = await loggedInFetch("/post", "POST", {
@@ -21,14 +23,13 @@ const PostPrompt = ({onPostCreated}) => {
     display: "flex",
     flexDirection: "row",
     alignItems: "flex-end",
-    padding: "1em 4em",
+    padding: "1em 3em",
     gap: "1em"
   }
-  const avatarStyle = {}
   return (
     <Card>
       <Box style={subContainerStyle}>
-        <Avatar src={pfp} sx={avatarStyle}/>
+        <AvatarImage user={loggedInUser}/>
         <TextField id="post-prompt"
                    label="Write a post"
                    variant="outlined"

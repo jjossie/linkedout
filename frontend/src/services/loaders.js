@@ -2,20 +2,25 @@ import {loggedInFetch} from "../utils/fetch";
 import {redirect} from "react-router-dom";
 
 export async function loadFeed({params}) {
-  return loggedInFetch(`/user/feed`)
+
+  const user = await getLoggedInUser();
+
+  const feed = await loggedInFetch(`/user/feed`)
     .then(res => res.json())
     .catch(reason => {
       console.error(reason);
       return redirect("/login");
     });
+  return {
+    user: user,
+    ...feed
+  }
 }
 
 
 export async function loadProfile() {
   // Get the logged-in User
-  const userRes = await loggedInFetch("/user", "GET")
-  const user = await userRes.json();
-  console.log(user);
+  const user = await getLoggedInUser();
   // Get the connections
   const connectionsArr = await loggedInFetch(`/user/connections`)
     .then(res => res.json())
@@ -50,14 +55,29 @@ export async function loadPostsForUser(request) {
 
 
 export async function loadConnectionRequests(request) {
+
+  const user = await getLoggedInUser();
+
   // Get the connection requests for the logged-in user
-  return loggedInFetch(`/user/connectionRequests`)
+  const connectionRequests = loggedInFetch(`/user/connectionRequests`)
     .then(res => {
       if (res.status === 403 || res.status === 400) {
         throw new Error(`Fetch returned response ${res.status}`);
-      }
+      } // TODO wrap this in a loader object
       return res.json();
     })
     .catch(reason => redirect("/login"));
+
+  return {
+    connectionRequests,
+    user
+  }
 }
 
+
+
+async function getLoggedInUser() {
+  return loggedInFetch("/user", "GET")
+    .then(res => res.json())
+    .catch(reason => redirect("/login"));
+}

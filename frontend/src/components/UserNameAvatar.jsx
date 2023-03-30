@@ -4,17 +4,17 @@ import {Box} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import AvatarImage from "./AvatarImage";
 
-const UserNameAvatar = ({userId, firstName, lastName, bold=false}) => {
-  const name = `${firstName} ${lastName}`;
+const UserNameAvatar = ({user, bold=false}) => {
+  const name = `${user.firstName} ${user.lastName}`;
   return (
     <Link
       style={{
         all: "unset",
         cursor: "pointer"
       }}
-      to={`/user/${userId}`} >
+      to={`/user/${user.userId}`} >
       <Box style={{display: "flex", alignItems: "center", gap: "0 0.5em"}}>
-        <AvatarImage firstName={firstName} lastName={lastName}/>
+        <AvatarImage user={user}/>
         <Typography variant={bold? "h6" : "" }>{name}</Typography>
       </Box>
     </Link>

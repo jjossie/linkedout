@@ -1,10 +1,11 @@
-import React, {useCallback} from 'react';
-import {Avatar, Button, Card, TextField} from "@mui/material";
-import pfp from "../../images/pfp.png";
+import React, {useCallback, useContext} from 'react';
+import {Button, Card, TextField} from "@mui/material";
 import {IoIosSearch} from "react-icons/io";
 
 import {Link, useNavigate} from "react-router-dom";
 import {clearToken} from "../../utils/storage";
+import {UserContext} from "../../services/UserContext";
+import AvatarImage from "../AvatarImage";
 
 const Header = (props) => {
 
@@ -12,6 +13,7 @@ const Header = (props) => {
   const linkStyle = {all: "unset"};
 
   const navigate = useNavigate();
+  const user = useContext(UserContext);
 
   const handleLogout = useCallback(() => {
     clearToken();
@@ -59,7 +61,7 @@ const Header = (props) => {
             <Button variant="text">Connection Requests</Button>
           </Link>
           <Link style={linkStyle} key="profileAvatar" to="/profile">
-            <Avatar id="header-avatar" src={pfp} sx={avatarStyle}/>
+            <AvatarImage user={user}/>
           </Link>
           <Button variant="text" onClick={handleLogout}>Logout</Button>
         </div>

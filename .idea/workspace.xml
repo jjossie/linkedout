@@ -8,9 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="fixed the user page being broken bug">
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="add animated optimistic update to post creation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AvatarImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AvatarImage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostPrompt.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserNameAvatar.jsx" afterDir="false" />
     </list>
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +99,7 @@
       <recent name="$PROJECT_DIR$/frontend/src/utils/fetch.js" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request. | Get Connections">
+  <component name="RunManager" selected="npm.Run Backend">
     <configuration name=" | Get Connection Requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/.rest" index="4" requestIdentifier="Get Connection Requests" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -170,27 +172,8 @@
       <workItem from="1678808224973" duration="7483000" />
       <workItem from="1678981801191" duration="49221000" />
       <workItem from="1679414045888" duration="2795000" />
-    </task>
-    <task id="LOCAL-00010" summary="export backend and delete old db">
-      <created>1675963383548</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1675963383548</updated>
-    </task>
-    <task id="LOCAL-00011" summary="modularize backend base url">
-      <created>1675964086049</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1675964086049</updated>
-    </task>
-    <task id="LOCAL-00012" summary="got dotenvs working">
-      <created>1675965024114</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1675965024114</updated>
+      <workItem from="1680018376027" duration="6596000" />
+      <workItem from="1680190751101" duration="2896000" />
     </task>
     <task id="LOCAL-00013" summary="add vercel.json">
       <created>1675965105635</created>
@@ -514,7 +497,28 @@
       <option name="project" value="LOCAL" />
       <updated>1679705568381</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="posts have a time ago string">
+      <created>1680019777115</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1680019777116</updated>
+    </task>
+    <task id="LOCAL-00060" summary="ConnectionRequests page has a blank message">
+      <created>1680021828033</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1680021828033</updated>
+    </task>
+    <task id="LOCAL-00061" summary="add animated optimistic update to post creation">
+      <created>1680024324081</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1680024324081</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,9 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="HOLY FETCH" />
-    <MESSAGE value="remove old Register page and add error handling for registration" />
-    <MESSAGE value="drafted connectionRequestsForUserId" />
     <MESSAGE value="connectionRequests frontend page is broken but SuggestedConnections component mostly works? but sometimes gives the undefined error" />
     <MESSAGE value="fixed &quot;*.map() is not a function&quot; errors" />
     <MESSAGE value="fixed SuggestedConnections" />
@@ -570,7 +571,10 @@
     <MESSAGE value="fixed the feed error snackbar" />
     <MESSAGE value="POSTS SHOW UP AGAIN LETS GOOOOOO" />
     <MESSAGE value="fixed the user page being broken bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the user page being broken bug" />
+    <MESSAGE value="posts have a time ago string" />
+    <MESSAGE value="ConnectionRequests page has a blank message" />
+    <MESSAGE value="add animated optimistic update to post creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add animated optimistic update to post creation" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

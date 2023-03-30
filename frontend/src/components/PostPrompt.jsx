@@ -1,7 +1,4 @@
 import React, {useState} from 'react';
-import PostMediaButton from "./PostMediaButton";
-import {RiArticleLine, RiCalendar2Line, RiVideoLine} from "react-icons/ri";
-import {HiOutlinePhotograph} from "react-icons/hi";
 import {Avatar, Box, Button, Card, TextField} from "@mui/material";
 
 import pfp from "../images/pfp.png";
@@ -44,12 +41,6 @@ const PostPrompt = ({onPostCreated}) => {
           <SendIcon h={2}/>
         </Button>
       </Box>
-      <div style={subContainerStyle}>
-        <PostMediaButton key="Photo" icon={HiOutlinePhotograph} text="Photo" color="dodgerblue"/>
-        <PostMediaButton key="Video" icon={RiVideoLine} text="Video" color="mediumseagreen"/>
-        <PostMediaButton key="Event" icon={RiCalendar2Line} text="Event" color="peru"/>
-        <PostMediaButton key="Write" icon={RiArticleLine} text="Write article" color="tomato"/>
-      </div>
     </Card>
   );
 }

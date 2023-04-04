@@ -24,11 +24,13 @@ const Feed = (props) => {
       <Box sx={feedStyle}>
         <TransitionGroup>
           {props.posts?.map?.(post => {
+            console.log(post);
             const key = post.createdAt + post.userId.firstName;
             return <Collapse key={key}>
               <Post key={key + "post"}
                     user={post.userId} // This one is called userId, but it's a populated user object
                     text={post.text}
+                    imageUrl={post.imageUrl}
                     createdAt={post.createdAt}/>
             </Collapse>;
           })}

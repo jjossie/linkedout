@@ -10,6 +10,7 @@ const Post = ({
   user,
   createdAt,
   text,
+  imageUrl,
 }) => {
 
 
@@ -38,6 +39,9 @@ const Post = ({
       </div>
       <Divider/>
       <p>{text}</p>
+      {imageUrl && <img src={imageUrl} alt={text} style={{
+        width: "100%"
+      }}/>}
     </Card>
   );
 };

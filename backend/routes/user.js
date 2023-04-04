@@ -96,6 +96,7 @@ routes.get("/:userId/connections", requiresAuth, async (req, res) => {
   try {
     const userId = req.params.userId;
 
+
     if (!await isAConnection(req.user._id, userId))
       return res.status(403).json({message: "This user is not a connection of the logged in user"});
 
@@ -114,7 +115,7 @@ routes.get("/:userId/posts", requiresAuth, async (req, res) => {
   try {
     const userId = req.params.userId;
 
-    if (!await isAConnection(req.user.userId, userId))
+    if (!(await isAConnection(req.user.userId, userId)) && userId !== req.user._id.toString())
       return res.status(403).json({message: "This user is not a connection of the logged in user"});
 
     const posts = await postsForUserId(userId);

@@ -65,7 +65,7 @@ const createPost = async (post, userId) => {
     ...post,
     userId,
     createdAt: Date.now().toString()
-  }
+  };
   const newPostModel = new PostModel(newPost);
   const newPostResult = await newPostModel.save();
   // Pull it with a query
@@ -137,16 +137,17 @@ const allPrivateChatMessages = () => {
 // End Private Chat Message Methods
 
 
-
 const privateChatsForUserId = (userId) => {
   return PrivateChatModel.find({userIds: userId}); // userId contained in list
 };
 
 const postsForUserId = (userId) => {
-  return PostModel.find({userId: userId}).populate({
-    path: 'userId',
-    model: UserModel
-  });
+  return PostModel
+    .find({userId: userId}).populate({
+      path: 'userId',
+      model: UserModel
+    })
+    .sort({createdAt: "desc"});
 };
 
 
@@ -169,8 +170,6 @@ const feedForUserId = async (userId) => {
   const connectionRequests = await connectionRequestsForUserId(userId);
   return {posts, connectionRequests};
 };
-
-
 
 
 module.exports = {

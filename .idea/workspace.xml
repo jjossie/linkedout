@@ -8,11 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="CONTEXT is a thing now">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ConnectionRequestList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/loaders.js" afterDir="false" />
-    </list>
+    <list default="true" id="294a9172-cdf6-42a5-b2d7-56dc90ed2a27" name="Changes" comment="eh its good enough" />
     <list id="adda52d7-8bd7-428f-a5f3-7f6ab4f38183" name="FrontendWeek8" comment="FrontendWeek8" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,14 +168,7 @@
       <workItem from="1678981801191" duration="49221000" />
       <workItem from="1679414045888" duration="2795000" />
       <workItem from="1680018376027" duration="6596000" />
-      <workItem from="1680190751101" duration="7845000" />
-    </task>
-    <task id="LOCAL-00016" summary="Added some containers to the UI">
-      <created>1675989896037</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1675989896037</updated>
+      <workItem from="1680190751101" duration="8118000" />
     </task>
     <task id="LOCAL-00017" summary="dramatic improvements to frontend">
       <created>1676089581013</created>
@@ -517,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680198327984</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="eh its good enough">
+      <created>1680199109264</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1680199109264</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +544,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added middleware for requesting authentication" />
     <MESSAGE value="more middleware and clean up logs" />
     <MESSAGE value="refactor a lot, move connection functions to a connection.js controller, fix suggesting self connection" />
     <MESSAGE value="refactor a lot, move connection functions to a connection.js controller, fix suggesting self connection, fix connectionRequests endpoint" />
@@ -573,7 +568,8 @@
     <MESSAGE value="fixed a suggestedUsers bug" />
     <MESSAGE value="modularized some avatar stuff" />
     <MESSAGE value="CONTEXT is a thing now" />
-    <option name="LAST_COMMIT_MESSAGE" value="CONTEXT is a thing now" />
+    <MESSAGE value="eh its good enough" />
+    <option name="LAST_COMMIT_MESSAGE" value="eh its good enough" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

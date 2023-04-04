@@ -45,10 +45,9 @@ const colors = [
 
 
 const AvatarImage = ({user}) => {
-
-  const image = user?.imageUrl;
-  const initials = `${user?.firstName[0]}${user?.lastName[0]}`;
-  const color = colors[numberFromText(user?.firstName + " " + user?.lastName) % colors.length];
+  const image = user ? user.imageUrl : null;
+  const initials = (user?.firstName && user?.lastName) ? `${user?.firstName[0]}${user?.lastName[0]}` : "AB";
+  const color = user ? colors[numberFromText(user?.firstName + " " + user?.lastName) % colors.length] : colors[0];
 
   return (
     <>

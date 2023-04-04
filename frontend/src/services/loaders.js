@@ -26,14 +26,15 @@ export async function loadProfile() {
     .then(res => res.json())
     .catch(reason => redirect("/login"));
 
-  // TODO fix
   // Get the user's posts
-  // const posts = await loggedInFetch("/user/")
+  const posts = await loggedInFetch(`/user/${user._id}/posts`)
+    .then(res => res.json())
+    .catch(reason => console.log(reason));
 
   return {
     user: user,
     connectionUserIds: connectionsArr.map(conn => conn._id),
-    posts: null
+    posts: posts
   };
 }
 
@@ -47,7 +48,12 @@ export async function loadPostsForUser(request) {
     .then(res => res.json())
     .catch(reason => redirect("/login"));
   const user = await loggedInFetch(`/user/${request.params.userId}`)
-    .then(res => res.json())
+    .then(res => {
+      if (res.ok)
+        return res.json();
+      else
+        throw new Error(res.status);
+    })
     .catch(reason => redirect("/login"));
   return {
     user: user,

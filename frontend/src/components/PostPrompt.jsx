@@ -16,6 +16,7 @@ const PostPrompt = ({onPostCreated}) => {
       text: postText
     }).then(res => res.json());
     console.log(result);
+    setPostText("");
     onPostCreated(result);
   }
 
@@ -36,8 +37,9 @@ const PostPrompt = ({onPostCreated}) => {
                    sx={{flexGrow: 1}}
                    size="small"
                    onChange={e => setPostText(e.target.value)}
+                   value={postText}
                    multiline
-        >{postText}</TextField>
+        />
         <Button variant="contained" onClick={handleCreatePost} size="large">
           <SendIcon h={2}/>
         </Button>

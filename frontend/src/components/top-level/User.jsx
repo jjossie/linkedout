@@ -9,8 +9,8 @@ import PostPrompt from "../PostPrompt";
 import {UserContext} from "../../services/UserContext";
 
 const User = () => {
-  const {user, posts} = useLoaderData();
-  const name = (user)? user.firstName + " " + user.lastName : "Danny Default";
+  const {user, posts, specifiedUser} = useLoaderData();
+  const name = (specifiedUser)? specifiedUser.firstName + " " + specifiedUser.lastName : "Danny Default";
 
   return (
     <UserContext.Provider value={user}>
@@ -20,7 +20,7 @@ const User = () => {
         <Grid2 container laptop={10} mobile={12}>
           <Grid2 laptop={8} tablet={10} mobile={12}>
             <Stack p={2} spacing={4}>
-              <ProfileHeader user={user}/>
+              <ProfileHeader user={specifiedUser}/>
               <PostPrompt/>
               {posts && <Feed posts={posts}/>}
             </Stack>

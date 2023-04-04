@@ -56,7 +56,8 @@ export async function loadPostsForUser(request) {
     })
     .catch(reason => redirect("/login"));
   return {
-    user: user,
+    user: await getLoggedInUser(),
+    specifiedUser: user,
     posts: posts
   }
 }
